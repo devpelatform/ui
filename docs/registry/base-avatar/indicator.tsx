@@ -1,10 +1,11 @@
 import { Avatar, AvatarFallback, AvatarImage, AvatarIndicator } from '@pelatform/ui/base';
+import { getImagePath } from '@/lib/utils';
 
 export default function AvatarDemo() {
   return (
     <div className="flex flex-wrap gap-6">
       <Avatar className="size-14">
-        <AvatarImage src="/media/avatars/14.png" alt="@reui" />
+        <AvatarImage src={getImagePath('/media/avatars/14.png')} alt="@pelatform" />
         <AvatarFallback>CH</AvatarFallback>
         <AvatarIndicator className="-end-1 -top-1">
           <svg viewBox="0 0 15 16" className="h-4 fill-primary">
@@ -13,7 +14,7 @@ export default function AvatarDemo() {
         </AvatarIndicator>
       </Avatar>
       <Avatar className="size-14">
-        <AvatarImage src="/media/avatars/14.png" alt="@reui" />
+        <AvatarImage src={getImagePath('/media/avatars/14.png')} alt="@pelatform" />
         <AvatarFallback>CH</AvatarFallback>
         <AvatarIndicator className="-end-1 -bottom-1">
           <svg viewBox="0 0 15 16" className="h-4 fill-primary">

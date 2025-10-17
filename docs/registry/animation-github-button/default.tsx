@@ -6,7 +6,7 @@ export default function Component() {
       <GithubButton
         targetStars={1501}
         label="Star on GitHub"
-        repoUrl="https://github.com/keenthemes/reui"
+        repoUrl="https://github.com/devpelatform/ui"
       />
     </div>
   );

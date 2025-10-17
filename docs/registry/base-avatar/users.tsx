@@ -1,4 +1,5 @@
 import { Avatar, AvatarFallback, AvatarImage } from '@pelatform/ui/base';
+import { getImagePath } from '@/lib/utils';
 
 export default function AvatarDemo() {
   return (
@@ -6,32 +7,32 @@ export default function AvatarDemo() {
       <div className="-space-x-1 flex">
         <Avatar className="size-7">
           <AvatarImage
-            src="/media/avatars/2.png"
-            alt="@reui"
+            src={getImagePath('/media/avatars/2.png')}
+            alt="@pelatform"
             className="border-2 border-background hover:z-10"
           />
           <AvatarFallback>CH</AvatarFallback>
         </Avatar>
         <Avatar className="size-7">
           <AvatarImage
-            src="/media/avatars/4.png"
-            alt="@reui"
+            src={getImagePath('/media/avatars/4.png')}
+            alt="@pelatform"
             className="border-2 border-background hover:z-10"
           />
           <AvatarFallback>CH</AvatarFallback>
         </Avatar>
         <Avatar className="size-7">
           <AvatarImage
-            src="/media/avatars/6.png"
-            alt="@reui"
+            src={getImagePath('/media/avatars/6.png')}
+            alt="@pelatform"
             className="border-2 border-background hover:z-10"
           />
           <AvatarFallback>CH</AvatarFallback>
         </Avatar>
         <Avatar className="size-7">
           <AvatarImage
-            src="/media/avatars/8.png"
-            alt="@reui"
+            src={getImagePath('/media/avatars/8.png')}
+            alt="@pelatform"
             className="border-2 border-background hover:z-10"
           />
           <AvatarFallback>CH</AvatarFallback>

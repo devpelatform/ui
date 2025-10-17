@@ -9,7 +9,7 @@ export default function Component() {
         separator={true}
         label=""
         roundStars={true}
-        repoUrl="https://github.com/keenthemes/reui"
+        repoUrl="https://github.com/devpelatform/ui"
         variant="outline"
       />
     </div>

@@ -8,7 +8,7 @@ export default function Component() {
         targetStars={80890}
         label="Github Stars"
         roundStars={true}
-        repoUrl="https://github.com/keenthemes/reui"
+        repoUrl="https://github.com/devpelatform/ui"
         variant="outline"
       />
     </div>
