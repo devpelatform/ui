@@ -1,9 +1,12 @@
 'use client';
 
 import type { ReactNode } from 'react';
+import dynamic from 'next/dynamic';
 import { RootProvider } from 'fumadocs-ui/provider';
 
-import SearchDialog from '@/components/search';
+const SearchDialog = dynamic(() => import('@/components/search'), {
+  ssr: false,
+});
 
 export function Provider({ children }: { children: ReactNode }) {
   return (
