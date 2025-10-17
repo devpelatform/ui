@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "@pelatform/ui/css";
 @import "fumadocs-ui/css/neutral.css";
 @import "fumadocs-ui/css/preset.css";
 
@@ -21,4 +22,12 @@ button,
 .dark {
   --color-fd-ring: oklch(0.747 0.12 165.696);
   --color-fd-primary: oklch(0.747 0.12 165.696);
+}
+
+:root {
+  --primary: oklch(0.684 0.142 161.882);
+}
+
+.dark {
+  --primary: oklch(0.747 0.12 165.696);
 }

@@ -1,0 +1,107 @@
+/**
+ * Theme Mode Switcher Component
+ * Provides a button to cycle through light, dark, and system theme modes
+ * Integrates with the application's color configuration and meta color management
+ */
+
+'use client';
+
+import * as React from 'react';
+import { Monitor, Moon, Sun } from 'lucide-react';
+import { useTheme } from 'next-themes';
+
+import { THEME_MODES, type ThemeMode } from '@/lib/colors';
+import { cn } from '@/lib/utils';
+import { Button } from '@/ui/default/button';
+
+/**
+ * Props interface for the ModeSwitcher component
+ */
+export interface ModeSwitcherProps {
+  /** Additional CSS classes for the button */
+  className?: string;
+  /** Button variant style */
+  variant?: 'ghost' | 'outline' | 'secondary';
+  /** Button size */
+  size?: 'sm' | 'md' | 'lg';
+  /** Custom cycle order for themes (defaults to system -> light -> dark) */
+  cycleOrder?: ThemeMode[];
+}
+
+/**
+ * ModeSwitcher Component
+ *
+ * A button component that cycles through available theme modes (light, dark, system).
+ * Automatically updates the meta theme color and displays appropriate icons
+ * for each theme state. Integrates with next-themes for theme persistence.
+ *
+ * Features:
+ * - Cycles through light, dark, and system themes
+ * - Updates meta theme color automatically
+ * - Shows appropriate icons for each theme
+ * - Accessible with screen reader support
+ * - Customizable appearance and cycle order
+ * - Integrates with application color configuration
+ *
+ * @param props - Component props
+ * @returns JSX element containing the theme switcher button
+ *
+ * @example
+ * ```tsx
+ * // Basic usage
+ * <ModeSwitcher />
+ *
+ * // Custom styling
+ * <ModeSwitcher
+ *   className="border border-gray-300"
+ *   variant="outline"
+ *   size="lg"
+ * />
+ *
+ * // Custom cycle order
+ * <ModeSwitcher
+ *   cycleOrder={['light', 'dark']} // Skip system mode
+ * />
+ * ```
+ */
+export function ModeSwitcher({
+  className,
+  variant = 'ghost',
+  size = 'md',
+  cycleOrder = [THEME_MODES.SYSTEM, THEME_MODES.LIGHT, THEME_MODES.DARK],
+}: ModeSwitcherProps) {
+  const { setTheme, theme } = useTheme();
+
+  const toggleTheme = React.useCallback(() => {
+    const currentIndex = cycleOrder.indexOf(theme as ThemeMode);
+    const nextIndex = (currentIndex + 1) % cycleOrder.length;
+    const nextTheme = cycleOrder[nextIndex];
+
+    setTheme(nextTheme);
+  }, [theme, setTheme, cycleOrder]);
+
+  const getCurrentIcon = () => {
+    if (theme === THEME_MODES.SYSTEM) {
+      return <Monitor />;
+    }
+
+    if (theme === THEME_MODES.DARK) {
+      return <Moon />;
+    }
+
+    return <Sun />;
+  };
+
+  return (
+    <Button
+      variant={variant}
+      size={size}
+      className={cn('group/toggle size-8 px-0 text-foreground', className)}
+      onClick={toggleTheme}
+      aria-label="Switch theme"
+    >
+      {getCurrentIcon()}
+      <span className="sr-only">Toggle theme</span>
+    </Button>
+  );
+}

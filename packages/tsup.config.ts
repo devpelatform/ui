@@ -3,9 +3,16 @@ import { defineConfig } from 'tsup';
 
 export default defineConfig(() => {
   return {
-    entry: {
-      index: './src/index.ts',
-    },
+    entry: [
+      './src/index.ts',
+      './src/animation.ts',
+      './src/aria.ts',
+      './src/base.ts',
+      './src/components.ts',
+      './src/default.ts',
+      './src/hooks.ts',
+      './src/re-export/*.ts',
+    ],
     format: ['esm', 'cjs'],
     splitting: true,
     cjsInterop: true,
@@ -19,5 +26,6 @@ export default defineConfig(() => {
         exclude: /node_modules/,
       }),
     ],
+    onSuccess: 'node scripts/addClientDirective.js',
   };
 });

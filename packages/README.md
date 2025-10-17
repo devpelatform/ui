@@ -1,10 +1,10 @@
-# @pelatform/package
+# @pelatform/ui
 
-This is a template package for creating a package & docs
+A Modern and Minimal React UI Library built with TailwindCSS.
 
-[![Version](https://img.shields.io/npm/v/@pelatform/package-template.svg)](https://www.npmjs.com/package/@pelatform/package-template)
-[![License](https://img.shields.io/npm/l/@pelatform/package-template.svg)](https://github.com/devpelatform/package-template/blob/main/LICENSE)
+[![Version](https://img.shields.io/npm/v/@pelatform/ui.svg)](https://www.npmjs.com/package/@pelatform/ui)
+[![License](https://img.shields.io/npm/l/@pelatform/ui.svg)](https://github.com/devpelatform/ui/blob/main/LICENSE)
 
 ## Getting Started
 
-Visit https://devpelatform.github.io/package-template to get started with this package.
+Visit https://devpelatform.github.io/ui to get started with this package.

@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "---Getting Started---",
+    "(root)/index",
+    "---Default Components---",
+    "(default)/accordion",
+    "(default)/accordion-menu",
+    "---Base Components---",
+    "(base)/base-avatar",
+    "(base)/base-badge",
+    "---Animations Components---",
+    "(animations)/github-button",
+    "(animations)/gradient-background",
+    "(animations)/grid-background"
+  ]
+}

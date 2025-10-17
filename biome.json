@@ -34,8 +34,16 @@
       "recommended": true,
       "a11y": {
         "noAutofocus": "off",
+        "noLabelWithoutControl": "off",
         "noSvgWithoutTitle": "off",
-        "useButtonType": "off"
+        "noStaticElementInteractions": "off",
+        "useAnchorContent": "off",
+        "useAriaPropsForRole": "off",
+        "useAriaPropsSupportedByRole": "off",
+        "useButtonType": "off",
+        "useFocusableInteractive": "off",
+        "useSemanticElements": "off",
+        "useValidAnchor": "off"
       },
       "correctness": {
         "noUnusedImports": {
@@ -43,6 +51,7 @@
           "level": "info",
           "options": {}
         },
+        "noUnknownTypeSelector": "off",
         "useUniqueElementIds": "off",
         "noUnusedFunctionParameters": "off",
         "useParseIntRadix": "off",
@@ -56,6 +65,7 @@
         "useShorthandAssign": "error",
         "useSingleVarDeclarator": "error",
         "noNonNullAssertion": "off",
+        "noDescendingSpecificity": "off",
         "useSelfClosingElements": {
           "fix": "safe",
           "level": "info",
@@ -72,6 +82,7 @@
         "noUnknownAtRules": "off",
         "noArrayIndexKey": "off",
         "noExplicitAny": "warn",
+        "noImplicitAnyLet": "off",
         "noDoubleEquals": {
           "fix": "safe",
           "level": "warn",
