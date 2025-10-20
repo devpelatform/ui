@@ -6,8 +6,7 @@
     "clean": "rimraf .next .source out",
     "clean:all": "rimraf .next .source .turbo node_modules out",
     "dev": "next dev --turbo",
-    "build": "next build && pnpm build:post",
-    "build:post": "bun ./scripts/post-build.ts",
+    "build": "next build",
     "start": "next start",
     "types:check": "tsc --noEmit",
     "postinstall": "fumadocs-mdx"
@@ -28,13 +27,13 @@
   "devDependencies": {
     "@next/env": "^15.5.6",
     "@shikijs/transformers": "^3.13.0",
-    "@tailwindcss/postcss": "^4.1.14",
+    "@tailwindcss/postcss": "^4.1.15",
     "@types/mdx": "^2.0.13",
-    "@types/node": "24.8.1",
+    "@types/node": "24.9.0",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "shiki": "^3.13.0",
-    "tailwindcss": "^4.1.14",
+    "tailwindcss": "^4.1.15",
     "typescript": "^5.9.3"
   },
   "packageManager": "pnpm@10.18.3"

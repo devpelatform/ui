@@ -90,6 +90,9 @@ jobs:
         # env:
         #   NEXT_PUBLIC_SITE_URL: https://devpelatform.github.io/package-template
 
+      - name: Build Post
+        run: pnpm build:post
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
