@@ -4,7 +4,6 @@
     "strict": true,
     // Modules
     "baseUrl": ".",
-    "customConditions": ["development"],
     "module": "ESNext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,

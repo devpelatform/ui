@@ -1,6 +1,6 @@
 {
   "name": "@pelatform/ui",
-  "version": "1.5.1",
+  "version": "1.5.2",
   "description": "A Modern and Minimal React UI Library built with TailwindCSS.",
   "author": "Pelatform Dev",
   "license": "MIT",
@@ -130,7 +130,8 @@
     "dev": "tsup --watch",
     "build": "tsup --clean --dts",
     "types:check": "tsc --noEmit",
-    "prepublishOnly": "pnpm run clean && tsup --clean --dts"
+    "prepack": "node scripts/prepare-publish.mjs",
+    "postpack": "git checkout -- package.json"
   },
   "homepage": "https://devpelatform.github.io/ui",
   "files": [
