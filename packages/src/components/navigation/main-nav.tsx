@@ -8,9 +8,9 @@
 
 import { ArrowUpRight, ChevronDown } from 'lucide-react';
 
-import { DefaultLink, type SharedLink } from '@/components';
-import { googleTrackEvent } from '@/lib/analytics';
-import { cn } from '@/lib/utils';
+import { DefaultLink, type SharedLink } from '../../components';
+import { googleTrackEvent } from '../../lib/analytics';
+import { cn } from '../../lib/utils';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -19,7 +19,7 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from '@/ui/default/dropdown-menu';
+} from '../../ui/default/dropdown-menu';
 
 /**
  * Interface defining the structure of a navigation item

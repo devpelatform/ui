@@ -4,7 +4,7 @@
  * Supports theming through currentColor and customizable sizing
  */
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 /**
  * Logo Component

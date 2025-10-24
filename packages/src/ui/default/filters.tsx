@@ -5,7 +5,7 @@ import { createContext, useCallback, useContext, useMemo, useState } from 'react
 import { cva, type VariantProps } from 'class-variance-authority';
 import { AlertCircle, Check, Plus, X } from 'lucide-react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 import {
   Command,
   CommandEmpty,
@@ -219,12 +219,12 @@ const filterInputVariants = cva(
     'has-[[data-slot=filters-input]:focus-visible]:outline-none',
     'has-[[data-slot=filters-input]:focus-visible]:ring-[3px]',
     'has-[[data-slot=filters-input]:focus-visible]:z-1',
-    'has-[[data-slot=filters-input]::aria-invalid]:border',
-    'has-[[data-slot=filters-input]::aria-invalid]:border-solid',
-    'has-[[data-slot=filters-input]::aria-invalid]:border-destructive/60',
-    'has-[[data-slot=filters-input]::aria-invalid]:ring-destructive/10',
-    'dark:has-[[data-slot=filters-input]::aria-invalid]:border-destructive',
-    'dark:has-[[data-slot=filters-input]::aria-invalid]:ring-destructive/20',
+    'has-[[data-slot=filters-input]:[aria-invalid=true]]:border',
+    'has-[[data-slot=filters-input]:[aria-invalid=true]]:border-solid',
+    'has-[[data-slot=filters-input]:[aria-invalid=true]]:border-destructive/60',
+    'has-[[data-slot=filters-input]:[aria-invalid=true]]:ring-destructive/10',
+    'dark:has-[[data-slot=filters-input]:[aria-invalid=true]]:border-destructive',
+    'dark:has-[[data-slot=filters-input]:[aria-invalid=true]]:ring-destructive/20',
   ],
   {
     variants: {
@@ -233,9 +233,9 @@ const filterInputVariants = cva(
         outline: 'bg-background border border-border',
       },
       size: {
-        lg: 'h-10 text-sm px-2.5 has-[[data-slot=filters-prefix]]:ps-0 has-[[data-slot=filters-suffix]]:pe-0',
-        md: 'h-9 text-sm px-2 has-[[data-slot=filters-prefix]]:ps-0 has-[[data-slot=filters-suffix]]:pe-0',
-        sm: 'h-8 text-xs px-1.5 has-[[data-slot=filters-prefix]]:ps-0 has-[[data-slot=filters-suffix]]:pe-0',
+        lg: 'h-10 text-sm px-2.5 has-data-[slot=filters-prefix]:ps-0 has-data-[slot=filters-suffix]:pe-0',
+        md: 'h-9 text-sm px-2 has-data-[slot=filters-prefix]:ps-0 has-data-[slot=filters-suffix]:pe-0',
+        sm: 'h-8 text-xs px-1.5 has-data-[slot=filters-prefix]:ps-0 has-data-[slot=filters-suffix]:pe-0',
       },
       cursorPointer: {
         true: 'cursor-pointer',
@@ -381,7 +381,7 @@ const filterFieldValueVariants = cva(
       variant: {
         solid: 'bg-secondary',
         outline:
-          'bg-background border border-border hover:bg-secondary has-[[data-slot=switch]]:hover:bg-transparent',
+          'bg-background border border-border hover:bg-secondary has-data-[slot=switch]:hover:bg-transparent',
       },
       size: {
         lg: 'h-10 px-4 text-sm gap-1.5 [&_svg:not([class*=size-])]:size-4',

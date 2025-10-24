@@ -24,7 +24,7 @@ import {
 import { CSS } from '@dnd-kit/utilities';
 import { Slot } from '@radix-ui/react-slot';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 const SortableItemContext = React.createContext<{
   listeners: DraggableSyntheticListeners | undefined;
@@ -223,7 +223,7 @@ function SortableItemHandle({
       data-dragging={isDragging}
       data-disabled={disabled}
       {...listeners}
-      className={cn(cursor && (isDragging ? '!cursor-grabbing' : '!cursor-grab'), className)}
+      className={cn(cursor && (isDragging ? 'cursor-grabbing!' : 'cursor-grab!'), className)}
     >
       {children}
     </Comp>

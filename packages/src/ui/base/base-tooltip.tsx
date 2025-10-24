@@ -4,7 +4,7 @@ import type * as React from 'react';
 import { Tooltip as TooltipPrimitive } from '@base-ui-components/react/tooltip';
 import { cva, type VariantProps } from 'class-variance-authority';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 function TooltipProvider({
   delay = 0,

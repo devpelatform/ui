@@ -1,15 +1,16 @@
-@import "tw-animate-css";
+@import 'tw-animate-css';
 
-@import "./components/apexcharts.css";
-@import "./components/book.css";
-@import "./components/image-input.css";
-@import "./components/leaflet.css";
-@import "./components/patterns.css";
-@import "./components/rating.css";
-@import "./components/scrollable.css";
-@import "./components/theme-transition.css";
-@import "./components/extra.css";
+@import './components/apexcharts.css';
+@import './components/book.css';
+@import './components/image-input.css';
+@import './components/leaflet.css';
+@import './components/patterns.css';
+@import './components/rating.css';
+@import './components/scrollable.css';
+@import './components/theme-transition.css';
+@import './components/extra.css';
 
+@source '../src/.';
 @source '../dist/.';
 
 @custom-variant dark (&:is(.dark *));

@@ -21,10 +21,10 @@ import * as React from 'react';
 import type { DialogProps } from '@radix-ui/react-dialog';
 import { Search } from 'lucide-react';
 
-import { googleTrackEvent } from '@/lib/analytics';
-import { cn } from '@/lib/utils';
-import { Button } from '@/ui/default/button';
-import { CommandDialog, CommandInput, CommandList } from '@/ui/default/command';
+import { googleTrackEvent } from '../../lib/analytics';
+import { cn } from '../../lib/utils';
+import { Button } from '../../ui/default/button';
+import { CommandDialog, CommandInput, CommandList } from '../../ui/default/command';
 
 /**
  * Props interface for the CommandMenu component
@@ -236,7 +236,7 @@ export function CommandMenu({
         open={open}
         onOpenChange={setOpen}
         className={cn(
-          '[&_[data-dialog-close]]:end-[0.925rem] [&_[data-dialog-close]]:top-[0.925rem]',
+          '**:data-dialog-close:end-[0.925rem] **:data-dialog-close:top-[0.925rem]',
           classDialog,
         )}
       >

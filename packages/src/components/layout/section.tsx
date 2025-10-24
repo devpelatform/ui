@@ -9,7 +9,7 @@
 import type { HTMLAttributes } from 'react';
 import { PlusIcon } from 'lucide-react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 import { GridBackground } from '../ui/grid-background';
 
 /**

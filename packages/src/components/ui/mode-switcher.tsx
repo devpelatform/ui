@@ -10,9 +10,9 @@ import * as React from 'react';
 import { Monitor, Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
 
-import { THEME_MODES, type ThemeMode } from '@/lib/colors';
-import { cn } from '@/lib/utils';
-import { Button } from '@/ui/default/button';
+import { THEME_MODES, type ThemeMode } from '../../lib/colors';
+import { cn } from '../../lib/utils';
+import { Button } from '../../ui/default/button';
 
 /**
  * Props interface for the ModeSwitcher component

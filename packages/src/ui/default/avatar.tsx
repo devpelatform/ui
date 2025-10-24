@@ -4,7 +4,7 @@ import type * as React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { Avatar as AvatarPrimitive } from 'radix-ui';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 const avatarStatusVariants = cva(
   'flex items-center rounded-full size-2 border-2 border-background',

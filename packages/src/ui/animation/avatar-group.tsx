@@ -10,7 +10,7 @@ import {
   useTransform,
 } from 'motion/react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 type AnimationVariantType = 'spring' | 'tween' | 'inertia' | 'decay' | 'keyframes';
 type AnimationType = 'default' | 'flip' | 'reveal';
@@ -216,14 +216,14 @@ export function AvatarGroupItem({
             )}
           >
             <motion.div
-              className="-bottom-px absolute inset-x-10 z-30 h-px w-[20%] bg-gradient-to-r from-transparent via-emerald-500 to-transparent dark:via-emerald-900"
+              className="-bottom-px absolute inset-x-10 z-30 h-px w-[20%] bg-linear-to-r from-transparent via-emerald-500 to-transparent dark:via-emerald-900"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.15 }}
             />
             <motion.div
-              className="-bottom-px absolute left-10 z-30 h-px w-[40%] bg-gradient-to-r from-transparent via-sky-500 to-transparent dark:via-sky-900"
+              className="-bottom-px absolute left-10 z-30 h-px w-[40%] bg-linear-to-r from-transparent via-sky-500 to-transparent dark:via-sky-900"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}

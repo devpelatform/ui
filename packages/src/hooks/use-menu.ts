@@ -6,7 +6,7 @@
 
 'use client';
 
-import type { MenuConfig, MenuItem } from '@/types/menu';
+import type { MenuConfig, MenuItem } from '../types/menu';
 
 /** Return type interface for useMenu hook */
 interface UseMenuReturn {

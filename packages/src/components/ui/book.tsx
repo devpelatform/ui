@@ -8,7 +8,7 @@
 
 import type React from 'react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 /**
  * Props interface for the Book component
@@ -91,7 +91,7 @@ export function Book(props: BookProps) {
   } = props;
   return (
     <div
-      className={cn('group inline-block w-fit [perspective:900px]')}
+      className={cn('group perspective-[900px] inline-block w-fit')}
       style={
         {
           '--book-color': color,
@@ -101,7 +101,7 @@ export function Book(props: BookProps) {
         } as React.CSSProperties
       }
     >
-      <div className="relative aspect-[49/60] w-fit min-w-[calc(var(--book-width))] rotate-0 transition-transform duration-500 ease-out contain-inline-size [transform-style:preserve-3d] group-hover:[transform:rotateY(-20deg)_scale(1.066)translateX(-8px)]">
+      <div className="transform-3d group-hover:transform-[rotateY(-20deg)_scale(1.066)translateX(-8px)] relative aspect-49/60 w-fit min-w-[calc(var(--book-width))] rotate-0 transition-transform duration-500 ease-out contain-inline-size">
         <Stack
           align="stretch"
           className="absolute size-full overflow-hidden rounded-r rounded-l border border-border bg-stone-100 shadow-book dark:bg-stone-800"
@@ -112,7 +112,7 @@ export function Book(props: BookProps) {
               grow
               direction="row"
               className={cn(
-                'relative min-w-[calc(var(--book-width))] overflow-hidden bg-[var(--book-color)]',
+                'relative min-w-[calc(var(--book-width))] overflow-hidden bg-(--book-color)',
               )}
             >
               <div className="absolute inset-y-0 min-w-[8.2%] bg-book-bind-bg opacity-100 mix-blend-overlay" />
@@ -140,7 +140,7 @@ export function Book(props: BookProps) {
         />
         <div
           aria-hidden={true}
-          className="book-bg absolute left-0 h-full w-full rounded-r rounded-l-md bg-[var(--book-color)]"
+          className="book-bg absolute left-0 h-full w-full rounded-r rounded-l-md bg-(--book-color)"
           style={{
             transform: 'translateZ(calc(-1 * var(--book-depth)))',
           }}

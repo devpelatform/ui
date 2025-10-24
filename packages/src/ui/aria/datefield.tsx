@@ -15,7 +15,7 @@ import {
   type TimeValue as TimeValueRa,
 } from 'react-aria-components';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 import { inputVariants } from '../default/input';
 
 function DateField<T extends DateValueRa>({ className, children, ...props }: DateFieldProps<T>) {

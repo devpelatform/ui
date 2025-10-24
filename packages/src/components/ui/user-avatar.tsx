@@ -12,7 +12,7 @@ import {
   AvatarImage,
   AvatarIndicator,
   AvatarStatus,
-} from '@/ui/default/avatar';
+} from '../../ui/default/avatar';
 
 /**
  * Props interface for the UserAvatar component

@@ -4,7 +4,7 @@ import type * as React from 'react';
 import { Check, ChevronRight, Circle } from 'lucide-react';
 import { Menubar as MenubarPrimitive } from 'radix-ui';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 function MenubarMenu({ ...props }: React.ComponentProps<typeof MenubarPrimitive.Menu>) {
   return <MenubarPrimitive.Menu data-slot="menubar-menu" {...props} />;
@@ -114,7 +114,7 @@ function MenubarContent({
         alignOffset={alignOffset}
         sideOffset={sideOffset}
         className={cn(
-          'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-[12rem] space-y-0.5 overflow-hidden rounded-md border border-border bg-popover p-2 text-popover-foreground shadow-black/5 shadow-md transition-shadow data-[state=open]:animate-in',
+          'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-50 min-w-48 space-y-0.5 overflow-hidden rounded-md border border-border bg-popover p-2 text-popover-foreground shadow-black/5 shadow-md transition-shadow data-[state=open]:animate-in',
           className,
         )}
         {...props}

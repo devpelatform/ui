@@ -3,7 +3,7 @@
 import { cva } from 'class-variance-authority';
 import { composeRenderProps, Text, ToggleButton } from 'react-aria-components';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 import { buttonVariants } from '../default/button';
 
 const showMoreStyles = cva('text-sm leading-6 before:border-border after:border-border', {

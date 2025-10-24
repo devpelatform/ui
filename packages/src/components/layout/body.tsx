@@ -6,8 +6,8 @@
 
 'use client';
 
-import { cn } from '@/lib/utils';
-import type { BaseProps } from '@/types/components';
+import { cn } from '../../lib/utils';
+import type { BaseProps } from '../../types/components';
 
 function useMode(slug: string): string | undefined {
   return Array.isArray(slug) && slug.length > 0 ? slug[0] : undefined;

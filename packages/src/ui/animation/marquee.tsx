@@ -2,7 +2,7 @@
 
 import React, { type ComponentPropsWithoutRef, useRef } from 'react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 interface MarqueeProps extends ComponentPropsWithoutRef<'div'> {
   /**
@@ -71,7 +71,7 @@ export function Marquee({
       ref={marqueeRef}
       data-slot="marquee"
       className={cn(
-        'group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)]',
+        'group flex gap-(--gap) overflow-hidden p-2 [--duration:40s] [--gap:1rem]',
         {
           'flex-row': !vertical,
           'flex-col': vertical,
@@ -90,12 +90,12 @@ export function Marquee({
               <div
                 key={i}
                 className={cn(
-                  !vertical ? 'flex-row [gap:var(--gap)]' : 'flex-col [gap:var(--gap)]',
+                  !vertical ? 'flex-row gap-(--gap)' : 'flex-col gap-(--gap)',
                   'flex shrink-0 justify-around',
                   !vertical && 'animate-marquee flex-row',
                   vertical && 'animate-marquee-vertical flex-col',
-                  pauseOnHover && 'group-hover:[animation-play-state:paused]',
-                  reverse && '[animation-direction:reverse]',
+                  pauseOnHover && 'group-hover:paused',
+                  reverse && 'direction-[reverse]',
                 )}
               >
                 {children}

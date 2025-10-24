@@ -4,7 +4,7 @@
  * for common UI elements like images, links, and navigation
  */
 
-import type { Image, Link } from '@/types/components';
+import type { Image, Link } from '../../types/components';
 
 /**
  * Interface for components that accept a custom Image component

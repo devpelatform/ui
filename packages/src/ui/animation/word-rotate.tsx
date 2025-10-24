@@ -9,7 +9,7 @@ import {
   type Variants,
 } from 'motion/react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 interface WordRotateProps extends Omit<MotionProps, 'children'> {
   words: string[];

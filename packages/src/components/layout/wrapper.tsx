@@ -6,8 +6,8 @@
 
 'use client';
 
-import { cn } from '@/lib/utils';
-import type { BaseProps } from '@/types/components';
+import { cn } from '../../lib/utils';
+import type { BaseProps } from '../../types/components';
 
 /**
  * MaxWidthWrapper Component
@@ -58,7 +58,5 @@ import type { BaseProps } from '@/types/components';
  * ```
  */
 export function MaxWidthWrapper({ className, children }: BaseProps) {
-  return (
-    <div className={cn('mx-auto w-full max-w-screen-xl p-3 lg:px-10', className)}>{children}</div>
-  );
+  return <div className={cn('mx-auto w-full max-w-7xl p-3 lg:px-10', className)}>{children}</div>;
 }

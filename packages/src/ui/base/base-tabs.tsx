@@ -4,7 +4,7 @@ import * as React from 'react';
 import { Tabs as BaseTabs } from '@base-ui-components/react/tabs';
 import { cva, type VariantProps } from 'class-variance-authority';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 // Variants for TabsList
 const tabsListVariants = cva('flex items-center shrink-0', {
@@ -64,12 +64,12 @@ const tabsListVariants = cva('flex items-center shrink-0', {
     {
       variant: 'default',
       shape: 'pill',
-      className: 'rounded-full [&_[role=tab]]:rounded-full',
+      className: 'rounded-full **:[[role=tab]]:rounded-full',
     },
     {
       variant: 'button',
       shape: 'pill',
-      className: 'rounded-full [&_[role=tab]]:rounded-full',
+      className: 'rounded-full **:[[role=tab]]:rounded-full',
     },
   ],
   defaultVariants: {
@@ -85,10 +85,10 @@ const tabsTriggerVariants = cva(
     variants: {
       variant: {
         default:
-          'text-muted-foreground data-[selected]:bg-background hover:text-foreground data-[selected]:text-foreground data-[selected]:shadow-xs data-[selected]:shadow-black/5',
+          'text-muted-foreground data-selected:bg-background hover:text-foreground data-selected:text-foreground data-selected:shadow-xs data-selected:shadow-black/5',
         button:
-          'focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-lg text-accent-foreground hover:text-foreground data-[selected]:bg-accent data-[selected]:text-foreground',
-        line: 'border-b-2 text-muted-foreground border-transparent data-[selected]:border-primary hover:text-primary data-[selected]:text-primary',
+          'focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-lg text-accent-foreground hover:text-foreground data-selected:bg-accent data-selected:text-foreground',
+        line: 'border-b-2 text-muted-foreground border-transparent data-selected:border-primary hover:text-primary data-selected:text-primary',
       },
       size: {
         lg: 'gap-2.5 [&_svg]:size-5 text-sm',

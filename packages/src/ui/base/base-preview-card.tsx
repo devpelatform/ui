@@ -3,7 +3,7 @@
 import type * as React from 'react';
 import { PreviewCard as BasePreviewCard } from '@base-ui-components/react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 function PreviewCard({ ...props }: React.ComponentProps<typeof BasePreviewCard.Root>) {
   return <BasePreviewCard.Root delay={0} closeDelay={0} data-slot="preview-card" {...props} />;
@@ -26,7 +26,7 @@ function PreviewCardPopup({
     <BasePreviewCard.Popup
       data-slot="preview-card-popup"
       className={cn(
-        '-outline-offset-1 z-50 w-64 origin-[var(--transform-origin)] rounded-md bg-popover p-4 text-popover-foreground shadow-md outline outline-border transition-[transform,scale,opacity] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0',
+        '-outline-offset-1 z-50 w-64 origin-(--transform-origin) rounded-md bg-popover p-4 text-popover-foreground shadow-md outline outline-border transition-[transform,scale,opacity] data-ending-style:scale-95 data-starting-style:scale-95 data-ending-style:opacity-0 data-starting-style:opacity-0',
         className,
       )}
       {...props}

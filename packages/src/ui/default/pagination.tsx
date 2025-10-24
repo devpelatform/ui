@@ -3,7 +3,7 @@
 import type * as React from 'react';
 import { MoreHorizontal } from 'lucide-react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 const Pagination = ({ className, ...props }: React.ComponentProps<'nav'>) => (
   <nav

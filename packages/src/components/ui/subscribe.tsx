@@ -10,10 +10,10 @@ import { useState } from 'react';
 import { CircleAlert, CircleCheck } from 'lucide-react';
 import { toast } from 'sonner';
 
-import { googleTrackEvent } from '@/lib/analytics';
-import { Alert, AlertIcon, AlertTitle } from '@/ui/default/alert';
-import { Button } from '@/ui/default/button';
-import { Input } from '@/ui/default/input';
+import { googleTrackEvent } from '../../lib/analytics';
+import { Alert, AlertIcon, AlertTitle } from '../../ui/default/alert';
+import { Button } from '../../ui/default/button';
+import { Input } from '../../ui/default/input';
 import { RecaptchaPopover } from '../utils/recaptcha-popover';
 
 /**

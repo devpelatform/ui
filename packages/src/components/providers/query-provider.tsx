@@ -11,7 +11,7 @@ import { QueryCache, QueryClient, QueryClientProvider } from '@tanstack/react-qu
 import { CircleAlert } from 'lucide-react';
 import { toast } from 'sonner';
 
-import { Alert, AlertIcon, AlertTitle } from '@/ui/default/alert';
+import { Alert, AlertIcon, AlertTitle } from '../../ui/default/alert';
 
 /**
  * React Query provider component with optimized configuration

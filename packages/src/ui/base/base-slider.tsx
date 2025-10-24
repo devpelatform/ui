@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { Slider as SliderPrimitive } from '@base-ui-components/react/slider';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './base-tooltip';
 
 function Slider({
@@ -80,7 +80,7 @@ function Slider({
         key={index}
         data-slot="slider-thumb"
         className={cn(
-          'block size-4 shrink-0 rounded-full border border-primary bg-background shadow-sm outline-none ring-ring/20 transition-[color,box-shadow] hover:ring-4 disabled:pointer-events-none disabled:opacity-50 data-[dragging]:ring-4 data-[focused]:ring-4 data-[touched]:ring-4',
+          'block size-4 shrink-0 rounded-full border border-primary bg-background shadow-sm outline-none ring-ring/20 transition-[color,box-shadow] hover:ring-4 disabled:pointer-events-none disabled:opacity-50 data-dragging:ring-4 data-focused:ring-4 data-touched:ring-4',
         )}
         onPointerDown={handlePointerDown}
       />
@@ -112,7 +112,7 @@ function Slider({
       min={min}
       max={max}
       className={cn(
-        'relative flex w-full touch-none select-none items-center data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col data-[disabled]:opacity-50',
+        'relative flex w-full touch-none select-none items-center data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col data-disabled:opacity-50',
         className,
       )}
       onValueChange={handleValueChange}
@@ -135,7 +135,7 @@ function SliderThumb({ className, ...props }: React.ComponentProps<typeof Slider
     <SliderPrimitive.Thumb
       data-slot="slider-thumb"
       className={cn(
-        'block size-4 shrink-0 rounded-full border border-primary bg-background shadow-sm outline-none ring-ring/20 transition-[color,box-shadow] hover:ring-4 disabled:pointer-events-none disabled:opacity-50 data-[dragging]:ring-4 data-[focused]:ring-4 data-[touched]:ring-4',
+        'block size-4 shrink-0 rounded-full border border-primary bg-background shadow-sm outline-none ring-ring/20 transition-[color,box-shadow] hover:ring-4 disabled:pointer-events-none disabled:opacity-50 data-dragging:ring-4 data-focused:ring-4 data-touched:ring-4',
         className,
       )}
       {...props}

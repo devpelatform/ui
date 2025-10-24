@@ -7,7 +7,7 @@ import {
   createFormHook as createTanstackFormHook,
 } from '@tanstack/react-form';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 import { Label } from './base-label';
 
 const { fieldContext, formContext, useFieldContext } = createFormHookContexts();

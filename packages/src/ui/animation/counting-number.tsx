@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { animate, motion, type UseInViewOptions, useInView, useMotionValue } from 'motion/react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 interface CountingNumberProps {
   from?: number;

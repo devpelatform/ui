@@ -2,7 +2,7 @@
 
 import { type HTMLMotionProps, motion, type Transition } from 'motion/react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 type GradientBackgroundProps = HTMLMotionProps<'div'> & {
   transition?: Transition;
@@ -17,7 +17,7 @@ function GradientBackground({
     <motion.div
       data-slot="gradient-background"
       className={cn(
-        'size-full bg-[length:300%_300%] bg-gradient-to-br from-0% from-fuchsia-400 via-50% via-violet-500 to-100% to-fuchsia-600',
+        'size-full bg-linear-to-br bg-size-[300%_300%] from-0% from-fuchsia-400 via-50% via-violet-500 to-100% to-fuchsia-600',
         className,
       )}
       animate={{

@@ -6,7 +6,7 @@ import type { ItemInstance } from '@headless-tree/core';
 import { ChevronDownIcon, SquareMinus, SquarePlus } from 'lucide-react';
 import { Slot as SlotPrimitive } from 'radix-ui';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 type ToggleIconType = 'chevron' | 'plus-minus';
 
@@ -96,7 +96,7 @@ function TreeItem<T = any>({
         data-slot="tree-item"
         style={mergedStyle}
         className={cn(
-          'z-10 select-none ps-(--tree-padding) not-last:pb-0.5 outline-hidden focus:z-20 data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+          'z-10 select-none ps-(--tree-padding) not-last:pb-0.5 outline-hidden focus:z-20 data-disabled:pointer-events-none data-disabled:opacity-50',
           className,
         )}
         data-focus={typeof item.isFocused === 'function' ? item.isFocused() || false : undefined}

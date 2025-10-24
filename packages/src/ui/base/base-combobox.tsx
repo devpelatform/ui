@@ -5,7 +5,7 @@ import { Combobox as ComboboxPrimitive } from '@base-ui-components/react/combobo
 import { cva, type VariantProps } from 'class-variance-authority';
 import { Check, ChevronDown, X } from 'lucide-react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 // Define input size variants (without file: part)
 const inputVariants = cva(
@@ -16,9 +16,9 @@ const inputVariants = cva(
     has-[[data-slot=combobox-input]:focus-visible]:border-ring
     has-[[data-slot=combobox-input]:focus-visible]:outline-none
     has-[[data-slot=combobox-input]:focus-visible]:ring-[3px]
-    [&_[data-slot=combobox-input]]:grow
+    **:data-[slot=combobox-input]:grow
     disabled:cursor-not-allowed disabled:opacity-60 
-    [&[readonly]]:bg-muted/80 [&[readonly]]:cursor-not-allowed
+    [[readonly]]:bg-muted/80 [[readonly]]:cursor-not-allowed
     aria-invalid:border-destructive/60 aria-invalid:ring-destructive/10 dark:aria-invalid:border-destructive dark:aria-invalid:ring-destructive/20
   `,
   {
@@ -38,10 +38,10 @@ const inputVariants = cva(
 const chipsVariants = cva(
   [
     'flex items-center flex-wrap gap-1',
-    '[&_[data-slot=combobox-input]]:py-0 [&_[data-slot=combobox-input]]:px-1.5 has-[[data-slot=combobox-chip]]:[&_[data-slot=combobox-input]]:px-0',
-    '[&_[data-slot=combobox-input]]:min-h-0 [&_[data-slot=combobox-input]]:flex-1',
-    '[&_[data-slot=combobox-input]]:border-0 [&_[data-slot=combobox-input]]:shadow-none [&_[data-slot=combobox-input]]:rounded-none',
-    '[&_[data-slot=combobox-input]]:outline-none [&_[data-slot=combobox-input]]:ring-0',
+    '**:data-[slot=combobox-input]:py-0 **:data-[slot=combobox-input]:px-1.5 has-data-[slot=combobox-chip]:**:data-[slot=combobox-input]:px-0',
+    '**:data-[slot=combobox-input]:min-h-0 **:data-[slot=combobox-input]:flex-1',
+    '**:data-[slot=combobox-input]:border-0 **:data-[slot=combobox-input]:shadow-none **:data-[slot=combobox-input]:rounded-none',
+    '**:data-[slot=combobox-input]:outline-none **:data-[slot=combobox-input]:ring-0',
   ],
   {
     variants: {
@@ -168,11 +168,11 @@ function ComboboxPopup({
     <ComboboxPrimitive.Popup
       data-slot="combobox-popup"
       className={cn(
-        'max-h-[min(var(--available-height),23rem)] w-[var(--anchor-width)] max-w-[var(--available-width)] py-1',
+        'max-h-[min(var(--available-height),23rem)] w-(--anchor-width) max-w-(--available-width) py-1',
         'scroll-pt-2 scroll-pb-2 overflow-y-auto overscroll-contain bg-[canvas]',
         'rounded-md border border-border bg-popover text-popover-foreground shadow-black/5 shadow-md',
-        'origin-[var(--transform-origin)] transition-[transform,scale,opacity] data-[ending-style]:scale-90',
-        'data-[starting-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0',
+        'origin-(--transform-origin) transition-[transform,scale,opacity] data-ending-style:scale-90',
+        'data-starting-style:scale-90 data-ending-style:opacity-0 data-starting-style:opacity-0',
         className,
       )}
       {...props}
@@ -224,7 +224,7 @@ function ComboboxItem({
         'relative flex cursor-default items-center',
         'relative select-none items-center gap-2 rounded-md py-1.5 ps-7 pe-2 text-foreground text-sm outline-hidden transition-colors data-disabled:pointer-events-none data-disabled:opacity-50',
         '[&_svg:not([class*=size-])]:size-4 [&_svg:not([role=img]):not([class*=text-])]:opacity-60 [&_svg]:pointer-events-none [&_svg]:shrink-0',
-        'data-[highlighted]:relative data-[highlighted]:z-0 data-[highlighted]:text-foreground data-[highlighted]:before:absolute data-[highlighted]:before:inset-x-1 data-[highlighted]:before:inset-y-0 data-[highlighted]:before:z-[-1] data-[highlighted]:before:rounded-sm data-[highlighted]:before:bg-accent',
+        'data-highlighted:relative data-highlighted:z-0 data-highlighted:text-foreground data-highlighted:before:absolute data-highlighted:before:inset-x-1 data-highlighted:before:inset-y-0 data-highlighted:before:z-[-1] data-highlighted:before:rounded-sm data-highlighted:before:bg-accent',
         className,
       )}
       {...props}
@@ -296,7 +296,7 @@ function ComboboxClear({
       className={cn(
         '-translate-y-1/2 absolute end-6 top-1/2 cursor-pointer rounded-sm opacity-70 ring-offset-background',
         'opacity-60 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none',
-        'data-[disabled]:pointer-events-none',
+        'data-disabled:pointer-events-none',
         className,
       )}
       {...props}
@@ -318,7 +318,7 @@ function ComboboxIcon({
       className={cn(
         '-translate-y-1/2 absolute end-2 top-1/2 cursor-pointer rounded-sm opacity-70 ring-offset-background transition-opacity',
         'opacity-60 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none',
-        'data-[disabled]:pointer-events-none',
+        'data-disabled:pointer-events-none',
         className,
       )}
       {...props}

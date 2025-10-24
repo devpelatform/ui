@@ -9,19 +9,24 @@
 import { useCallback, useState } from 'react';
 import { ArrowUpRight, ChevronDown, Menu } from 'lucide-react';
 
-import { DefaultLink, DefaultNavigate, type SharedLink, type SharedNavigate } from '@/components';
-import { useMetaColor } from '@/hooks/use-meta-color';
-import { cn } from '@/lib/utils';
-import type { BaseProps } from '@/types/components';
-import { Button } from '@/ui/default/button';
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/ui/default/collapsible';
+import {
+  DefaultLink,
+  DefaultNavigate,
+  type SharedLink,
+  type SharedNavigate,
+} from '../../components';
+import { useMetaColor } from '../../hooks/use-meta-color';
+import { cn } from '../../lib/utils';
+import type { BaseProps } from '../../types/components';
+import { Button } from '../../ui/default/button';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '../../ui/default/collapsible';
 import {
   Drawer,
   DrawerContent,
   DrawerDescription,
   DrawerTitle,
   DrawerTrigger,
-} from '@/ui/default/drawer';
+} from '../../ui/default/drawer';
 import { handleMenuClick, type NavItem } from './main-nav';
 
 /**

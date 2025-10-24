@@ -4,8 +4,8 @@ import { Toast } from '@base-ui-components/react/toast';
 import { cva } from 'class-variance-authority';
 import { CircleAlert, CircleCheck, Info, Loader, TriangleAlert, X } from 'lucide-react';
 
-import { toastManager, useToast } from '@/hooks/use-toast';
-import { cn } from '@/lib/utils';
+import { toastManager, useToast } from '../../hooks/use-toast';
+import { cn } from '../../lib/utils';
 
 export type ToastType = 'default' | 'loading' | 'success' | 'error' | 'info' | 'warning';
 

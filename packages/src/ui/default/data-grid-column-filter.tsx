@@ -4,7 +4,7 @@ import type * as React from 'react';
 import type { Column } from '@tanstack/react-table';
 import { Check, CirclePlus } from 'lucide-react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 import { Badge } from './badge';
 import { Button } from './button';
 import {

@@ -3,7 +3,7 @@
 import type React from 'react';
 import { Collapsible as BaseCollapsible } from '@base-ui-components/react/collapsible';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 function Collapsible({ ...props }: React.ComponentProps<typeof BaseCollapsible.Root>) {
   return <BaseCollapsible.Root data-slot="collapsible" {...props} />;
@@ -45,7 +45,7 @@ function CollapsiblePanel({
     <BaseCollapsible.Panel
       data-slot="collapsible-panel"
       className={cn(
-        'h-[var(--collapsible-panel-height)] overflow-hidden transition-all ease-out data-[ending-style]:h-0 data-[starting-style]:h-0',
+        'h-(--collapsible-panel-height) overflow-hidden transition-all ease-out data-ending-style:h-0 data-starting-style:h-0',
         className,
       )}
       {...props}

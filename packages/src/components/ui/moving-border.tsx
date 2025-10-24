@@ -16,7 +16,7 @@ import {
   useTransform,
 } from 'motion/react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 /**
  * Props interface for MovingLabel component
@@ -97,10 +97,7 @@ export function MovingLabel({
 }: MovingLabelProps) {
   return (
     <Component
-      className={cn(
-        'relative h-9 overflow-hidden bg-transparent p-[1px] text-xl',
-        containerClassName,
-      )}
+      className={cn('relative h-9 overflow-hidden bg-transparent p-px text-xl', containerClassName)}
       style={{
         borderRadius: borderRadius,
       }}
@@ -119,7 +116,7 @@ export function MovingLabel({
 
       <div
         className={cn(
-          'relative flex h-full w-full items-center justify-center border border-slate-800 bg-slate-900/[0.5] text-sm text-white antialiased backdrop-blur-xl',
+          'relative flex h-full w-full items-center justify-center border border-slate-800 bg-slate-900/50 text-sm text-white antialiased backdrop-blur-xl',
           className,
         )}
         style={{

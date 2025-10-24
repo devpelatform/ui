@@ -9,8 +9,8 @@
 import type * as React from 'react';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
 
-import { DEFAULT_THEME_MODE, THEME_MODES } from '@/lib/colors';
-import { TooltipProvider } from '@/ui/default/tooltip';
+import { DEFAULT_THEME_MODE, THEME_MODES } from '../../lib/colors';
+import { TooltipProvider } from '../../ui/default/tooltip';
 
 /**
  * Props interface for ThemeProvider component

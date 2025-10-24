@@ -5,7 +5,7 @@ import { Accordion } from '@base-ui-components/react/accordion';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { ChevronDown, Plus } from 'lucide-react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 // Variants
 const accordionRootVariants = cva('', {

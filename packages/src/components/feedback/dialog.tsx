@@ -15,7 +15,7 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-} from '@/ui/default/alert-dialog';
+} from '../../ui/default/alert-dialog';
 
 /**
  * Props interface for the ConfirmDismissDialog component

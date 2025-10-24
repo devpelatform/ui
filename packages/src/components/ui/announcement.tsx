@@ -9,8 +9,8 @@
 import type { HTMLAttributes } from 'react';
 import type { VariantProps } from 'class-variance-authority';
 
-import { cn } from '@/lib/utils';
-import { Badge, type badgeVariants } from '@/ui/default/badge';
+import { cn } from '../../lib/utils';
+import { Badge, type badgeVariants } from '../../ui/default/badge';
 
 /**
  * Props interface for the Announcement component

@@ -3,7 +3,7 @@
 import type * as React from 'react';
 import { Progress as BaseProgress } from '@base-ui-components/react/progress';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 function Progress({
   className,

@@ -4,7 +4,7 @@ import * as React from 'react';
 import * as BasePhoneInput from 'react-phone-number-input';
 import flags from 'react-phone-number-input/flags';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 import { Button } from './base-button';
 import {
   Combobox,

@@ -1,6 +1,6 @@
 {
   "name": "@pelatform/ui",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "A Modern and Minimal React UI Library built with TailwindCSS.",
   "author": "Pelatform Dev",
   "license": "MIT",
@@ -12,6 +12,10 @@
     "./css": "./css/theme.css",
     "./css/*": "./css/components/*.css",
     ".": {
+      "development": {
+        "types": "./src/dev/index.ts",
+        "default": "./src/dev/index.ts"
+      },
       "import": {
         "types": "./dist/index.d.ts",
         "default": "./dist/index.js"
@@ -22,6 +26,10 @@
       }
     },
     "./animation": {
+      "development": {
+        "types": "./src/dev/animation.ts",
+        "default": "./src/dev/animation.ts"
+      },
       "import": {
         "types": "./dist/animation.d.ts",
         "default": "./dist/animation.js"
@@ -32,6 +40,10 @@
       }
     },
     "./aria": {
+      "development": {
+        "types": "./src/dev/aria.ts",
+        "default": "./src/dev/aria.ts"
+      },
       "import": {
         "types": "./dist/aria.d.ts",
         "default": "./dist/aria.js"
@@ -42,6 +54,10 @@
       }
     },
     "./base": {
+      "development": {
+        "types": "./src/dev/base.ts",
+        "default": "./src/dev/base.ts"
+      },
       "import": {
         "types": "./dist/base.d.ts",
         "default": "./dist/base.js"
@@ -52,6 +68,10 @@
       }
     },
     "./components": {
+      "development": {
+        "types": "./src/dev/components.ts",
+        "default": "./src/dev/components.ts"
+      },
       "import": {
         "types": "./dist/components.d.ts",
         "default": "./dist/components.js"
@@ -62,6 +82,10 @@
       }
     },
     "./default": {
+      "development": {
+        "types": "./src/dev/default.ts",
+        "default": "./src/dev/default.ts"
+      },
       "import": {
         "types": "./dist/default.d.ts",
         "default": "./dist/default.js"
@@ -72,6 +96,10 @@
       }
     },
     "./hooks": {
+      "development": {
+        "types": "./src/dev/hooks.ts",
+        "default": "./src/dev/hooks.ts"
+      },
       "import": {
         "types": "./dist/hooks.d.ts",
         "default": "./dist/hooks.js"
@@ -82,6 +110,10 @@
       }
     },
     "./re/*": {
+      "development": {
+        "types": "./src/re-export/*.ts",
+        "default": "./src/re-export/*.ts"
+      },
       "import": {
         "types": "./dist/re-export/*.d.ts",
         "default": "./dist/re-export/*.js"
@@ -121,7 +153,7 @@
     "@headless-tree/core": "^1.5.1",
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-slot": "^1.2.3",
-    "@tanstack/react-form": "^1.23.7",
+    "@tanstack/react-form": "^1.23.8",
     "@tanstack/react-query": "^5.90.5",
     "@tanstack/react-table": "^8.21.3",
     "class-variance-authority": "^0.7.1",
@@ -129,7 +161,7 @@
     "cmdk": "^1.1.1",
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.4.2",
-    "lucide-react": "^0.546.0",
+    "lucide-react": "^0.547.0",
     "motion": "^12.23.24",
     "next-themes": "^0.4.6",
     "radix-ui": "^1.4.3",
@@ -137,7 +169,7 @@
     "react-aria-components": "^1.13.0",
     "react-day-picker": "^9.11.1",
     "react-hook-form": "^7.65.0",
-    "react-phone-number-input": "^3.4.12",
+    "react-phone-number-input": "^3.4.13",
     "react-resizable-panels": "^3.0.6",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.3.1",
@@ -146,13 +178,13 @@
     "zod": "^4.1.12"
   },
   "devDependencies": {
-    "@types/node": "^24.9.0",
+    "@types/node": "^24.9.1",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "esbuild-plugin-preserve-directives": "^0.0.11",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "tailwindcss": "^4.1.15",
+    "tailwindcss": "^4.1.16",
     "tsup": "^8.5.0",
     "typescript": "^5.9.3"
   },

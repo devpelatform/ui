@@ -29,7 +29,7 @@ import {
 import { CSS } from '@dnd-kit/utilities';
 import { Slot } from '@radix-ui/react-slot';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 interface KanbanContextProps<T> {
   columns: Record<string, T[]>;
@@ -385,7 +385,7 @@ function KanbanColumnHandle({
       {...listeners}
       className={cn(
         'opacity-0 transition-opacity group-hover/kanban-column:opacity-100',
-        cursor && (isDragging ? '!cursor-grabbing' : '!cursor-grab'),
+        cursor && (isDragging ? 'cursor-grabbing!' : 'cursor-grab!'),
         className,
       )}
     >
@@ -461,7 +461,7 @@ function KanbanItemHandle({ asChild, className, children, cursor = true }: Kanba
       data-dragging={isDragging}
       data-disabled={disabled}
       {...listeners}
-      className={cn(cursor && (isDragging ? '!cursor-grabbing' : '!cursor-grab'), className)}
+      className={cn(cursor && (isDragging ? 'cursor-grabbing!' : 'cursor-grab!'), className)}
     >
       {children}
     </Comp>
@@ -538,7 +538,7 @@ function KanbanOverlay({ children, className }: KanbanOverlayProps) {
         data-slot="kanban-overlay"
         data-dragging={true}
         style={style}
-        className={cn('pointer-events-none', className, activeId ? '!cursor-grabbing' : '')}
+        className={cn('pointer-events-none', className, activeId ? 'cursor-grabbing!' : '')}
       >
         {content}
       </div>

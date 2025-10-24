@@ -6,7 +6,7 @@ import { Select as SelectPrimitive } from '@base-ui-components/react/select';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon, X } from 'lucide-react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 // Create a Context for `indicatorPosition` and `indicator` control
 const SelectContext = React.createContext<{
@@ -90,7 +90,7 @@ function SelectClear({ className, children, onClick, ...props }: React.Component
     <button
       data-slot="select-clear"
       className={cn(
-        `-translate-y-1/2 absolute end-2 top-1/2 cursor-pointer rounded-sm opacity-60 transition-opacity hover:opacity-100 focus:outline-none focus:ring-0 focus:ring-offset-0 disabled:pointer-events-none data-[disabled]:pointer-events-none`,
+        `-translate-y-1/2 absolute end-2 top-1/2 cursor-pointer rounded-sm opacity-60 transition-opacity hover:opacity-100 focus:outline-none focus:ring-0 focus:ring-offset-0 disabled:pointer-events-none data-disabled:pointer-events-none`,
         className,
       )}
       onClick={handleClick}
@@ -108,7 +108,7 @@ const selectTriggerVariants = cva(
 		shadow-xs transition-[color,box-shadow,border-color] outline-none
 		focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]
 		aria-invalid:ring-destructive/50 aria-invalid:border-destructive
-		data-[disabled]:pointer-events-none data-[disabled]:opacity-60
+		data-disabled:pointer-events-none data-disabled:opacity-60
 		*:data-[slot=select-value]:line-clamp-1 *:data-[slot=select-value]:flex *:data-[slot=select-value]:items-center *:data-[slot=select-value]:gap-2
 		[&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='text-'])]:text-muted-foreground
 	`,
@@ -200,9 +200,8 @@ function SelectContent({
         <SelectPrimitive.Popup
           data-slot="select-content"
           className={cn(
-            `data-[closed]:fade-out-0 data-[open]:fade-in-0 data-[closed]:zoom-out-95 data-[open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 relative z-50 max-h-(--available-height) min-w-(--anchor-width) origin-[var(--transform-origin)] overflow-y-auto overflow-x-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[closed]:animate-out data-[open]:animate-in`,
-            position === 'item-aligned' &&
-              '[&_*[data-slot=select-item]]:min-w-[var(--anchor-width)]',
+            `data-closed:fade-out-0 data-open:fade-in-0 data-closed:zoom-out-95 data-open:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 relative z-50 max-h-(--available-height) min-w-(--anchor-width) origin-(--transform-origin) overflow-y-auto overflow-x-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-closed:animate-out data-open:animate-in`,
+            position === 'item-aligned' && '[&_*[data-slot=select-item]]:min-w-(--anchor-width)',
             className,
           )}
           {...props}
@@ -226,7 +225,7 @@ function SelectItem({
     <SelectPrimitive.Item
       data-slot="select-item"
       className={cn(
-        `relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 text-sm outline-hidden data-[disabled]:pointer-events-none data-highlighted:bg-accent data-highlighted:text-accent-foreground data-[disabled]:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg:not([class*='text-'])]:text-muted-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2`,
+        `relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 text-sm outline-hidden data-disabled:pointer-events-none data-highlighted:bg-accent data-highlighted:text-accent-foreground data-disabled:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg:not([class*='text-'])]:text-muted-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0 *:[span]:last:flex *:[span]:last:items-center *:[span]:last:gap-2`,
         indicatorPosition === 'left' ? 'ps-7 pe-2' : 'ps-2 pe-7',
         className,
       )}

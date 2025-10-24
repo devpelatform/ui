@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 // Define CardContext
 type CardContextType = {
@@ -55,7 +55,7 @@ const cardContentVariants = cva('grow p-5', {
   variants: {
     variant: {
       default: '',
-      accent: 'bg-card rounded-t-xl [&:last-child]:rounded-b-xl',
+      accent: 'bg-card rounded-t-xl last:rounded-b-xl',
     },
   },
   defaultVariants: {

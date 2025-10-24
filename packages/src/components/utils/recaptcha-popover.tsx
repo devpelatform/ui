@@ -11,9 +11,9 @@ import { CircleAlert } from 'lucide-react';
 import { Popover } from 'radix-ui';
 import { toast } from 'sonner';
 
-import { useRecaptchaV2 } from '@/hooks/use-recaptcha-v2';
-import { Alert, AlertIcon, AlertTitle } from '@/ui/default/alert';
-import { Button } from '@/ui/default/button';
+import { useRecaptchaV2 } from '../../hooks/use-recaptcha-v2';
+import { Alert, AlertIcon, AlertTitle } from '../../ui/default/alert';
+import { Button } from '../../ui/default/button';
 
 /**
  * Props interface for the RecaptchaPopover component

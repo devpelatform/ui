@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { type HTMLMotionProps, motion } from 'motion/react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 type GridSize =
   | '4:4'

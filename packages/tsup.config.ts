@@ -3,6 +3,7 @@ import { defineConfig } from 'tsup';
 
 export default defineConfig(() => {
   return {
+    external: ['react', 'react-dom'],
     entry: [
       './src/index.ts',
       './src/animation.ts',

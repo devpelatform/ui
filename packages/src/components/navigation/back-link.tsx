@@ -8,9 +8,9 @@
 
 import { ChevronLeft } from 'lucide-react';
 
-import { cn } from '@/lib/utils';
-import type { BaseProps } from '@/types/components';
-import { Button } from '@/ui/default/button';
+import { cn } from '../../lib/utils';
+import type { BaseProps } from '../../types/components';
+import { Button } from '../../ui/default/button';
 import { DefaultLink, type SharedLink } from '../utils/shared';
 
 /**

@@ -6,8 +6,8 @@
 
 'use client';
 
-import { cn } from '@/lib/utils';
-import type { BaseProps } from '@/types/components';
+import { cn } from '../../lib/utils';
+import type { BaseProps } from '../../types/components';
 
 /**
  * SiteHeader Component

@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 const DescriptionList = ({ className, ref, ...props }: React.ComponentProps<'dl'>) => {
   return (

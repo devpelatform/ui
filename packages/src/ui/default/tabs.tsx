@@ -4,7 +4,7 @@ import * as React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { Tabs as TabsPrimitive } from 'radix-ui';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 // Variants for TabsList
 const tabsListVariants = cva('flex items-center shrink-0', {
@@ -64,12 +64,12 @@ const tabsListVariants = cva('flex items-center shrink-0', {
     {
       variant: 'default',
       shape: 'pill',
-      className: 'rounded-full [&_[role=tab]]:rounded-full',
+      className: 'rounded-full **:[[role=tab]]:rounded-full',
     },
     {
       variant: 'button',
       shape: 'pill',
-      className: 'rounded-full [&_[role=tab]]:rounded-full',
+      className: 'rounded-full **:[[role=tab]]:rounded-full',
     },
   ],
   defaultVariants: {

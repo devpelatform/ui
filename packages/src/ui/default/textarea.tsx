@@ -3,14 +3,14 @@
 import type * as React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 // Define input size variants
 const textareaVariants = cva(
   `
     w-full bg-background border border-input shadow-xs shadow-black/5 transition-[color,box-shadow] 
     text-foreground placeholder:text-muted-foreground/80 focus-visible:border-ring focus-visible:outline-none focus-visible:ring-[3px] 
-    focus-visible:ring-ring/30 disabled:cursor-not-allowed disabled:opacity-50 [&[readonly]]:opacity-70 
+    focus-visible:ring-ring/30 disabled:cursor-not-allowed disabled:opacity-50 [[readonly]]:opacity-70 
     aria-invalid:border-destructive/60 aria-invalid:ring-destructive/10 dark:aria-invalid:border-destructive dark:aria-invalid:ring-destructive/20
   `,
   {

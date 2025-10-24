@@ -4,7 +4,7 @@ import type * as React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import { X } from 'lucide-react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 const alertVariants = cva('flex items-stretch w-full gap-2 group-[.toaster]:w-(--width)', {
   variants: {
@@ -276,7 +276,7 @@ function AlertContent({ className, ...props }: React.HTMLAttributes<HTMLParagrap
   return (
     <div
       data-slot="alert-content"
-      className={cn('space-y-2 [&_[data-slot=alert-title]]:font-semibold', className)}
+      className={cn('space-y-2 **:data-[slot=alert-title]:font-semibold', className)}
       {...props}
     />
   );

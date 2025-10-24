@@ -2,14 +2,14 @@
 
 import { Field as BaseField } from '@base-ui-components/react/field';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 function Field({ className, ...props }: React.ComponentProps<typeof BaseField.Root>) {
   return (
     <BaseField.Root
       data-slot="field"
       className={cn(
-        'flex flex-col gap-2 has-[[data-slot=field-error]]:[&_[data-slot=field-description]]:hidden',
+        'flex flex-col gap-2 has-data-[slot=field-error]:**:data-[slot=field-description]:hidden',
         className,
       )}
       {...props}

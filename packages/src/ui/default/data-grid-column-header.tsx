@@ -15,7 +15,7 @@ import {
   Settings2,
 } from 'lucide-react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 import { Button } from './button';
 import { useDataGrid } from './data-grid';
 import {

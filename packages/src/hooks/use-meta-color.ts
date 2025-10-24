@@ -9,7 +9,7 @@
 import * as React from 'react';
 import { useTheme } from 'next-themes';
 
-import { META_THEME_COLORS, THEME_MODES } from '@/lib/colors';
+import { META_THEME_COLORS, THEME_MODES } from '../lib/colors';
 
 /**
  * Hook for managing HTML meta theme-color tag based on current theme

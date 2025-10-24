@@ -9,7 +9,7 @@ import {
   type Variants,
 } from 'motion/react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 type AnimationVariant =
   | 'fadeIn'

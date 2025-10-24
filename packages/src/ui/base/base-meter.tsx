@@ -3,7 +3,7 @@
 import type * as React from 'react';
 import { Meter as BaseMeter } from '@base-ui-components/react/meter';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 function Meter({ className, children, ...props }: React.ComponentProps<typeof BaseMeter.Root>) {
   return (

@@ -4,7 +4,7 @@ import type * as React from 'react';
 import { Menu as MenuPrimitive } from '@base-ui-components/react/menu';
 import { Check, ChevronRight, Circle } from 'lucide-react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 // Root - Groups all parts of the menu
 function Menu({ ...props }: React.ComponentProps<typeof MenuPrimitive.Root>) {
@@ -74,8 +74,8 @@ function MenuPopup({ ...props }: React.ComponentProps<typeof MenuPrimitive.Popup
       data-slot="menu-popup"
       {...props}
       className={cn(
-        'z-50 min-w-[8rem] space-y-0.5 overflow-hidden rounded-md border border-border bg-popover p-2 text-popover-foreground shadow-black/5 shadow-md',
-        'origin-[var(--transform-origin)] transition-[transform,scale,opacity] data-[ending-style]:scale-90 data-[starting-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0',
+        'z-50 min-w-32 space-y-0.5 overflow-hidden rounded-md border border-border bg-popover p-2 text-popover-foreground shadow-black/5 shadow-md',
+        'origin-(--transform-origin) transition-[transform,scale,opacity] data-ending-style:scale-90 data-starting-style:scale-90 data-ending-style:opacity-0 data-starting-style:opacity-0',
         props.className,
       )}
     />
@@ -249,7 +249,7 @@ function MenuSubmenuTrigger({
       className={cn(
         'flex cursor-default select-none items-center gap-2 rounded-md px-2 py-1.5 text-sm outline-hidden',
         'focus:bg-accent focus:text-foreground',
-        '[&[data-popup-open]]:bg-accent [&[data-popup-open]]:text-foreground',
+        'data-popup-open:bg-accent data-popup-open:text-foreground',
         '[&>svg:not([class*=size-])]:size-4 [&>svg]:pointer-events-none [&>svg]:shrink-0 [&_svg:not([role=img]):not([class*=text-])]:opacity-60',
         inset && 'ps-7',
         className,

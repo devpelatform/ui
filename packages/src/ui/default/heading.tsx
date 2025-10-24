@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 interface HeadingProps extends React.ComponentProps<'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'> {
   level?: 1 | 2 | 3 | 4 | 5 | 6;

@@ -4,7 +4,7 @@ import type * as React from 'react';
 import { Dialog as DialogPrimitive } from '@base-ui-components/react/dialog';
 import { X } from 'lucide-react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 import { buttonVariants } from './base-button';
 
 function Dialog({ ...props }: React.ComponentProps<typeof DialogPrimitive.Root>) {
@@ -48,7 +48,7 @@ function DialogBackdrop({
     <DialogPrimitive.Backdrop
       data-slot="dialog-backdrop"
       className={cn(
-        'fixed inset-0 z-50 bg-black/30 transition-all duration-150 [backdrop-filter:blur(4px)] data-[ending-style]:opacity-0 data-[starting-style]:opacity-0',
+        'fixed inset-0 z-50 bg-black/30 transition-all duration-150 [backdrop-filter:blur(4px)] data-ending-style:opacity-0 data-starting-style:opacity-0',
         className,
       )}
       {...props}
@@ -67,7 +67,7 @@ function DialogPopup({
     <DialogPrimitive.Popup
       data-slot="dialog-popup"
       className={cn(
-        `fixed z-50 grid gap-4 border bg-background p-6 shadow-black/5 shadow-lg transition-all duration-150 data-[ending-style]:scale-90 data-[starting-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0 sm:rounded-lg`,
+        `fixed z-50 grid gap-4 border bg-background p-6 shadow-black/5 shadow-lg transition-all duration-150 data-ending-style:scale-90 data-starting-style:scale-90 data-ending-style:opacity-0 data-starting-style:opacity-0 sm:rounded-lg`,
         fullscreen
           ? 'inset-5'
           : 'top-[50%] left-[50%] w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] sm:max-w-lg',

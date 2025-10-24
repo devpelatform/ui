@@ -1,5 +1,5 @@
-import { cn } from '@/lib/utils';
-import type { GradientLayer, PatternLayer, PositionedElement } from '@/types/ohimg';
+import { cn } from '../lib/utils';
+import type { GradientLayer, PatternLayer, PositionedElement } from '../types/ohimg';
 
 /**
  * Converts hex color to rgba format with specified opacity

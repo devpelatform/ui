@@ -5,7 +5,7 @@ import { Autocomplete as AutocompletePrimitive } from '@base-ui-components/react
 import { cva, type VariantProps } from 'class-variance-authority';
 import { X } from 'lucide-react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 // Define input size variants (without file: part)
 const inputVariants = cva(
@@ -13,7 +13,7 @@ const inputVariants = cva(
     flex w-full bg-background border border-input shadow-xs shadow-black/5 transition-[color,box-shadow] text-foreground placeholder:text-muted-foreground/80 
     focus-visible:ring-ring/30 focus-visible:border-ring focus-visible:outline-none focus-visible:ring-[3px]     
     disabled:cursor-not-allowed disabled:opacity-60 
-    [&[readonly]]:bg-muted/80 [&[readonly]]:cursor-not-allowed
+    [[readonly]]:bg-muted/80 [[readonly]]:cursor-not-allowed
     aria-invalid:border-destructive/60 aria-invalid:ring-destructive/10 dark:aria-invalid:border-destructive dark:aria-invalid:ring-destructive/20
   `,
   {
@@ -133,11 +133,11 @@ function AutocompletePopup({
     <AutocompletePrimitive.Popup
       data-slot="autocomplete-popup"
       className={cn(
-        'max-h-[min(var(--available-height),23rem)] w-[var(--anchor-width)] max-w-[var(--available-width)] py-1',
+        'max-h-[min(var(--available-height),23rem)] w-(--anchor-width) max-w-(--available-width) py-1',
         'scroll-pt-2 scroll-pb-2 overflow-y-auto overscroll-contain bg-[canvas]',
         'rounded-md border border-border bg-popover text-popover-foreground shadow-black/5 shadow-md',
-        'origin-[var(--transform-origin)] transition-[transform,scale,opacity] data-[ending-style]:scale-90',
-        'data-[starting-style]:scale-90 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0',
+        'origin-(--transform-origin) transition-[transform,scale,opacity] data-ending-style:scale-90',
+        'data-starting-style:scale-90 data-ending-style:opacity-0 data-starting-style:opacity-0',
         className,
       )}
       {...props}
@@ -192,8 +192,8 @@ function AutocompleteItem({
         'relative flex cursor-default select-none items-center gap-2 rounded-md px-4 py-2 text-foreground text-sm outline-hidden transition-colors',
         'data-disabled:pointer-events-none data-disabled:opacity-50',
         '[&_svg:not([class*=size-])]:size-4 [&_svg:not([role=img]):not([class*=text-])]:opacity-60 [&_svg]:pointer-events-none [&_svg]:shrink-0',
-        'data-[highlighted]:relative data-[highlighted]:z-0 data-[highlighted]:text-foreground data-[highlighted]:before:absolute',
-        'data-[highlighted]:before:inset-x-1 data-[highlighted]:before:inset-y-0 data-[highlighted]:before:z-[-1] data-[highlighted]:before:rounded-sm data-[highlighted]:before:bg-accent',
+        'data-highlighted:relative data-highlighted:z-0 data-highlighted:text-foreground data-highlighted:before:absolute',
+        'data-highlighted:before:inset-x-1 data-highlighted:before:inset-y-0 data-highlighted:before:z-[-1] data-highlighted:before:rounded-sm data-highlighted:before:bg-accent',
         className,
       )}
       {...props}
@@ -282,7 +282,7 @@ function AutocompleteClear({
       className={cn(
         '-translate-y-1/2 absolute top-1/2 cursor-pointer rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100',
         'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none',
-        'data-[disabled]:pointer-events-none',
+        'data-disabled:pointer-events-none',
         className,
       )}
       {...props}

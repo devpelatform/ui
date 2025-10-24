@@ -5,7 +5,7 @@ import { NumberField as NumberFieldPrimitive } from '@base-ui-components/react/n
 import { cva, type VariantProps } from 'class-variance-authority';
 import { MinusIcon, MoveHorizontalIcon, PlusIcon } from 'lucide-react';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 type NumberFieldContextType = {
   id: string;

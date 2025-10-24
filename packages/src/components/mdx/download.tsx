@@ -8,9 +8,9 @@
 
 import { Download } from 'lucide-react';
 
-import { cn } from '@/lib/utils';
-import type { BaseProps } from '@/types/components';
-import { Button } from '@/ui/default/button';
+import { cn } from '../../lib/utils';
+import type { BaseProps } from '../../types/components';
+import { Button } from '../../ui/default/button';
 
 /**
  * DownloadFile Component

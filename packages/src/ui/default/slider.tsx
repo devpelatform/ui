@@ -3,7 +3,7 @@
 import type * as React from 'react';
 import { Slider as SliderPrimitive } from 'radix-ui';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 function Slider({
   className,
@@ -29,7 +29,7 @@ function SliderThumb({ className, ...props }: React.ComponentProps<typeof Slider
     <SliderPrimitive.Thumb
       data-slot="slider-thumb"
       className={cn(
-        'box-content block size-4 shrink-0 cursor-pointer rounded-full border-[2px] border-primary bg-primary-foreground shadow-black/5 shadow-xs outline-hidden focus:outline-hidden',
+        'box-content block size-4 shrink-0 cursor-pointer rounded-full border-2 border-primary bg-primary-foreground shadow-black/5 shadow-xs outline-hidden focus:outline-hidden',
         className,
       )}
       {...props}

@@ -2,9 +2,9 @@
 
 import type { ComponentProps } from 'react';
 
-import { DefaultLink, type SharedLink } from '@/components';
-import { cn } from '@/lib/utils';
-import type { Link } from '@/types/components';
+import { DefaultLink, type SharedLink } from '../../components';
+import { cn } from '../../lib/utils';
+import type { Link } from '../../types/components';
 
 export function ExtraLink({
   Link = DefaultLink,

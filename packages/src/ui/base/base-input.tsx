@@ -4,7 +4,7 @@ import type * as React from 'react';
 import type { Input as BaseInput } from '@base-ui-components/react/input';
 import { cva, type VariantProps } from 'class-variance-authority';
 
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 
 // Define input size variants
 const inputVariants = cva(
@@ -12,8 +12,8 @@ const inputVariants = cva(
     flex w-full bg-background border border-input shadow-xs shadow-black/5 transition-[color,box-shadow] text-foreground placeholder:text-muted-foreground/80 
     focus-visible:ring-ring/30  focus-visible:border-ring focus-visible:outline-none focus-visible:ring-[3px]     
     disabled:cursor-not-allowed disabled:opacity-60 
-    [&[readonly]]:bg-muted/80 [&[readonly]]:cursor-not-allowed
-    file:h-full [&[type=file]]:py-0 file:border-solid file:border-input file:bg-transparent 
+    [[readonly]]:bg-muted/80 [[readonly]]:cursor-not-allowed
+    file:h-full [[type=file]]:py-0 file:border-solid file:border-input file:bg-transparent 
     file:font-medium file:not-italic file:text-foreground file:p-0 file:border-0 file:border-e
     aria-invalid:border-destructive/60 aria-invalid:ring-destructive/10 dark:aria-invalid:border-destructive dark:aria-invalid:ring-destructive/20
   `,
@@ -55,7 +55,7 @@ const inputAddonVariants = cva(
 const inputGroupVariants = cva(
   `
     flex items-stretch
-    [&_[data-slot=input]]:grow
+    **:data-[slot=input]:grow
     [&_[data-slot=input-addon]:has(+[data-slot=input])]:rounded-e-none [&_[data-slot=input-addon]:has(+[data-slot=input])]:border-e-0
     [&_[data-slot=input-addon]:has(+[data-slot=datefield])]:rounded-e-none [&_[data-slot=input-addon]:has(+[data-slot=datefield])]:border-e-0 
     [&_[data-slot=input]+[data-slot=input-addon]]:rounded-s-none [&_[data-slot=input]+[data-slot=input-addon]]:border-s-0
@@ -63,13 +63,13 @@ const inputGroupVariants = cva(
     [&_[data-slot=input]+[data-slot=button]]:rounded-s-none
     [&_[data-slot=button]+[data-slot=input]]:rounded-s-none
     [&_[data-slot=input-addon]+[data-slot=input]]:rounded-s-none
-    [&_[data-slot=input-addon]+[data-slot=datefield]]:[&_[data-slot=input]]:rounded-s-none
+    [&_[data-slot=input-addon]+[data-slot=datefield]]:**:data-[slot=input]:rounded-s-none
     [&_[data-slot=input]:has(+[data-slot=button])]:rounded-e-none
     [&_[data-slot=input]:has(+[data-slot=input-addon])]:rounded-e-none
     [&_[data-slot=datefield]]:grow
     [&_[data-slot=datefield]+[data-slot=input-addon]]:rounded-s-none 
     [&_[data-slot=datefield]+[data-slot=input-addon]]:border-s-0
-    [&_[data-slot=datefield]:has(~[data-slot=input-addon])]:[&_[data-slot=input]]:rounded-e-none
+    [&_[data-slot=datefield]:has(~[data-slot=input-addon])]:**:data-[slot=input]:rounded-e-none
     [&_[data-slot=datefield]~[data-slot=input-addon]]:rounded-s-none
   `,
   {
@@ -81,36 +81,36 @@ const inputGroupVariants = cva(
 const inputWrapperVariants = cva(
   `
     flex items-center gap-1.5
-    has-[:focus-visible]:ring-ring/30 
-    has-[:focus-visible]:border-ring
-    has-[:focus-visible]:outline-none 
-    has-[:focus-visible]:ring-[3px]
+    has-focus-visible:ring-ring/30 
+    has-focus-visible:border-ring
+    has-focus-visible:outline-none 
+    has-focus-visible:ring-[3px]
 
-    [&_[data-slot=datefield]]:grow 
-    [&_[data-slot=input]]:data-focus-within:ring-transparent  
-    [&_[data-slot=input]]:data-focus-within:ring-0 
-    [&_[data-slot=input]]:data-focus-within:border-0 
-    [&_[data-slot=input]]:flex 
-    [&_[data-slot=input]]:w-full 
-    [&_[data-slot=input]]:outline-none 
-    [&_[data-slot=input]]:transition-colors 
-    [&_[data-slot=input]]:text-foreground
-    [&_[data-slot=input]]:placeholder:text-muted-foreground 
-    [&_[data-slot=input]]:border-0 
-    [&_[data-slot=input]]:bg-transparent 
-    [&_[data-slot=input]]:p-0
-    [&_[data-slot=input]]:shadow-none 
-    [&_[data-slot=input]]:focus-visible:ring-0 
-    [&_[data-slot=input]]:h-auto 
-    [&_[data-slot=input]]:disabled:cursor-not-allowed
-    [&_[data-slot=input]]:disabled:opacity-50    
+    **:data-[slot=datefield]:grow 
+    **:data-[slot=input]:data-focus-within:ring-transparent  
+    **:data-[slot=input]:data-focus-within:ring-0 
+    **:data-[slot=input]:data-focus-within:border-0 
+    **:data-[slot=input]:flex 
+    **:data-[slot=input]:w-full 
+    **:data-[slot=input]:outline-none 
+    **:data-[slot=input]:transition-colors 
+    **:data-[slot=input]:text-foreground
+    **:data-[slot=input]:placeholder:text-muted-foreground 
+    **:data-[slot=input]:border-0 
+    **:data-[slot=input]:bg-transparent 
+    **:data-[slot=input]:p-0
+    **:data-[slot=input]:shadow-none 
+    **:data-[slot=input]:focus-visible:ring-0 
+    **:data-[slot=input]:h-auto 
+    **:data-[slot=input]:disabled:cursor-not-allowed
+    **:data-[slot=input]:disabled:opacity-50    
 
     [&_svg]:text-muted-foreground 
 
-    has-[[aria-invalid=true]]:border-destructive/60 
-    has-[[aria-invalid=true]]:ring-destructive/10 
-    dark:has-[[aria-invalid=true]]:border-destructive 
-    dark:has-[[aria-invalid=true]]:ring-destructive/20    
+    has-aria-invalid:border-destructive/60 
+    has-aria-invalid:ring-destructive/10 
+    dark:has-aria-invalid:border-destructive 
+    dark:has-aria-invalid:ring-destructive/20    
   `,
   {
     variants: {

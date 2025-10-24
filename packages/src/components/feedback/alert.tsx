@@ -17,7 +17,7 @@ import type { ReactNode } from 'react';
 import { Check, CircleAlert, CircleCheck, CircleX, Info, TriangleAlert } from 'lucide-react';
 import { toast } from 'sonner';
 
-import { Alert, AlertIcon, AlertTitle } from '@/ui/default/alert';
+import { Alert, AlertIcon, AlertTitle } from '../../ui/default/alert';
 
 /**
  * Configuration options for the alert toast notification

@@ -2,7 +2,7 @@
 
 import type { ReactNode } from 'react';
 import dynamic from 'next/dynamic';
-import { RootProvider } from 'fumadocs-ui/provider';
+import { RootProvider } from 'fumadocs-ui/provider/next';
 
 const SearchDialog = dynamic(() => import('@/components/search'), {
   ssr: false,
