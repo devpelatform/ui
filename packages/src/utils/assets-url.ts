@@ -19,7 +19,7 @@
  * ```
  */
 export function getAssetsUrl(path: string): string {
-  const baseUrl = 'https://assets.pelatform.com/';
+  const baseUrl = 'https://assets.pelatform.com';
 
   return `${baseUrl}/${path}`;
 }
