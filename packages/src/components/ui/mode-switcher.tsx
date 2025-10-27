@@ -104,7 +104,7 @@ export function ModeSwitcher({
     if (theme === THEME_MODES.SYSTEM) {
       return (
         <>
-          <Monitor /> {withLabel ?? <span>{label.system}</span>}
+          <Monitor /> {withLabel && <span>{label.system}</span>}
         </>
       );
     }
@@ -112,14 +112,14 @@ export function ModeSwitcher({
     if (theme === THEME_MODES.DARK) {
       return (
         <>
-          <Moon /> {withLabel ?? <span>{label.dark}</span>}
+          <Moon /> {withLabel && <span>{label.dark}</span>}
         </>
       );
     }
 
     return (
       <>
-        <Sun /> {withLabel ?? <span>{label.light}</span>}
+        <Sun /> {withLabel && <span>{label.light}</span>}
       </>
     );
   };
