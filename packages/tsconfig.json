@@ -3,7 +3,7 @@
     // Type Checking
     "strict": true,
     // Modules
-    "baseUrl": ".",
+    // "baseUrl": ".",
     "module": "ESNext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,

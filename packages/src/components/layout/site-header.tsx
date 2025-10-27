@@ -64,7 +64,7 @@ export function SiteHeader({ className, children }: BaseProps) {
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 w-full border-border border-b bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/60 dark:border-border',
+        'sticky top-0 z-50 w-full border-border border-b bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/60',
         className,
       )}
     >

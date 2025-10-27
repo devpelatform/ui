@@ -117,7 +117,7 @@ function NavigationMenuPositioner({
         collisionPadding={{ top: 5, bottom: 5, left: 20, right: 20 }}
         collisionAvoidance={{ side: 'none' }}
         className={cn(
-          "box-border h-(--positioner-height) w-(--positioner-width) max-w-(--available-width) transition-[top,left,right,bottom] duration-(--duration) ease-(--easing) before:absolute before:content-[''] data-instant:transition-none data-[side=bottom]:before:top-[-10px] data-[side=left]:before:top-0 data-[side=right]:before:top-0 data-[side=bottom]:before:right-0 data-[side=left]:before:right-[-10px] data-[side=top]:before:right-0 data-[side=left]:before:bottom-0 data-[side=right]:before:bottom-0 data-[side=top]:before:bottom-[-10px] data-[side=bottom]:before:left-0 data-[side=right]:before:left-[-10px] data-[side=top]:before:left-0 data-[side=bottom]:before:h-2.5 data-[side=top]:before:h-2.5 data-[side=left]:before:w-2.5 data-[side=right]:before:w-2.5",
+          "data-[side=left]:before:-right-2.5 data-side=bottom:before:-top-2.5 data-side=top:before:-bottom-2.5 data-side=right:before:-left-2.5 box-border h-(--positioner-height) w-(--positioner-width) max-w-(--available-width) transition-[top,left,right,bottom] duration-(--duration) ease-(--easing) before:absolute before:content-[''] data-instant:transition-none data-[side=left]:before:top-0 data-side=right:before:top-0 data-side=bottom:before:right-0 data-side=top:before:right-0 data-[side=left]:before:bottom-0 data-side=right:before:bottom-0 data-side=bottom:before:left-0 data-side=top:before:left-0 data-side=bottom:before:h-2.5 data-side=top:before:h-2.5 data-[side=left]:before:w-2.5 data-side=right:before:w-2.5",
           className,
         )}
         style={
@@ -189,7 +189,7 @@ function NavigationMenuArrow({
     <NavigationMenuPrimitive.Arrow
       data-slot="navigation-menu-arrow"
       className={cn(
-        'data-[side=right]:-rotate-90 flex transition-[left] duration-(--duration) ease-(--easing) data-[side=bottom]:top-[-8px] data-[side=left]:right-[-13px] data-[side=top]:bottom-[-8px] data-[side=right]:left-[-13px] data-[side=left]:rotate-90 data-[side=top]:rotate-180',
+        'data-side=right:-rotate-90 data-side=bottom:-top-2 data-side=top:-bottom-2 flex transition-[left] duration-(--duration) ease-(--easing) data-[side=left]:right-[-13px] data-side=right:left-[-13px] data-[side=left]:rotate-90 data-side=top:rotate-180',
         className,
       )}
       {...props}

@@ -13,6 +13,7 @@ import { useTheme } from 'next-themes';
 import { THEME_MODES, type ThemeMode } from '../../lib/colors';
 import { cn } from '../../lib/utils';
 import { Button } from '../../ui/default/button';
+import { DropdownMenuItem } from '../../ui/default/dropdown-menu';
 
 /**
  * Props interface for the ModeSwitcher component
@@ -26,6 +27,14 @@ export interface ModeSwitcherProps {
   size?: 'sm' | 'md' | 'lg';
   /** Custom cycle order for themes (defaults to system -> light -> dark) */
   cycleOrder?: ThemeMode[];
+  /** Button type: 'toggle' for a single button or 'dropdown' for a menu with options */
+  type?: 'toogle' | 'dropdown';
+  /** Labels for each theme mode (optional) */
+  label?: {
+    system?: string;
+    dark?: string;
+    light?: string;
+  };
 }
 
 /**
@@ -69,6 +78,12 @@ export function ModeSwitcher({
   variant = 'ghost',
   size = 'md',
   cycleOrder = [THEME_MODES.SYSTEM, THEME_MODES.LIGHT, THEME_MODES.DARK],
+  type = 'toogle',
+  label = {
+    system: 'System',
+    dark: 'Dark',
+    light: 'Light',
+  },
 }: ModeSwitcherProps) {
   const { setTheme, theme } = useTheme();
 
@@ -80,28 +95,54 @@ export function ModeSwitcher({
     setTheme(nextTheme);
   }, [theme, setTheme, cycleOrder]);
 
-  const getCurrentIcon = () => {
+  const getCurrentIcon = (withLabel: boolean = false) => {
     if (theme === THEME_MODES.SYSTEM) {
-      return <Monitor />;
+      return (
+        <>
+          <Monitor /> {withLabel ?? <span>{label.system}</span>}
+        </>
+      );
     }
 
     if (theme === THEME_MODES.DARK) {
-      return <Moon />;
+      return (
+        <>
+          <Moon /> {withLabel ?? <span>{label.dark}</span>}
+        </>
+      );
     }
 
-    return <Sun />;
+    return (
+      <>
+        <Sun /> {withLabel ?? <span>{label.light}</span>}
+      </>
+    );
   };
 
+  if (type === 'toogle') {
+    return (
+      <Button
+        variant={variant}
+        size={size}
+        className={cn('group/toggle size-8 px-0 text-foreground', className)}
+        onClick={toggleTheme}
+        aria-label="Switch theme"
+      >
+        {getCurrentIcon()}
+        <span className="sr-only">Toggle theme</span>
+      </Button>
+    );
+  }
+
   return (
-    <Button
-      variant={variant}
-      size={size}
-      className={cn('group/toggle size-8 px-0 text-foreground', className)}
-      onClick={toggleTheme}
-      aria-label="Switch theme"
+    <DropdownMenuItem
+      className={className}
+      onSelect={(e) => {
+        e.preventDefault();
+        toggleTheme();
+      }}
     >
-      {getCurrentIcon()}
-      <span className="sr-only">Toggle theme</span>
-    </Button>
+      {getCurrentIcon(true)}
+    </DropdownMenuItem>
   );
 }

@@ -414,7 +414,7 @@ function DataGridTableRowSelect<TData>({
     <>
       <div
         className={cn(
-          'absolute start-0 top-0 bottom-0 hidden w-[2px] bg-primary',
+          'absolute start-0 top-0 bottom-0 hidden w-0.5 bg-primary',
           row.getIsSelected() && 'block',
         )}
       />

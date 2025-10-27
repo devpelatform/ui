@@ -79,7 +79,7 @@ const cardFooterVariants = cva('flex items-center px-5 min-h-14', {
   variants: {
     variant: {
       default: 'border-t border-border',
-      accent: 'bg-card rounded-b-xl mt-[2px]',
+      accent: 'bg-card rounded-b-xl mt-0.5',
     },
   },
   defaultVariants: {

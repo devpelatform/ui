@@ -103,7 +103,7 @@ export function ScreenLoader({
   return (
     <div
       className={cn(
-        'fixed inset-0 z-50 flex flex-col items-center justify-center gap-2 transition-opacity duration-700 ease-in-out',
+        'fixed inset-0 z-500 flex flex-col items-center justify-center gap-2 bg-background transition-opacity duration-700 ease-in-out',
         className,
       )}
       role="status"

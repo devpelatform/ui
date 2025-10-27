@@ -1,4 +1,30 @@
 /**
+ * Assets URL Utility
+ * Builds a fully-qualified CDN URL for a given assets path.
+ * Useful for referencing illustrations and media from the Pelatform assets CDN.
+ */
+
+/**
+ * Build a full CDN URL for a given assets path.
+ *
+ * @param path - Relative path to the asset (e.g., "media/illustrations/29.svg")
+ * @returns A fully-qualified CDN URL string
+ *
+ * @example
+ * ```ts
+ * import { getAssetsUrl } from "@pelatform/ui/utils/assets-url";
+ *
+ * const url = getAssetsUrl("media/illustrations/29.svg");
+ * // "https://assets.pelatform.com/media/illustrations/29.svg"
+ * ```
+ */
+export function getAssetsUrl(path: string): string {
+  const baseUrl = 'https://assets.pelatform.com/';
+
+  return `${baseUrl}/${path}`;
+}
+
+/**
  * Build a CDN URL for a country flag SVG.
  *
  * The function lowercases the given ISO country code and returns a
@@ -23,8 +49,7 @@
  * ```
  */
 export function getFlagUrl(flag: string): string {
-  const baseUrl = 'https://assets.pelatform.com/media/flags';
   const flagCode = flag.toLowerCase();
 
-  return `${baseUrl}/${flagCode}.svg`;
+  return `${getAssetsUrl('media/flags')}/${flagCode}.svg`;
 }

@@ -22,6 +22,10 @@ export type Image = ComponentType<{
   alt: string;
   /** Additional CSS classes */
   className?: string;
+  /** Width of the image */
+  width?: number;
+  /** Height of the image */
+  height?: number;
 }>;
 
 /**

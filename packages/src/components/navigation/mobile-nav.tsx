@@ -14,7 +14,7 @@ import {
   DefaultNavigate,
   type SharedLink,
   type SharedNavigate,
-} from '../../components';
+} from '../../components/utils/shared';
 import { useMetaColor } from '../../hooks/use-meta-color';
 import { cn } from '../../lib/utils';
 import type { BaseProps } from '../../types/components';

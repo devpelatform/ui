@@ -1,6 +1,6 @@
 {
   "name": "@pelatform/ui",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "A Modern and Minimal React UI Library built with TailwindCSS.",
   "author": "Pelatform Dev",
   "license": "MIT",

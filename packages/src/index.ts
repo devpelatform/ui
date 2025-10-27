@@ -11,6 +11,6 @@ export * from './types/components';
 export * from './types/menu';
 export * from './types/ohimg';
 
-export * from './utils/flag-url';
+export * from './utils/assets-url';
 export * from './utils/ip';
 export * from './utils/parse';

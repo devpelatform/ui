@@ -8,7 +8,11 @@ export * from '../components/feedback/dialog';
 export * from '../components/feedback/screen-loader';
 
 // Layout Components
+export * from '../components/layout/auth';
+export * from '../components/layout/blank';
 export * from '../components/layout/body';
+export * from '../components/layout/comingsoon';
+export * from '../components/layout/error';
 export * from '../components/layout/grid';
 export * from '../components/layout/section';
 export * from '../components/layout/site-footer';
@@ -43,6 +47,7 @@ export * from '../components/ui/dots-pattern';
 export * from '../components/ui/grid-background';
 export * from '../components/ui/icons';
 export * from '../components/ui/image-input';
+export * from '../components/ui/language-switcher';
 export * from '../components/ui/logo';
 export * from '../components/ui/mode-switcher';
 export * from '../components/ui/moving-border';

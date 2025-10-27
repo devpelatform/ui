@@ -30,10 +30,10 @@ export default function Component() {
         {/* Content */}
         <div className="mx-auto flex h-full max-w-4xl flex-col items-center justify-center space-y-10 px-8">
           {/* Main heading */}
-          <h1 className="animate-fade-in bg-gradient-to-r from-white via-purple-200 to-fuchsia-400 bg-clip-text text-center font-bold text-3xl text-transparent md:text-4xl">
+          <h1 className="animate-fade-in bg-linear-to-r from-white via-purple-200 to-fuchsia-400 bg-clip-text text-center font-bold text-3xl text-transparent md:text-4xl">
             AI Agents That
             <br />
-            <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
               Actually Perform
             </span>
           </h1>

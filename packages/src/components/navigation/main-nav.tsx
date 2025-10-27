@@ -8,7 +8,7 @@
 
 import { ArrowUpRight, ChevronDown } from 'lucide-react';
 
-import { DefaultLink, type SharedLink } from '../../components';
+import { DefaultLink, type SharedLink } from '../../components/utils/shared';
 import { googleTrackEvent } from '../../lib/analytics';
 import { cn } from '../../lib/utils';
 import {
