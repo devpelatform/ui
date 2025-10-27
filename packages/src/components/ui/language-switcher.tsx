@@ -46,8 +46,8 @@ export interface LocaleOption {
 export interface LanguageSwitcherProps extends SharedImage {
   /** Additional CSS classes */
   className?: string;
-  /** UI type: standalone toggle button or submenu dropdown */
-  type?: 'toggle' | 'dropdown';
+  /** UI type: standalone dropdown or submenu dropdown */
+  type?: 'dropdown' | 'sub-dropdown';
   /** Button variant style (for toggle type) */
   variant?: 'ghost' | 'outline' | 'secondary';
   /** Button size (for toggle type) */
@@ -72,7 +72,7 @@ export interface LanguageSwitcherProps extends SharedImage {
 
 export function LanguageSwitcher({
   className,
-  type = 'toggle',
+  type = 'dropdown',
   variant = 'ghost',
   size = 'md',
   showNames = true,
@@ -105,7 +105,7 @@ export function LanguageSwitcher({
     return null;
   }
 
-  if (type === 'toggle') {
+  if (type === 'dropdown') {
     return (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
@@ -125,7 +125,11 @@ export function LanguageSwitcher({
             </span>
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="end" className="min-w-[150px]">
+        <DropdownMenuContent
+          align="end"
+          className="min-w-[150px]"
+          onCloseAutoFocus={(e) => e.preventDefault()}
+        >
           {languages.map((lang) => (
             <DropdownMenuItem
               key={lang.code}

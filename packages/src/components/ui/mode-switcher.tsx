@@ -13,7 +13,12 @@ import { useTheme } from 'next-themes';
 import { THEME_MODES, type ThemeMode } from '../../lib/colors';
 import { cn } from '../../lib/utils';
 import { Button } from '../../ui/default/button';
-import { DropdownMenuItem } from '../../ui/default/dropdown-menu';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '../../ui/default/dropdown-menu';
 
 /**
  * Props interface for the ModeSwitcher component
@@ -27,8 +32,8 @@ export interface ModeSwitcherProps {
   size?: 'sm' | 'md' | 'lg';
   /** Custom cycle order for themes (defaults to system -> light -> dark) */
   cycleOrder?: ThemeMode[];
-  /** Button type: 'toggle' for a single button or 'dropdown' for a menu with options */
-  type?: 'toogle' | 'dropdown';
+  /** Button type: 'toggle' for a single button or 'dropdown' and 'sub-dropdown' for a menu with options */
+  type?: 'toogle' | 'dropdown' | 'sub-dropdown';
   /** Labels for each theme mode (optional) */
   label?: {
     system?: string;
@@ -119,6 +124,8 @@ export function ModeSwitcher({
     );
   };
 
+  const isActive = (val: 'light' | 'dark' | 'system') => theme === val;
+
   if (type === 'toogle') {
     return (
       <Button
@@ -131,6 +138,49 @@ export function ModeSwitcher({
         {getCurrentIcon()}
         <span className="sr-only">Toggle theme</span>
       </Button>
+    );
+  }
+
+  if (type === 'dropdown') {
+    return (
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button
+            variant={variant}
+            size={size}
+            className={cn(
+              'group/toggle size-8 px-0 text-foreground ring-0! focus:outline-none! focus:ring-0! focus-visible:outline-none! focus-visible:ring-0! focus-visible:ring-offset-0!',
+              className,
+            )}
+          >
+            {getCurrentIcon()}
+            <span className="sr-only">Toggle theme</span>
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end" onCloseAutoFocus={(e) => e.preventDefault()}>
+          <DropdownMenuItem
+            className={isActive('light') ? 'bg-accent' : ''}
+            onClick={() => setTheme('light')}
+          >
+            <Sun />
+            {label.light}
+          </DropdownMenuItem>
+          <DropdownMenuItem
+            className={isActive('dark') ? 'bg-accent' : ''}
+            onClick={() => setTheme('dark')}
+          >
+            <Moon />
+            {label.dark}
+          </DropdownMenuItem>
+          <DropdownMenuItem
+            className={isActive('system') ? 'bg-accent' : ''}
+            onClick={() => setTheme('system')}
+          >
+            <Monitor />
+            {label.system}
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
     );
   }
 
