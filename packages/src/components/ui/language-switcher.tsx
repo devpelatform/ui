@@ -66,8 +66,8 @@ export interface LanguageSwitcherProps extends SharedImage {
   locales: LocaleOption[];
   /** Handler called when a new locale is selected */
   onLocaleChange: (newLocale: string) => void | Promise<void>;
-  // /** Base path for flag images (e.g., '/flags'), combined with `${flag}.svg` */
-  // flagsBasePath?: string;
+  /** Custom flags asset url */
+  customFlagUrl?: boolean;
 }
 
 export function LanguageSwitcher({
@@ -82,7 +82,7 @@ export function LanguageSwitcher({
   currentLocale,
   locales,
   onLocaleChange,
-  // flagsBasePath = '/flags',
+  customFlagUrl = false,
   Image = DefaultImage,
 }: LanguageSwitcherProps) {
   const [isPending, startTransition] = useTransition();
@@ -138,7 +138,7 @@ export function LanguageSwitcher({
             >
               {showFlags && lang.flag ? (
                 <Image
-                  src={getFlagUrl(lang.flag)}
+                  src={customFlagUrl ? lang.flag : getFlagUrl(lang.flag)}
                   alt={`${lang.name} flag`}
                   className="size-4 rounded-full object-cover"
                   width={24}
@@ -174,7 +174,7 @@ export function LanguageSwitcher({
               {currentLanguage.name}
               {showFlags && currentLanguage.flag && (
                 <Image
-                  src={getFlagUrl(currentLanguage.flag)}
+                  src={customFlagUrl ? currentLanguage.flag : getFlagUrl(currentLanguage.flag)}
                   alt={currentLanguage.name}
                   className="ms-1 size-3.5 rounded-full"
                   width={24}
@@ -198,7 +198,7 @@ export function LanguageSwitcher({
             >
               {showFlags && item.flag ? (
                 <Image
-                  src={getFlagUrl(item.flag)}
+                  src={customFlagUrl ? item.flag : getFlagUrl(item.flag)}
                   alt={`${item.name} flag`}
                   className="size-4 rounded-full object-cover"
                   width={24}
