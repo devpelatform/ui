@@ -1,6 +1,6 @@
 {
   "name": "@pelatform/ui",
-  "version": "1.5.7",
+  "version": "1.5.8",
   "description": "A Modern and Minimal React UI Library built with TailwindCSS.",
   "author": "Pelatform Dev",
   "license": "MIT",
@@ -155,7 +155,7 @@
     "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-slot": "^1.2.3",
     "@tanstack/react-form": "^1.23.8",
-    "@tanstack/react-query": "^5.90.5",
+    "@tanstack/react-query": "^5.90.6",
     "@tanstack/react-table": "^8.21.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -169,7 +169,7 @@
     "react-aria": "^3.44.0",
     "react-aria-components": "^1.13.0",
     "react-day-picker": "^9.11.1",
-    "react-hook-form": "^7.65.0",
+    "react-hook-form": "^7.66.0",
     "react-phone-number-input": "^3.4.13",
     "react-resizable-panels": "^3.0.6",
     "sonner": "^2.0.7",
@@ -179,7 +179,7 @@
     "zod": "^4.1.12"
   },
   "devDependencies": {
-    "@types/node": "^24.9.2",
+    "@types/node": "^24.10.0",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
     "esbuild-plugin-preserve-directives": "^0.0.11",
