@@ -5,7 +5,7 @@ import fs from 'node:fs';
 const pkgPath = new URL('../package.json', import.meta.url);
 const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf8'));
 
-// pkg.files = ["dist/*", "README.md"];
+pkg.files = ['css/*', 'dist/*', 'README.md'];
 
 function stripDevBranch(obj) {
   if (obj && typeof obj === 'object') {

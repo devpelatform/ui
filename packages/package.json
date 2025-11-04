@@ -137,6 +137,7 @@
   "files": [
     "css/*",
     "dist/*",
+    "src/*",
     "README.md"
   ],
   "keywords": [
