@@ -50,7 +50,13 @@ import { Alert, AlertIcon, AlertTitle } from '../../ui/default/alert';
  * }
  * ```
  */
-export const QueryProvider = ({ children }: { children: ReactNode }) => {
+export const QueryProvider = ({
+  client: clientProps,
+  children,
+}: {
+  client?: QueryClient;
+  children: ReactNode;
+}) => {
   /**
    * Initialize QueryClient with optimized configuration
    * Uses useState to ensure single instance across re-renders
@@ -129,5 +135,5 @@ export const QueryProvider = ({ children }: { children: ReactNode }) => {
       }),
   );
 
-  return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>;
+  return <QueryClientProvider client={clientProps ?? queryClient}>{children}</QueryClientProvider>;
 };
