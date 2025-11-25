@@ -1,6 +1,6 @@
 # @pelatformui/hook
 
-A collection of production-ready React hooks for the Pelatform UI Library. This package provides 14 reusable hooks for analytics, responsive design, form handling, navigation, DOM management, and more.
+A collection of production-ready React hooks for the Pelatform UI Library. This package provides 15 reusable hooks for analytics, responsive design, form handling, navigation, DOM management, and more.
 
 ## Installation
 
@@ -210,6 +210,20 @@ const mounted = useMounted();
 if (!mounted) return null; // Prevent hydration mismatches
 ```
 
+#### `useHydrated`
+
+SSR-safe hydration state detection using `useSyncExternalStore`.
+
+```typescript
+import { useHydrated } from "@pelatformui/hook";
+
+const hydrated = useHydrated();
+
+if (!hydrated) return null; // Returns false on server, true after client hydration
+```
+
+**Features:** Prevents hydration mismatches, minimal overhead, stable value between server and client renders
+
 #### `useRemoveGAParams`
 
 Automatically remove Google Analytics `_gl` parameter from URL after initialization.
@@ -230,13 +244,14 @@ useRemoveGAParams(); // Cleans URL after GA processes linker attribution
 - **Navigation**: `useMenu`, `useScrollPosition`
 - **DOM Interaction**: `useMutationObserver`, `useBodyClasses`
 - **Security**: `useRecaptchaV2`
-- **SSR Safety**: `useMounted`, `useRemoveGAParams`
+- **SSR Safety**: `useMounted`, `useHydrated`, `useRemoveGAParams`
 
 ### By Complexity
 
 **Simple** (Stateless/Single-purpose):
 
 - `useMounted`
+- `useHydrated`
 - `useBodyClasses`
 - `useRemoveGAParams`
 - `useMediaQuery`

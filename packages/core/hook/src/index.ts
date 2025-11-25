@@ -4,6 +4,7 @@ export * from './use-analytics';
 export * from './use-body-class';
 export * from './use-copy-to-clipboard';
 export * from './use-file-upload';
+export * from './use-hydrated';
 export * from './use-media-query';
 export * from './use-menu';
 export * from './use-mobile';

@@ -1,0 +1,46 @@
+{
+  "name": "@pelatformui/animation",
+  "version": "0.1.0",
+  "description": "Animation components of the Pelatform UI Library.",
+  "author": "Pelatform Dev",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    "./css": "./dist/style.css",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "clean:all": "rimraf .turbo dist node_modules",
+    "dev": "tsup --watch",
+    "build": "cp src/style.css dist/style.css && tsup",
+    "types:check": "tsc --noEmit"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@pelatformui/general": "workspace:*",
+    "@repo/tsconfig": "workspace:*",
+    "@types/react": "^19.2.7",
+    "lucide-react": "^0.554.0",
+    "motion": "^12.23.24",
+    "react": "^19.2.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "@pelatformui/general": ">=0.1.0",
+    "lucide-react": ">=0.5.0",
+    "motion": ">=12.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

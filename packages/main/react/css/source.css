@@ -1,0 +1,21 @@
+@source '../src/.';
+@source '../dist/.';
+
+@source '@pelatformui/animation';
+@source '../../../components/animation/dist/.';
+@source '../../../components/animation/src/.';
+
+@source '@pelatformui/aria';
+@source '../../../components/aria/dist/.';
+@source '../../../components/aria/src/.';
+
+@source '@pelatformui/base';
+@source '../../../components/base/dist/.';
+@source '../../../components/base/src/.';
+
+@source '@pelatformui/default';
+@source '../../../components/default/dist/.';
+@source '../../../components/default/src/.';
+
+@source '../../../core/hook/dist/.';
+@source '../../../core/hook/src/.';

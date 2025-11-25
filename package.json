@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "clean": "turbo run clean",
-    "clean:all": "turbo run clean:all && rm -rf .turbo && rm -rf bun.lock && rm -rf node_modules",
+    "clean:all": "turbo run clean:all && rm -rf .husky && rm -rf .turbo && rm -rf bun.lock && rm -rf node_modules",
+    "prepare": "husky",
     "dev": "turbo run dev",
     "build": "turbo run build",
     "start": "turbo run start",
