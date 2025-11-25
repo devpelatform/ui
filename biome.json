@@ -1,0 +1,159 @@
+{
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "includes": [
+      "**/*.{ts,tsx,js,jsx,cjs,mjs,cts,mts}",
+      "**/*.{json,css,scss}",
+      "**/*.{md,mdx,yml,yaml}",
+      "!!**/.next",
+      "!!**/.source",
+      "!!**/.turbo",
+      "!!**/build",
+      "!!**/coverage",
+      "!!**/dist",
+      "!!**/node_modules",
+      "!!**/out"
+    ],
+    "ignoreUnknown": false
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100,
+    "lineEnding": "lf"
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "a11y": {
+        "noAutofocus": "off",
+        "noLabelWithoutControl": "off",
+        "noSvgWithoutTitle": "off",
+        "noStaticElementInteractions": "off",
+        "useAnchorContent": "off",
+        "useAriaPropsForRole": "off",
+        "useAriaPropsSupportedByRole": "off",
+        "useButtonType": "off",
+        "useFocusableInteractive": "off",
+        "useSemanticElements": "off",
+        "useValidAnchor": "off"
+      },
+      "correctness": {
+        "noUnusedImports": {
+          "fix": "safe",
+          "level": "info",
+          "options": {}
+        },
+        "noUnknownTypeSelector": "off",
+        "useUniqueElementIds": "off",
+        "noUnusedFunctionParameters": "off",
+        "useParseIntRadix": "off",
+        "useHookAtTopLevel": "off"
+      },
+      "complexity": {
+        "noImportantStyles": "off"
+      },
+      "style": {
+        "useConst": "error",
+        "useShorthandAssign": "error",
+        "useSingleVarDeclarator": "error",
+        "noNonNullAssertion": "off",
+        "noDescendingSpecificity": "off",
+        "useSelfClosingElements": {
+          "fix": "safe",
+          "level": "info",
+          "options": {}
+        },
+        "useTemplate": {
+          "fix": "safe",
+          "level": "info",
+          "options": {}
+        }
+      },
+      "suspicious": {
+        "noDuplicateProperties": "off",
+        "noUnknownAtRules": "off",
+        "noArrayIndexKey": "off",
+        "noExplicitAny": "warn",
+        "noImplicitAnyLet": "off",
+        "noDoubleEquals": {
+          "fix": "safe",
+          "level": "warn",
+          "options": {}
+        }
+      },
+      "nursery": {
+        "useSortedClasses": {
+          "fix": "safe",
+          "level": "info",
+          "options": {
+            "functions": ["cn"]
+          }
+        }
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "single",
+      "arrowParentheses": "always",
+      "bracketSameLine": false,
+      "bracketSpacing": true,
+      "quoteProperties": "asNeeded",
+      "semicolons": "always",
+      "trailingCommas": "all"
+    }
+  },
+  "json": {
+    "formatter": {
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "trailingCommas": "none"
+    }
+  },
+  "css": {
+    "formatter": {
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "quoteStyle": "single"
+    },
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "identifierOrder": "natural",
+            "groups": [
+              [":URL:", ":NODE:", ":BUN:"],
+              ":BLANK_LINE:",
+              "react",
+              "react/**",
+              "next",
+              "next/**",
+              [":PACKAGE:", "!@pelatform/**", "!@pelatformui/**", "!@repo/**"],
+              ":BLANK_LINE:",
+              "@pelatform/**",
+              "@pelatformui/**",
+              "@repo/**",
+              ":ALIAS:",
+              ":PATH:"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

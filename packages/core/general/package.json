@@ -1,0 +1,43 @@
+{
+  "name": "@pelatformui/general",
+  "version": "0.1.0",
+  "description": "General components of the Pelatform UI Library.",
+  "author": "Pelatform Dev",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "clean:all": "rimraf .turbo dist node_modules",
+    "dev": "tsup --watch",
+    "build": "tsup",
+    "types:check": "tsc --noEmit"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.4.0"
+  },
+  "devDependencies": {
+    "@repo/tsconfig": "workspace:*",
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.7",
+    "react": "^19.2.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

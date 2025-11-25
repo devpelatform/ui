@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat:*)",
+      "Bash(find:*)",
+      "Bash(tree:*)",
+      "Bash(then echo \"$f\")",
+      "Bash(fi)",
+      "Bash(done)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
