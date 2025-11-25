@@ -49,7 +49,7 @@ bun lint:format
 
 ```bash
 # Navigate to the package directory
-cd packages/email  # or packages/storage, packages/utils
+cd packages/core/general  # or packages/core/hook, packages/components/animation
 
 # Run package-specific commands
 bun dev            # Development with watch mode
@@ -79,21 +79,21 @@ bun lint:format
 
 Use descriptive branch names:
 
-- `feature/add-new-email-provider` - For new features
-- `fix/storage-upload-bug` - For bug fixes
+- `feature/add-new-animation-component` - For new features
+- `fix/hook-hydration-bug` - For bug fixes
 - `docs/update-readme` - For documentation
-- `refactor/simplify-utils` - For refactoring
+- `refactor/simplify-components` - For refactoring
 
 ### Commit Messages
 
 Follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 ```
-feat(email): add support for SendGrid provider
-fix(storage): resolve S3 presigned URL expiration issue
-docs(utils): update function documentation
-refactor(email): simplify template rendering logic
-test(storage): add unit tests for Cloudinary provider
+feat(animation): add new text reveal component
+fix(hook): resolve hydration mismatch in useMounted
+docs(general): update utility function documentation
+refactor(base): simplify button component variants
+test(default): add unit tests for data grid filtering
 ```
 
 **Format**: `type(scope): description`

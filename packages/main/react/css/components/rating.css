@@ -1,0 +1,89 @@
+@layer components {
+  /* Base pf-rating styles */
+  .pf-rating {
+    display: inline-flex;
+    align-items: stretch;
+
+    & input {
+      appearance: none;
+      position: absolute;
+      inset-inline-start: 9999px;
+
+      &[disabled] {
+        display: none;
+      }
+    }
+  }
+
+  /* pf-rating on state */
+  .pf-rating-on {
+    @apply text-yellow-400;
+  }
+
+  /* pf-rating off state */
+  .pf-rating-off {
+    @apply text-muted-foreground;
+  }
+
+  /* pf-rating label base styles */
+  .pf-rating-label {
+    display: inline-flex !important;
+    align-items: center;
+
+    & .pf-rating-on {
+      display: none !important;
+    }
+
+    & .pf-rating-off {
+      display: inline-flex !important;
+    }
+  }
+
+  /* Hover and checked states for pf-rating label */
+  .pf-rating:hover label.pf-rating-label,
+  label.pf-rating-label,
+  label.pf-rating-label.checked,
+  div.pf-rating-label.checked {
+    & .pf-rating-on {
+      display: inline-flex !important;
+    }
+
+    & .pf-rating-off {
+      display: none !important;
+    }
+  }
+
+  /* Sibling hover and checked states */
+  label.pf-rating-label:hover ~ label.pf-rating-label,
+  .pf-rating-input:checked ~ .pf-rating-label {
+    & .pf-rating-on {
+      display: none !important;
+    }
+
+    & .pf-rating-off {
+      display: inline-flex !important;
+    }
+  }
+
+  /* Indeterminate pf-rating label state */
+  .pf-rating-label.indeterminate {
+    position: relative;
+
+    & .pf-rating-on {
+      display: inline-flex !important;
+      position: absolute;
+      z-index: 1;
+      overflow: hidden;
+      inset-inline-start: 0;
+    }
+
+    & .pf-rating-off {
+      display: inline-flex !important;
+    }
+  }
+
+  /* Cursor for label */
+  label.pf-rating-label {
+    cursor: pointer;
+  }
+}

@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2025-11-26
+
+### Added
+
+- **useHydrated**: SSR-safe hydration state detection hook
+  - Returns `false` on server, `true` after client hydration
+  - Uses `useSyncExternalStore` for stable server/client behavior
+  - Prevents hydration mismatches in SSR applications
+  - Minimal overhead with no-op external store subscription
+  - Essential for conditional client-only component rendering
+
 ## [0.1.0] - 2025-11-26
 
 ### Added

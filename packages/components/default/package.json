@@ -1,0 +1,70 @@
+{
+  "name": "@pelatformui/default",
+  "version": "0.1.0",
+  "description": "Default components of the Pelatform UI Library.",
+  "author": "Pelatform Dev",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    "./css": "./dist/style.css",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "clean:all": "rimraf .turbo dist node_modules",
+    "dev": "tsup --watch",
+    "build": "cp src/style.css dist/style.css && tsup",
+    "types:check": "tsc --noEmit"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/modifiers": "^9.0.0",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
+    "@headless-tree/core": "^1.5.1",
+    "@radix-ui/react-slot": "^1.2.4",
+    "@tanstack/react-table": "^8.21.3",
+    "cmdk": "^1.1.1",
+    "embla-carousel-react": "^8.6.0",
+    "input-otp": "^1.4.2",
+    "react-day-picker": "^9.11.2",
+    "react-resizable-panels": "^3.0.6",
+    "vaul": "^1.1.2"
+  },
+  "devDependencies": {
+    "@pelatformui/general": "workspace:*",
+    "@pelatformui/hook": "workspace:*",
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@repo/tsconfig": "workspace:*",
+    "@types/react": "^19.2.7",
+    "next-themes": "^0.4.6",
+    "radix-ui": "^1.4.3",
+    "react": "^19.2.0",
+    "react-hook-form": "^7.66.1",
+    "sonner": "^2.0.7",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "@pelatformui/general": ">=0.1.0",
+    "@pelatformui/hook": ">=0.1.0",
+    "@radix-ui/react-dialog": ">=1.1.0",
+    "lucide-react": ">=0.5.0",
+    "next-themes": ">=0.4.6",
+    "radix-ui": ">=1.4.0",
+    "react-hook-form": ">=7.5.0",
+    "sonner": ">=2.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
