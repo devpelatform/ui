@@ -99,6 +99,37 @@ const className = cn(
 );
 ```
 
+### Components
+
+#### Icons
+
+Brand icon collection providing 48 SVG icons for popular services, technologies, and platforms.
+
+```typescript
+import { Icons } from "@pelatformui/general";
+
+function MyComponent() {
+  return (
+    <div>
+      <Icons.google className="w-6 h-6" />
+      <Icons.github className="w-6 h-6 text-gray-900" />
+      <Icons.googleColorful className="w-8 h-8" />
+    </div>
+  );
+}
+```
+
+Available brand icons include:
+
+- **Tech Companies**: Anthropic, Apple, Google, Microsoft, OpenAI
+- **Social Media**: Discord, Facebook, Instagram, Kick, LinkedIn, Twitter (X)
+- **Development**: GitHub, GitLab, NPM, PNPM, Vercel
+- **Frameworks/Tools**: Next.js, React, Radix UI, Tailwind CSS, Prisma
+- **Services**: Notion, Linear, Stripe, PayPal, Dropbox
+- **Colorful Variants**: `googleColorful`, `facebookColorful`, `linkedinColorful`
+
+All icons support `currentColor` for easy theming and accept standard SVG props.
+
 ### Type Definitions
 
 #### Component Types
@@ -139,6 +170,10 @@ const buttonVariants = cva("button-base", {
 ```
 
 ## API Reference
+
+### Components
+
+- **`Icons`** - Brand icon collection (48 SVG brand icons)
 
 ### Utilities
 

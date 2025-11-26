@@ -1,6 +1,6 @@
 {
   "name": "@pelatformui/general",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "General components of the Pelatform UI Library.",
   "author": "Pelatform Dev",
   "license": "MIT",
@@ -31,7 +31,6 @@
   },
   "devDependencies": {
     "@repo/tsconfig": "workspace:*",
-    "@types/node": "^24.10.1",
     "@types/react": "^19.2.7",
     "react": "^19.2.0",
     "tsup": "^8.5.1",

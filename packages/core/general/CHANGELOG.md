@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2025-11-26
+
+### Added
+
+#### Components
+
+- **Icons**: Brand icon collection moved from @pelatformui/react
+  - 48 SVG brand icons for popular services and technologies
+  - Includes: Anthropic, Apple, Discord, Facebook, GitHub, Google, LinkedIn, Microsoft, Next.js, OpenAI, React, and more
+  - Colorful variants available for some brands (Google, Facebook, LinkedIn)
+  - Optimized SVG with currentColor support for theming
+  - Accessible via `@pelatformui/general` export
+
+### Changed
+
+- Removed `@types/node` from devDependencies (no longer needed)
+
 ## [0.1.0] - 2025-11-26
 
 ### Added
