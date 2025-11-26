@@ -19,7 +19,7 @@
     "clean": "rimraf dist",
     "clean:all": "rimraf .turbo dist node_modules",
     "dev": "tsup --watch",
-    "build": "cp src/style.css dist/style.css && tsup",
+    "build": "tsup && cp src/style.css dist/style.css",
     "types:check": "tsc --noEmit"
   },
   "files": [
