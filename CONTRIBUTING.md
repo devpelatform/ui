@@ -86,7 +86,7 @@ Use descriptive branch names:
 
 ### Commit Messages
 
-Follow [Conventional Commits](https://www.conventionalcommits.org/):
+Follow [Conventional Commits](https://www.conventionalcommits.org/) - commit messages automatically generate release notes!
 
 ```
 feat(animation): add new text reveal component
@@ -94,18 +94,47 @@ fix(hook): resolve hydration mismatch in useMounted
 docs(general): update utility function documentation
 refactor(base): simplify button component variants
 test(default): add unit tests for data grid filtering
+perf(hook): optimize useMediaQuery performance
 ```
 
 **Format**: `type(scope): description`
 
-**Types**:
+**Types** (mapped to release notes sections):
 
-- `feat`: New feature
-- `fix`: Bug fix
-- `docs`: Documentation changes
-- `refactor`: Code refactoring
-- `test`: Adding or updating tests
-- `chore`: Maintenance tasks
+- `feat`: New feature → 🚀 Features
+- `fix`: Bug fix → 🐛 Bug Fixes
+- `perf`: Performance improvement → ⚡ Performance Improvements
+- `docs`: Documentation changes → 📚 Documentation
+- `refactor`: Code refactoring → ♻️ Code Refactoring
+- `test`: Adding or updating tests → ✅ Tests
+- `style`: Code style changes → 💎 Styles
+- `build`: Build system changes → 🏗️ Build System
+- `ci`: CI configuration changes → 👷 Continuous Integration
+- `chore`: Maintenance tasks (hidden from release notes)
+- `revert`: Revert previous commit → ⏪ Reverts
+
+**Scopes**: Package names (general, hook, animation, aria, base, default, react)
+
+**Breaking Changes**: Add `!` after type or add `BREAKING CHANGE:` in footer
+
+```bash
+# Breaking change with !
+feat(hook)!: change useMediaQuery API
+
+# Breaking change in footer
+feat(hook): change useMediaQuery API
+
+BREAKING CHANGE: useMediaQuery now returns object instead of boolean
+```
+
+**How it works**:
+1. You write commits with conventional format
+2. Push to GitHub
+3. Release-please automatically creates a Release PR with:
+   - Updated versions based on commit types
+   - Generated CHANGELOG from commits
+   - Beautiful release notes categorized by type
+4. Merge the PR → Automatic publish to npm + GitHub release
 
 ### Writing Code
 
@@ -192,31 +221,47 @@ packages/your-package/
 
 ### Publishing Packages (Maintainers Only)
 
-This project uses [Changesets](https://github.com/changesets/changesets) for version management:
+This project uses [Release Please](https://github.com/googleapis/release-please) for automated releases:
 
-1. **Create a changeset**:
+**How it works**:
 
-   ```bash
-   npx changeset
-   ```
-
-   Follow the prompts to describe your changes.
-
-2. **Version packages**:
+1. **Write commits** with conventional format (see Commit Messages above)
 
    ```bash
-   bun run version
+   feat(hook): add new useLocalStorage hook
+   fix(general): resolve cn() merge conflict
    ```
 
-   This updates package versions and changelogs.
-
-3. **Publish to npm**:
+2. **Push to main branch**:
 
    ```bash
-   bun run release
+   git push origin main
    ```
 
-   This builds and publishes all changed packages.
+3. **Release Please creates PR automatically**:
+   - Analyzes commits since last release
+   - Determines version bumps (feat = minor, fix = patch, BREAKING = major)
+   - Generates CHANGELOG with categorized commits
+   - Updates package.json versions
+   - Creates beautiful release notes
+
+4. **Review and merge the Release PR**:
+   - Check the generated CHANGELOG
+   - Verify version bumps are correct
+   - Merge when ready
+
+5. **Automatic publish**:
+   - Packages automatically published to npm
+   - GitHub releases created with formatted notes
+   - Tags pushed to repository
+
+**Manual publish** (if needed):
+
+```bash
+bun run build
+cd packages/core/general
+npm publish --access public
+```
 
 ## Code of Conduct
 

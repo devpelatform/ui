@@ -34,9 +34,15 @@ bun clean:all              # Full cleanup including node_modules, .turbo, bun.lo
 ### Package Management & Publishing
 
 ```bash
-npx changeset              # Create a changeset for version management
-bun run version            # Update package versions based on changesets
-bun run release            # Build and publish packages to npm (maintainers only)
+# Commit with conventional commits (auto-generates release notes)
+git commit -m "feat(hook): add useLocalStorage hook"
+git commit -m "fix(general): resolve cn() merge conflict"
+
+# Push to trigger Release Please
+git push origin main
+
+# Release Please will create PR automatically
+# Merge PR → auto-publish to npm + GitHub release
 ```
 
 ## Architecture
@@ -232,15 +238,32 @@ This monorepo uses workspace protocol for internal dependencies. In package.json
 }
 ```
 
-## Publishing Workflow (Changesets)
+## Publishing Workflow (Release Please)
 
 1. Make changes to packages
-2. Run `npx changeset` and select affected packages
-3. Commit the changeset file along with your changes
-4. On merge to main, changesets will create a version PR
-5. When version PR is merged, packages are automatically published
+2. Commit with conventional commits format (see examples above)
+3. Push to main branch
+4. Release Please automatically creates Release PR with:
+   - Updated versions (based on commit types)
+   - Generated CHANGELOG (from commit messages)
+   - Beautiful release notes (categorized by type)
+5. Merge Release PR → packages automatically published to npm + GitHub release
 
-Configuration: `.changeset/config.json` - Uses main branch, public access, patches internal dependencies
+Configuration:
+- `release-please-config.json` - Package configuration and changelog sections
+- `.release-please-manifest.json` - Current version tracking
+- `.github/workflows/release-please.yml` - Automated workflow
+
+**Release Notes Categories**:
+- 🚀 Features (feat)
+- 🐛 Bug Fixes (fix)
+- ⚡ Performance Improvements (perf)
+- 📚 Documentation (docs)
+- ♻️ Code Refactoring (refactor)
+- ✅ Tests (test)
+- 💎 Styles (style)
+- 🏗️ Build System (build)
+- 👷 CI (ci)
 
 ## Important Notes
 

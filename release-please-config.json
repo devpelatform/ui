@@ -1,0 +1,71 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "packages": {
+    "packages/core/general": {
+      "package-name": "@pelatformui/general",
+      "changelog-path": "CHANGELOG.md",
+      "release-type": "node",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false,
+      "extra-files": []
+    },
+    "packages/core/hook": {
+      "package-name": "@pelatformui/hook",
+      "changelog-path": "CHANGELOG.md",
+      "release-type": "node",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false
+    },
+    "packages/components/animation": {
+      "package-name": "@pelatformui/animation",
+      "changelog-path": "CHANGELOG.md",
+      "release-type": "node",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false
+    },
+    "packages/components/aria": {
+      "package-name": "@pelatformui/aria",
+      "changelog-path": "CHANGELOG.md",
+      "release-type": "node",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false
+    },
+    "packages/components/base": {
+      "package-name": "@pelatformui/base",
+      "changelog-path": "CHANGELOG.md",
+      "release-type": "node",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false
+    },
+    "packages/components/default": {
+      "package-name": "@pelatformui/default",
+      "changelog-path": "CHANGELOG.md",
+      "release-type": "node",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false
+    },
+    "packages/main/react": {
+      "package-name": "@pelatformui/react",
+      "changelog-path": "CHANGELOG.md",
+      "release-type": "node",
+      "bump-minor-pre-major": true,
+      "bump-patch-for-minor-pre-major": false
+    }
+  },
+  "bootstrap-sha": "9f9cc03",
+  "group-pull-request-title-pattern": "chore: release ${version}",
+  "separate-pull-requests": false,
+  "changelog-sections": [
+    { "type": "feat", "section": "🚀 Features", "hidden": false },
+    { "type": "fix", "section": "🐛 Bug Fixes", "hidden": false },
+    { "type": "perf", "section": "⚡ Performance Improvements", "hidden": false },
+    { "type": "revert", "section": "⏪ Reverts", "hidden": false },
+    { "type": "docs", "section": "📚 Documentation", "hidden": false },
+    { "type": "style", "section": "💎 Styles", "hidden": false },
+    { "type": "refactor", "section": "♻️ Code Refactoring", "hidden": false },
+    { "type": "test", "section": "✅ Tests", "hidden": false },
+    { "type": "build", "section": "🏗️ Build System", "hidden": false },
+    { "type": "ci", "section": "👷 Continuous Integration", "hidden": false },
+    { "type": "chore", "section": "🔧 Miscellaneous Chores", "hidden": true }
+  ]
+}

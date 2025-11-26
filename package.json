@@ -12,13 +12,10 @@
     "lint": "biome lint --write",
     "format": "biome format --write",
     "lint:format": "biome check --write --unsafe --no-errors-on-unmatched",
-    "types:check": "turbo run types:check",
-    "release": "turbo run build --filter=./packages/** && changeset publish",
-    "version": "changeset version && bun install --lockfile-only"
+    "types:check": "turbo run types:check"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.7",
-    "@changesets/cli": "^2.29.7",
     "husky": "^9.1.7",
     "rimraf": "^6.1.2",
     "turbo": "2.6.1",

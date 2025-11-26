@@ -1,0 +1,83 @@
+name: Release Please
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run Release Please
+        uses: googleapis/release-please-action@v4
+        id: release
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+      - name: Checkout
+        if: ${{ steps.release.outputs.releases_created }}
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Setup Bun
+        if: ${{ steps.release.outputs.releases_created }}
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Setup Bun cache
+        if: ${{ steps.release.outputs.releases_created }}
+        uses: actions/cache@v4
+        with:
+          path: ~/.bun/install/cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-
+
+      - name: Install Dependencies
+        if: ${{ steps.release.outputs.releases_created }}
+        run: bun install --frozen-lockfile
+
+      - name: Build Packages
+        if: ${{ steps.release.outputs.releases_created }}
+        run: bun run build
+
+      - name: Publish to NPM
+        if: ${{ steps.release.outputs.releases_created }}
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+
+          # Publish each package that was released
+          for package_path in packages/core/general packages/core/hook packages/components/animation packages/components/aria packages/components/base packages/components/default packages/main/react; do
+            package_name=$(node -p "require('./$package_path/package.json').name")
+            package_version=$(node -p "require('./$package_path/package.json').version")
+
+            # Check if this package was released
+            if npm view $package_name@$package_version 2>/dev/null; then
+              echo "⏭️  $package_name@$package_version already published, skipping"
+            else
+              echo "📦 Publishing $package_name@$package_version"
+              cd $package_path
+              npm publish --access public
+              cd -
+            fi
+          done
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_OPTIONS: --max-old-space-size=4096
+
+      - name: Release Summary
+        if: ${{ steps.release.outputs.releases_created }}
+        run: |
+          echo "✅ Releases created and published!"
+          echo "${{ steps.release.outputs.releases_created }}"
