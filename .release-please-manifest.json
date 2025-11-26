@@ -1,9 +1,9 @@
 {
-  "packages/core/general": "0.1.1",
-  "packages/core/hook": "0.1.1",
-  "packages/components/animation": "0.1.0",
-  "packages/components/aria": "0.1.0",
-  "packages/components/base": "0.1.0",
-  "packages/components/default": "0.1.0",
-  "packages/main/react": "1.0.1"
+  "packages/core/general": "0.2.0",
+  "packages/core/hook": "0.2.0",
+  "packages/components/animation": "0.2.0",
+  "packages/components/aria": "0.1.1",
+  "packages/components/base": "0.1.1",
+  "packages/components/default": "0.1.1",
+  "packages/main/react": "1.1.0"
 }

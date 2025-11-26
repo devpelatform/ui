@@ -5,6 +5,29 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1](https://github.com/devpelatform/ui/compare/aria-v0.1.0...aria-v0.1.1) (2025-11-26)
+
+
+### 🐛 Bug Fixes
+
+* **components:** fix build script order for CSS export ([21cc7c4](https://github.com/devpelatform/ui/commit/21cc7c41b79614f2360516f0bf594e7d4c9eb181))
+
+
+### 📚 Documentation
+
+* add comprehensive documentation for all packages ([dd08601](https://github.com/devpelatform/ui/commit/dd086011ca0bfabb268ca2e6e897fbb45b6f57d0))
+* update README files with consistent formatting and syntax ([7273fce](https://github.com/devpelatform/ui/commit/7273fceb62e9764a97130f9d494e7883578efc73))
+
+
+### 💎 Styles
+
+* standardize quote usage in import statements across docs ([7273fce](https://github.com/devpelatform/ui/commit/7273fceb62e9764a97130f9d494e7883578efc73))
+
+
+### 👷 Continuous Integration
+
+* remove createGithubReleases flag from release workflow ([7273fce](https://github.com/devpelatform/ui/commit/7273fceb62e9764a97130f9d494e7883578efc73))
+
 ## [0.1.0] - 2025-11-26
 
 ### Added

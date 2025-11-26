@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0](https://github.com/devpelatform/ui/compare/hook-v0.1.1...hook-v0.2.0) (2025-11-26)
+
+
+### 🚀 Features
+
+* initial monorepo setup with core packages ([bf577e5](https://github.com/devpelatform/ui/commit/bf577e5905e3da66dd3ee28aeabb0330019c4222))
+
+
+### 📚 Documentation
+
+* add comprehensive documentation for all packages ([dd08601](https://github.com/devpelatform/ui/commit/dd086011ca0bfabb268ca2e6e897fbb45b6f57d0))
+
 ## [0.1.1] - 2025-11-26
 
 ### Added
