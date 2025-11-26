@@ -35,54 +35,67 @@ Plus additional ready-to-use components for layouts, navigation, and UI elements
 
 ```typescript
 // Main exports (utilities, types, icons)
-import { cn, cva, googleTrackEvent } from '@pelatformui/react'
+import { cn, cva, googleTrackEvent } from "@pelatformui/react";
 
 // Hooks
-import { useHydrated, useMobile, useMediaQuery } from '@pelatformui/react/hooks'
+import {
+  useHydrated,
+  useMobile,
+  useMediaQuery,
+} from "@pelatformui/react/hooks";
 
 // Animation components
-import { ShimmeringText, CountingNumber, Marquee } from '@pelatformui/react/animation'
+import {
+  ShimmeringText,
+  CountingNumber,
+  Marquee,
+} from "@pelatformui/react/animation";
 
 // ARIA components
-import { DateField, ShowMore } from '@pelatformui/react/aria'
+import { DateField, ShowMore } from "@pelatformui/react/aria";
 
 // Base components
-import { Button, Input, Select } from '@pelatformui/react/base'
+import { Button, Input, Select } from "@pelatformui/react/base";
 
 // Default styled components
-import { Card, DataGrid, Kanban } from '@pelatformui/react/default'
+import { Card, DataGrid, Kanban } from "@pelatformui/react/default";
 
 // All components (base + default + custom)
-import { SiteHeader, SiteFooter, CommandMenu } from '@pelatformui/react/components'
+import {
+  SiteHeader,
+  SiteFooter,
+  CommandMenu,
+} from "@pelatformui/react/components";
 
 // Styles
-import '@pelatformui/react/css'
+import "@pelatformui/react/css";
 ```
 
 ## Quick Start
 
 ```typescript
-import { Button, Card, Input } from '@pelatformui/react/default'
-import { useHydrated } from '@pelatformui/react/hooks'
-import '@pelatformui/react/css'
+import { Button, Card, Input } from "@pelatformui/react/default";
+import { useHydrated } from "@pelatformui/react/hooks";
+import "@pelatformui/react/css";
 
 function App() {
-  const hydrated = useHydrated()
+  const hydrated = useHydrated();
 
-  if (!hydrated) return null
+  if (!hydrated) return null;
 
   return (
     <Card>
       <Input placeholder="Enter text" />
       <Button>Submit</Button>
     </Card>
-  )
+  );
 }
 ```
 
 ## Component Categories
 
 ### Layout Components
+
 - **Auth** - Authentication page layout
 - **Blank** - Minimal blank layout
 - **Body** - Main content body
@@ -95,12 +108,14 @@ function App() {
 - **Wrapper** - Container wrapper
 
 ### Navigation Components
+
 - **BackLink** - Back navigation link
 - **CommandMenu** - Command palette
 - **MainNav** - Main navigation menu
 - **MobileNav** - Mobile navigation
 
 ### Feedback Components
+
 - **Alert** - Alert notifications
 - **AlertToast** - Toast notifications
 - **AlertNotification** - Notification alerts
@@ -109,6 +124,7 @@ function App() {
 - **ScreenLoader** - Loading screen
 
 ### UI Components
+
 - **Announcement** - Announcement banner with tags
 - **BackgroundPaths** - Decorative backgrounds
 - **Book** - Book/document display
@@ -126,10 +142,12 @@ function App() {
 - **UserAvatar** - User avatar display
 
 ### Provider Components
+
 - **QueryProvider** - TanStack Query provider
 - **ThemeProvider** - Theme management (next-themes + tooltip)
 
 ### MDX Components
+
 - **CodeDisplay** - Code snippet display
 - **Download** - Download link
 - **Link** - Custom link
@@ -138,6 +156,7 @@ function App() {
 - **YouTube** - YouTube embed
 
 ### Utility Components
+
 - **Fonts** - Font configuration
 - **RecaptchaPopover** - reCAPTCHA integration
 - **Shared** - Shared utilities
@@ -145,7 +164,7 @@ function App() {
 ## Theme Management
 
 ```typescript
-import { ThemeProvider } from '@pelatformui/react/components'
+import { ThemeProvider } from "@pelatformui/react/components";
 
 function App({ children }) {
   return (
@@ -157,7 +176,7 @@ function App({ children }) {
     >
       {children}
     </ThemeProvider>
-  )
+  );
 }
 ```
 
@@ -186,10 +205,11 @@ function App({ children }) {
 The package uses Tailwind CSS with custom theme configuration. Import the CSS in your app:
 
 ```typescript
-import '@pelatformui/react/css'
+import "@pelatformui/react/css";
 ```
 
 CSS includes:
+
 - Theme variables
 - Component styles
 - Animation utilities

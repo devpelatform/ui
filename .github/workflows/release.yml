@@ -43,7 +43,6 @@ jobs:
         with:
           publish: bun run release
           version: bun run version
-          createGithubReleases: true
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

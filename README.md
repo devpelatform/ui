@@ -37,11 +37,13 @@ This monorepo contains 7 packages organized into three categories:
 ### Core Packages
 
 - **[@pelatformui/general](./packages/core/general)** - Core utilities, types, and helpers
+
   - CVA (Class Variance Authority) integration
   - Color, analytics, and parsing utilities
   - Component and menu type definitions
 
 - **[@pelatformui/hook](./packages/core/hook)** - 15 React hooks
+
   - `useHydrated`, `useMobile`, `useMediaQuery`, `useAnalytics`
   - `useCopyToClipboard`, `useFileUpload`, `useScrollPosition`
   - `useMutationObserver`, `useRecaptchaV2`, and more
@@ -52,15 +54,18 @@ This monorepo contains 7 packages organized into three categories:
 ### Component Packages
 
 - **[@pelatformui/animation](./packages/components/animation)** - 14 animation components
+
   - Text effects: ShimmeringText, TextReveal, TypingText
   - Number animations: CountingNumber, AnimatedNumber
   - Layout effects: Marquee, InfiniteSlider
   - Background patterns and effects
 
 - **[@pelatformui/aria](./packages/components/aria)** - 2 ARIA components
+
   - DateField, ShowMore with WCAG 2.1 compliance
 
 - **[@pelatformui/base](./packages/components/base)** - 40+ headless components
+
   - Fully accessible, unstyled components built on Radix UI
   - Forms, dialogs, navigation, data display
 
@@ -79,14 +84,14 @@ This monorepo contains 7 packages organized into three categories:
 ## Quick Start
 
 ```typescript
-import { Button, Card, Input } from '@pelatformui/react/default'
-import { useHydrated } from '@pelatformui/react/hooks'
-import '@pelatformui/react/css'
+import { Button, Card, Input } from "@pelatformui/react/default";
+import { useHydrated } from "@pelatformui/react/hooks";
+import "@pelatformui/react/css";
 
 function App() {
-  const hydrated = useHydrated()
+  const hydrated = useHydrated();
 
-  if (!hydrated) return null
+  if (!hydrated) return null;
 
   return (
     <Card>
@@ -94,22 +99,22 @@ function App() {
       <Input placeholder="Enter your email" />
       <Button>Get Started</Button>
     </Card>
-  )
+  );
 }
 ```
 
 ### With Theme Provider
 
 ```typescript
-import { ThemeProvider } from '@pelatformui/react/components'
-import '@pelatformui/react/css'
+import { ThemeProvider } from "@pelatformui/react/components";
+import "@pelatformui/react/css";
 
 function App({ children }) {
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       {children}
     </ThemeProvider>
-  )
+  );
 }
 ```
 
@@ -119,28 +124,28 @@ The main `@pelatformui/react` package provides multiple import paths:
 
 ```typescript
 // Core utilities and types
-import { cn, cva, googleTrackEvent } from '@pelatformui/react'
+import { cn, cva, googleTrackEvent } from "@pelatformui/react";
 
 // Hooks
-import { useHydrated, useMobile } from '@pelatformui/react/hooks'
+import { useHydrated, useMobile } from "@pelatformui/react/hooks";
 
 // Animation components
-import { ShimmeringText, Marquee } from '@pelatformui/react/animation'
+import { ShimmeringText, Marquee } from "@pelatformui/react/animation";
 
 // ARIA components
-import { DateField } from '@pelatformui/react/aria'
+import { DateField } from "@pelatformui/react/aria";
 
 // Headless base components
-import { Button, Input } from '@pelatformui/react/base'
+import { Button, Input } from "@pelatformui/react/base";
 
 // Styled default components
-import { Card, DataGrid } from '@pelatformui/react/default'
+import { Card, DataGrid } from "@pelatformui/react/default";
 
 // Custom components
-import { SiteHeader, ThemeProvider } from '@pelatformui/react/components'
+import { SiteHeader, ThemeProvider } from "@pelatformui/react/components";
 
 // Styles
-import '@pelatformui/react/css'
+import "@pelatformui/react/css";
 ```
 
 ## Documentation
@@ -222,7 +227,7 @@ Please also read our [Code of Conduct](./CODE_OF_CONDUCT.md) before contributing
 
 ## License
 
-MIT © [Pelatform](https://github.com/devpelatform)
+MIT ÔøΩ [Pelatform](https://github.com/devpelatform)
 
 ## Links
 
@@ -233,4 +238,4 @@ MIT © [Pelatform](https://github.com/devpelatform)
 
 ---
 
-Built with d by the Pelatform team
+Built with ‚ù§Ô∏è by the Pelatform team

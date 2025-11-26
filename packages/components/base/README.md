@@ -23,7 +23,7 @@ bun add @pelatformui/general lucide-react react-hook-form
 Import the component styles in your app:
 
 ```typescript
-import '@pelatformui/base/css'
+import "@pelatformui/base/css";
 ```
 
 ## Component Categories

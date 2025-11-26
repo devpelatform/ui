@@ -25,7 +25,7 @@ bun add @pelatformui/general lucide-react motion
 Import the component styles in your app:
 
 ```typescript
-import '@pelatformui/animation/css'
+import "@pelatformui/animation/css";
 ```
 
 ## Components
