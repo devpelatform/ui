@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] - 2025-11-26
+
+### Changed
+
+- **Icons**: Moved icon components to @pelatformui/general for better reusability
+  - Icons are now exported from `@pelatformui/general`
+  - Still accessible via `@pelatformui/react` through re-export
+  - No breaking changes - existing imports continue to work
+  - Better package architecture and dependency management
+
+### Removed
+
+- Internal `src/components/ui/icons.tsx` file (moved to @pelatformui/general)
+
 ## [1.0.0] - 2025-11-26
 
 ### Added

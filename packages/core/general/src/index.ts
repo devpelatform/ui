@@ -6,6 +6,11 @@
 export { cva, type VariantProps } from 'class-variance-authority';
 
 /************************************
+ **** COMPONENTS
+ *************************************/
+export * from './components/icons';
+
+/************************************
  **** LIBRARIES
  *************************************/
 export * from './lib/analytics';
