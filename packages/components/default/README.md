@@ -23,7 +23,7 @@ bun add @pelatformui/general @pelatformui/hook @radix-ui/react-dialog lucide-rea
 Import the component styles in your app:
 
 ```typescript
-import '@pelatformui/default/css'
+import "@pelatformui/default/css";
 ```
 
 ## Component Categories
@@ -125,8 +125,8 @@ import '@pelatformui/default/css'
 ## Quick Start
 
 ```typescript
-import { Button, Card, Input, Select } from '@pelatformui/default'
-import '@pelatformui/default/css'
+import { Button, Card, Input, Select } from "@pelatformui/default";
+import "@pelatformui/default/css";
 
 function MyComponent() {
   return (
@@ -142,13 +142,14 @@ function MyComponent() {
       </Select>
       <Button>Submit</Button>
     </Card>
-  )
+  );
 }
 ```
 
 ## Features
 
 ### Data Table Features
+
 - Server-side pagination, sorting, and filtering
 - Column visibility toggle
 - Draggable columns and rows
@@ -159,6 +160,7 @@ function MyComponent() {
 - Empty states
 
 ### Advanced Components
+
 - **Kanban**: Full drag-and-drop kanban board with @dnd-kit
 - **Stepper**: Multi-step forms with navigation
 - **Tree**: Hierarchical data with expand/collapse
@@ -167,12 +169,14 @@ function MyComponent() {
 - **Command**: Search/command palette with cmdk
 
 ### Form Integration
+
 - React Hook Form support
 - Validation error display
 - Field-level state management
 - Accessible form structure
 
 ### Theme Support
+
 - Dark mode via next-themes
 - Customizable with Tailwind CSS
 - CVA-based variants
@@ -192,6 +196,7 @@ Full TypeScript support with comprehensive type definitions for all components.
 ## Dependencies
 
 ### Production Dependencies
+
 - `@dnd-kit/*` - Drag and drop functionality
 - `@tanstack/react-table` - Table state management
 - `cmdk` - Command menu
@@ -202,6 +207,7 @@ Full TypeScript support with comprehensive type definitions for all components.
 - `vaul` - Drawer component
 
 ### Peer Dependencies
+
 - React 19.2+
 - Radix UI components
 - Lucide React for icons

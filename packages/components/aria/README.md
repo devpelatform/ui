@@ -23,7 +23,7 @@ bun add @pelatformui/general react-aria-components
 Import the component styles in your app:
 
 ```typescript
-import '@pelatformui/aria/css'
+import "@pelatformui/aria/css";
 ```
 
 ## Components
