@@ -1,6 +1,20 @@
 # Contributing to Pelatform UI
 
-Thank you for your interest in contributing to Pelatform UI! This document provides guidelines and instructions for contributing to this monorepo.
+Thank you for your interest in contributing to Pelatform UI! We appreciate your time and effort in helping us build a comprehensive React UI library for TypeScript.
+
+## Code of Conduct
+
+This project and everyone participating in it is governed by our [Code of Conduct](./CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to pelatformdev@gmail.com.
+
+## Why Contribute?
+
+Pelatform UI is a community-driven project aiming to provide a comprehensive, accessible, and well-documented UI library for the TypeScript ecosystem. Your contributions help:
+
+- Build better components for developers worldwide
+- Improve accessibility and user experience
+- Expand the library's capabilities
+- Fix bugs and improve performance
+- Enhance documentation for better developer experience
 
 ## Getting Started
 
@@ -59,18 +73,28 @@ bun types:check    # Type-check the package
 
 ## Code Style
 
-This project uses [Biome](https://biomejs.dev/) for linting and formatting.
+This project uses [Biome](https://biomejs.dev/) for linting and formatting to ensure consistent code quality.
+
+### Code Standards
 
 - **Indentation**: 2 spaces
 - **Line Width**: 100 characters
-- **Quotes**: Single quotes
-- **Semicolons**: Always
+- **Quotes**: Single quotes for JavaScript/TypeScript
+- **Semicolons**: Always required
 - **Trailing Commas**: All
+- **Arrow Parentheses**: Always
 
-Run the following command before committing:
+### Format and Lint
+
+Before committing, always run:
 
 ```bash
+# Format and lint in one command
 bun lint:format
+
+# Or run separately
+bun format    # Format only
+bun lint      # Lint only
 ```
 
 ## Making Changes
@@ -117,7 +141,7 @@ test(default): add unit tests for data grid filtering
 
 ### Testing
 
-Before submitting your changes:
+**All changes must pass the following checks** before submitting:
 
 ```bash
 # Type-check all packages
@@ -129,6 +153,13 @@ bun build
 # Lint and format
 bun lint:format
 ```
+
+Make sure:
+
+- All TypeScript types are correct
+- No build errors or warnings
+- Code follows the style guide
+- Existing functionality is not broken
 
 ## Submitting Changes
 
@@ -147,14 +178,20 @@ bun lint:format
    git push origin feature/your-feature-name
    ```
 
-3. **Create a Pull Request** on GitHub with:
+3. **Create a Pull Request** on GitHub targeting the `main` branch
 
-   - Clear title describing the change
-   - Description of what changed and why
-   - Reference any related issues (e.g., "Fixes #123")
-   - Screenshots (if applicable)
+4. **Fill in the PR template** with:
 
-4. **Wait for review**: Maintainers will review your PR and may request changes
+   - **Clear title**: Use conventional commit format (e.g., "feat(animation): add text reveal component")
+   - **Description**: Explain what changed and why
+   - **Breaking changes**: Clearly document any breaking changes
+   - **Related issues**: Reference issues (e.g., "Fixes #123", "Closes #456")
+   - **Screenshots/videos**: Add visual proof for UI changes
+   - **Testing**: Describe how you tested the changes
+
+5. **Wait for review**: Maintainers will review your PR and may request changes
+
+**Keep PRs focused**: Large pull requests are harder to review. Try to keep changes focused on a single feature or fix.
 
 ### Pull Request Checklist
 
@@ -218,18 +255,21 @@ This project uses [Changesets](https://github.com/changesets/changesets) for ver
 
    This builds and publishes all changed packages.
 
-## Code of Conduct
+## Security
 
-This project adheres to the [Contributor Covenant Code of Conduct](./CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to pelatformdev@gmail.com.
+If you discover a security vulnerability within Pelatform UI, please send an email to pelatformdev@gmail.com. All security vulnerabilities will be promptly addressed.
 
-## Questions?
+**Do not report security issues through public GitHub issues.**
+
+## Questions and Support
 
 If you have questions or need help:
 
-- Open an issue on GitHub
-- Check existing issues and discussions
-- Review the package documentation
+- Check the [documentation](./README.md) and package READMEs
+- Search [existing issues](https://github.com/devpelatform/ui/issues) and [discussions](https://github.com/devpelatform/ui/discussions)
+- Open a new [discussion](https://github.com/devpelatform/ui/discussions) for questions
+- Open an [issue](https://github.com/devpelatform/ui/issues) for bug reports
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the MIT License.
+By contributing to Pelatform UI, you agree that your contributions will be licensed under the MIT License.

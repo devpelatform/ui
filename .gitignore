@@ -127,6 +127,7 @@ dist
 .pnp.*
 
 # other
+.claude
 .turbo
 .DS_Store
 .vercel
