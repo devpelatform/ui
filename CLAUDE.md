@@ -81,9 +81,9 @@ ui/
 **@repo/tsconfig** (`packages/core/tsconfig/`)
 
 - Shared TypeScript configurations:
-  - `base.json`: Base config with strict mode, ES2022
-  - `library.json`: React library config (extends base)
-  - `nextjs.json`: Next.js specific config (extends base)
+  - `base.json`: Base config with strict mode, ES2022, moduleResolution "bundler"
+  - `react-library.json`: React library config (extends base, JSX react-jsx, DOM libs)
+  - `nextjs.json`: Next.js specific config (extends base, JSX preserve)
 
 **@pelatformui/animation** (`packages/components/animation/`)
 
@@ -147,6 +147,8 @@ ui/
 - **TypeScript**: Module resolution is "bundler", strict mode enabled
 - **Format**: All packages export ESM format with TypeScript declarations
 - **External Dependencies**: React is externalized in builds
+- **CSS Handling**: Component packages with CSS use build scripts that copy `src/style.css` to `dist/style.css` after tsup build
+- **Peer Dependencies**: Component packages use peerDependencies to avoid bundling shared libraries (React, Radix UI, motion, etc.)
 
 ### Code Style (Biome)
 
@@ -191,12 +193,16 @@ Examples:
 2. Set up with standard structure:
    - `src/index.ts` - Main exports
    - `package.json` - Package metadata with workspace references
-   - `tsconfig.json` - Extends `@repo/tsconfig/library.json` or `react-library.json`
-   - `tsup.config.ts` - Build configuration (see existing packages)
+   - `tsconfig.json` - Extends `@repo/tsconfig/react-library.json`
+   - `tsup.config.ts` - Build configuration (see existing packages for standard config)
    - `README.md` - Package documentation
    - `CHANGELOG.md` - Version history
 3. Package naming: Use `@pelatformui/*` for public packages, `@repo/*` for internal
-4. For component packages: Configure CSS export via `./css` entry point in package.json
+4. For component packages with CSS:
+   - Add `src/style.css` file
+   - Configure `./css` export in package.json exports field
+   - Update build script to copy CSS: `"build": "tsup && cp src/style.css dist/style.css"`
+5. Configure peer dependencies for shared libraries to avoid bundling duplication
 
 ### Working on Individual Packages
 
@@ -250,3 +256,4 @@ Configuration: `.changeset/config.json` - Uses main branch, public access, patch
 - **Turbo**: Caches builds, runs tasks in dependency order
 - **React Version**: Uses React 19.2.0
 - **TypeScript**: Version 5.9.3, strict mode enforced
+- **Git Hooks**: Husky is configured (`bun prepare` installs hooks automatically)

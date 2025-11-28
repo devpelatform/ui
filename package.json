@@ -1,6 +1,6 @@
 {
   "name": "pelatformui",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "clean": "turbo run clean",
