@@ -3,7 +3,7 @@
   "changelog": [
     "@changesets/changelog-github",
     {
-      "repo": "devpelatform/template"
+      "repo": "devpelatform/ui"
     }
   ],
   "commit": false,

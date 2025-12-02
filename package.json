@@ -38,6 +38,7 @@
   },
   "workspaces": [
     "packages/**",
+    "examples/**",
     "apps/**"
   ],
   "lint-staged": {
