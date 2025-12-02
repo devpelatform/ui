@@ -38,7 +38,7 @@
     "components"
   ],
   "devDependencies": {
-    "@pelatform/tsconfig": "^0.1.0",
+    "@pelatform/tsconfig": "^0.1.1",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.7",
     "react": "^19.2.0",

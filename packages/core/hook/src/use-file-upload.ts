@@ -7,13 +7,19 @@
 "use client";
 
 import type React from "react";
-import type { ChangeEvent, DragEvent, InputHTMLAttributes } from "react";
-import { useCallback, useRef, useState } from "react";
+import {
+  type ChangeEvent,
+  type DragEvent,
+  type InputHTMLAttributes,
+  useCallback,
+  useRef,
+  useState,
+} from "react";
 
 /**
  * Metadata structure for uploaded files
  */
-export interface FileMetadata {
+export type FileMetadata = {
   /** The name of the file */
   name: string;
   /** The size of the file in bytes */
@@ -24,24 +30,24 @@ export interface FileMetadata {
   url: string;
   /** Unique identifier for the file */
   id: string;
-}
+};
 
 /**
  * File object with preview capabilities
  */
-export interface FileWithPreview {
+export type FileWithPreview = {
   /** The actual file object or metadata */
   file: File | FileMetadata;
   /** Unique identifier for the file */
   id: string;
   /** Optional preview URL for the file (typically for images) */
   preview?: string;
-}
+};
 
 /**
  * Configuration options for the file upload hook
  */
-export interface FileUploadOptions {
+export type FileUploadOptions = {
   /** Maximum number of files allowed (only used when multiple is true, defaults to Infinity) */
   maxFiles?: number;
   /** Maximum file size in bytes (defaults to Infinity) */
@@ -57,24 +63,24 @@ export interface FileUploadOptions {
   /** Callback function executed when new files are added */
   onFilesAdded?: (addedFiles: FileWithPreview[]) => void;
   onError?: (errors: string[]) => void;
-}
+};
 
 /**
  * Current state of the file upload component
  */
-export interface FileUploadState {
+export type FileUploadState = {
   /** Array of files currently selected/uploaded */
   files: FileWithPreview[];
   /** Whether the user is currently dragging files over the drop zone */
   isDragging: boolean;
   /** Array of validation error messages */
   errors: string[];
-}
+};
 
 /**
  * Actions available for file upload management
  */
-export interface FileUploadActions {
+export type FileUploadActions = {
   /** Add new files to the upload state */
   addFiles: (files: FileList | File[]) => void;
   /** Remove a specific file by its ID */
@@ -101,7 +107,7 @@ export interface FileUploadActions {
   ) => InputHTMLAttributes<HTMLInputElement> & {
     ref: React.Ref<HTMLInputElement>;
   };
-}
+};
 
 /**
  * Hook for comprehensive file upload functionality with drag & drop support
@@ -192,8 +198,10 @@ export const useFileUpload = (
         if (file.size > maxSize) {
           return `File "${file.name}" exceeds the maximum size of ${formatBytes(maxSize)}.`;
         }
-      } else if (file.size > maxSize) {
-        return `File "${file.name}" exceeds the maximum size of ${formatBytes(maxSize)}.`;
+      } else {
+        if (file.size > maxSize) {
+          return `File "${file.name}" exceeds the maximum size of ${formatBytes(maxSize)}.`;
+        }
       }
 
       if (accept !== "*") {
@@ -228,15 +236,12 @@ export const useFileUpload = (
    * @param file - The file to create a preview for
    * @returns Preview URL string or undefined
    */
-  const createPreview = useCallback(
-    (file: File | FileMetadata): string | undefined => {
-      if (file instanceof File) {
-        return URL.createObjectURL(file);
-      }
-      return file.url;
-    },
-    [],
-  );
+  const createPreview = useCallback((file: File | FileMetadata): string | undefined => {
+    if (file instanceof File) {
+      return URL.createObjectURL(file);
+    }
+    return file.url;
+  }, []);
 
   /**
    * Generate a unique identifier for a file
@@ -259,11 +264,7 @@ export const useFileUpload = (
     setState((prev) => {
       // Clean up object URLs
       for (const file of prev.files) {
-        if (
-          file.preview &&
-          file.file instanceof File &&
-          file.file.type.startsWith("image/")
-        ) {
+        if (file.preview && file.file instanceof File && file.file.type.startsWith("image/")) {
           URL.revokeObjectURL(file.preview);
         }
       }
@@ -291,9 +292,7 @@ export const useFileUpload = (
    */
   const addFiles = useCallback(
     (newFiles: FileList | File[]) => {
-      if (!newFiles || newFiles.length === 0) {
-        return;
-      }
+      if (!newFiles || newFiles.length === 0) return;
 
       const newFilesArray = Array.from(newFiles);
       const errors: string[] = [];
@@ -325,8 +324,7 @@ export const useFileUpload = (
         if (multiple) {
           const isDuplicate = state.files.some(
             (existingFile) =>
-              existingFile.file.name === file.name &&
-              existingFile.file.size === file.size,
+              existingFile.file.name === file.name && existingFile.file.size === file.size,
           );
 
           // Skip duplicate files silently
@@ -363,9 +361,7 @@ export const useFileUpload = (
         onFilesAdded?.(validFiles);
 
         setState((prev) => {
-          const newFiles = !multiple
-            ? validFiles
-            : [...prev.files, ...validFiles];
+          const newFiles = !multiple ? validFiles : [...prev.files, ...validFiles];
           onFilesChange?.(newFiles);
           return {
             ...prev,
@@ -502,7 +498,7 @@ export const useFileUpload = (
       if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
         // In single file mode, only use the first file
         if (!multiple) {
-          const file = e.dataTransfer.files[0]!;
+          const file = e.dataTransfer.files[0];
           addFiles([file]);
         } else {
           addFiles(e.dataTransfer.files);
@@ -591,16 +587,13 @@ export const useFileUpload = (
  * ```
  */
 export const formatBytes = (bytes: number, decimals = 2): string => {
-  if (bytes === 0) {
-    return "0 Bytes";
-  }
+  if (bytes === 0) return "0 Bytes";
 
   const k = 1024;
   const dm = decimals < 0 ? 0 : decimals;
   const sizes = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
 
   const i = Math.floor(Math.log(bytes) / Math.log(k));
-  const idx = Math.min(i, sizes.length - 1);
 
-  return `${Number.parseFloat((bytes / k ** idx).toFixed(dm))} ${sizes[idx]}`;
+  return Number.parseFloat((bytes / k ** i).toFixed(dm)) + sizes[i];
 };

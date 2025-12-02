@@ -18,10 +18,7 @@ export interface GtagWindow extends Window {
   gtag?: (
     command: "event" | "config" | "set",
     targetId: string,
-    config?: Record<
-      string,
-      string | number | boolean | object | null | undefined
-    >,
+    config?: Record<string, string | number | boolean | object | null | undefined>,
   ) => void;
 }
 
@@ -370,12 +367,7 @@ export const useAnalytics = () => {
    * @param itemId - Optional ID of the created item
    */
   const trackCreate = useCallback(
-    (
-      module: ModuleType,
-      submodule: SubModuleType,
-      itemType: string,
-      itemId?: string,
-    ) => {
+    (module: ModuleType, submodule: SubModuleType, itemType: string, itemId?: string) => {
       trackEvent({
         event_name: "crud_create",
         module,
@@ -397,12 +389,7 @@ export const useAnalytics = () => {
    * @param itemId - ID of the updated item
    */
   const trackUpdate = useCallback(
-    (
-      module: ModuleType,
-      submodule: SubModuleType,
-      itemType: string,
-      itemId: string,
-    ) => {
+    (module: ModuleType, submodule: SubModuleType, itemType: string, itemId: string) => {
       trackEvent({
         event_name: "crud_update",
         module,
@@ -430,7 +417,7 @@ export const useAnalytics = () => {
       submodule: SubModuleType,
       itemType: string,
       itemId: string,
-      isHardDelete = false,
+      isHardDelete: boolean = false,
     ) => {
       trackEvent({
         event_name: "crud_delete",

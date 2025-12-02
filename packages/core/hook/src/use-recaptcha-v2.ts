@@ -12,7 +12,7 @@ import { useCallback, useEffect, useRef } from "react";
  * Type definition for Google reCAPTCHA instance
  * Defines the available methods on the grecaptcha object
  */
-interface ReCaptchaInstance {
+type ReCaptchaInstance = {
   /** Wait for reCAPTCHA to be ready */
   ready: (callback: () => void) => void;
   /** Render reCAPTCHA widget in container */
@@ -24,7 +24,7 @@ interface ReCaptchaInstance {
   reset: (id: number) => void;
   /** Get response token from widget */
   getResponse: (id: number) => string;
-}
+};
 
 /**
  * Extended Window interface with reCAPTCHA properties
@@ -51,16 +51,11 @@ let scriptLoadPromise: Promise<void> | null = null;
  */
 function loadRecaptchaScript(): Promise<void> {
   // Return existing promise if script is already loading
-  if (scriptLoadPromise) {
-    return scriptLoadPromise;
-  }
+  if (scriptLoadPromise) return scriptLoadPromise;
 
   scriptLoadPromise = new Promise((resolve) => {
     // Check if script already exists and grecaptcha is loaded
-    if (
-      document.getElementById(RECAPTCHA_SCRIPT_ID) &&
-      (window as RecaptchaWindow).grecaptcha
-    ) {
+    if (document.getElementById(RECAPTCHA_SCRIPT_ID) && (window as RecaptchaWindow).grecaptcha) {
       resolve();
       return;
     }
@@ -73,8 +68,7 @@ function loadRecaptchaScript(): Promise<void> {
     // Create and append the reCAPTCHA script element
     const script = document.createElement("script");
     script.id = RECAPTCHA_SCRIPT_ID;
-    script.src =
-      "https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoaded&render=explicit";
+    script.src = `https://www.google.com/recaptcha/api.js?onload=onRecaptchaLoaded&render=explicit`;
     script.async = true;
     script.defer = true;
 
@@ -154,12 +148,8 @@ export function useRecaptchaV2(siteKey: string) {
    */
   const initializeRecaptcha = useCallback(async () => {
     // Prevent multiple simultaneous initialization attempts
-    if (isInitializing.current) {
-      return;
-    }
-    if (!(containerRef.current && siteKey)) {
-      return;
-    }
+    if (isInitializing.current) return;
+    if (!containerRef.current || !siteKey) return;
 
     isInitializing.current = true;
 
@@ -211,7 +201,7 @@ export function useRecaptchaV2(siteKey: string) {
   useEffect(() => {
     // Initialize reCAPTCHA when container is available
     if (containerRef.current) {
-      void initializeRecaptcha();
+      initializeRecaptcha();
     }
 
     // Cleanup function to reset widget on unmount
@@ -258,9 +248,7 @@ export function useRecaptchaV2(siteKey: string) {
    */
   const resetCaptcha = () => {
     const grecaptcha = (window as RecaptchaWindow).grecaptcha;
-    if (!grecaptcha || widgetId.current === null) {
-      return;
-    }
+    if (!grecaptcha || widgetId.current === null) return;
 
     try {
       grecaptcha.reset(widgetId.current);

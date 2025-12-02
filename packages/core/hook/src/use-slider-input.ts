@@ -83,18 +83,12 @@ interface UseSliderInputProps {
  * }
  * ```
  */
-export function useSliderInput({
-  minValue,
-  maxValue,
-  initialValue,
-}: UseSliderInputProps) {
+export function useSliderInput({ minValue, maxValue, initialValue }: UseSliderInputProps) {
   /** State for slider component values */
-  const [sliderValues, setSliderValues] =
-    useState<[number, number]>(initialValue);
+  const [sliderValues, setSliderValues] = useState<[number, number]>(initialValue);
 
   /** State for input field values (may temporarily differ from slider) */
-  const [inputValues, setInputValues] =
-    useState<[number, number]>(initialValue);
+  const [inputValues, setInputValues] = useState<[number, number]>(initialValue);
 
   /**
    * Handle slider value changes and sync with input values
@@ -116,7 +110,7 @@ export function useSliderInput({
    */
   const handleInputChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>, index: 0 | 1) => {
-      const newValue = Number.parseFloat(e.target.value);
+      const newValue = parseFloat(e.target.value);
 
       // Only update if the value is a valid number
       if (!Number.isNaN(newValue)) {

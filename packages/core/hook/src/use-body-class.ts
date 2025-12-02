@@ -33,9 +33,7 @@ import { useEffect } from "react";
 export const useBodyClasses = (className: string) => {
   useEffect(() => {
     // Early return if no className provided
-    if (!className.trim()) {
-      return;
-    }
+    if (!className.trim()) return;
 
     // Split classNames by spaces, including multi-line support
     const classList = className.split(/\s+/).filter(Boolean);

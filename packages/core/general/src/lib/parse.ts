@@ -19,17 +19,11 @@
  * ```
  */
 export function normalizePath(input: string): string {
-  if (!input) {
-    return "/";
-  }
+  if (!input) return "/";
   let p = input.trim();
-  if (!p.startsWith("/")) {
-    p = `/${p}`;
-  }
+  if (!p.startsWith("/")) p = `/${p}`;
   p = p.replace(/\/{2,}/g, "/");
-  if (p.length > 1 && p.endsWith("/")) {
-    p = p.slice(0, -1);
-  }
+  if (p.length > 1 && p.endsWith("/")) p = p.slice(0, -1);
   return p;
 }
 
@@ -110,8 +104,7 @@ export const parse =
     // Extract and process search parameters
     const searchParams = req.nextUrl.searchParams.toString();
     const searchParamsObj = Object.fromEntries(req.nextUrl.searchParams);
-    const searchParamsString =
-      searchParams.length > 0 ? `?${searchParams}` : "";
+    const searchParamsString = searchParams.length > 0 ? `?${searchParams}` : "";
 
     // Construct full path including query parameters
     const fullPath = `${path}${searchParamsString}`;
@@ -119,8 +112,7 @@ export const parse =
     // Extract path components with proper URL decoding
     // This handles international characters (Hebrew, Arabic, Chinese, etc.)
     const pathSegments = path.split("/").filter(Boolean);
-    const key =
-      pathSegments.length > 0 ? decodeURIComponent(pathSegments[0]) : "";
+    const key = pathSegments.length > 0 ? decodeURIComponent(pathSegments[0]) : "";
     const fullKey = path.length > 1 ? decodeURIComponent(path.slice(1)) : "";
 
     return {

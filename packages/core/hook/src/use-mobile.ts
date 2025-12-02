@@ -116,9 +116,7 @@ export function useIsMobile(breakpoint: number = DEFAULT_MOBILE_BREAKPOINT) {
    * Starts as undefined to handle SSR properly and prevent hydration mismatches
    * Will be updated to actual boolean value after client-side mount
    */
-  const [isMobile, setIsMobile] = React.useState<boolean | undefined>(
-    undefined,
-  );
+  const [isMobile, setIsMobile] = React.useState<boolean | undefined>(undefined);
 
   React.useEffect(() => {
     /**

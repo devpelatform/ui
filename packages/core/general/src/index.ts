@@ -8,20 +8,20 @@ export { cva, type VariantProps } from "class-variance-authority";
 /************************************
  **** COMPONENTS
  *************************************/
-export * from "./components/icons.js";
+export * from "./components/icons";
 
 /************************************
  **** LIBRARIES
  *************************************/
-export * from "./lib/analytics.js";
-export * from "./lib/assets.js";
-export * from "./lib/colors.js";
-export * from "./lib/ip.js";
-export * from "./lib/parse.js";
-export * from "./lib/utils.js";
+export * from "./lib/analytics";
+export * from "./lib/assets";
+export * from "./lib/colors";
+export * from "./lib/ip";
+export * from "./lib/parse";
+export * from "./lib/utils";
 
 /************************************
  **** TYPES
  *************************************/
-export * from "./types/components.js";
-export * from "./types/menu.js";
+export * from "./types/components";
+export * from "./types/menu";

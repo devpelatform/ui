@@ -1,11 +1,4 @@
 {
   "extends": "@pelatform/tsconfig/tsconfig.react.json",
-  "compilerOptions": {
-    "rootDir": "./src",
-    "outDir": "./dist",
-    "tsBuildInfoFile": "./dist/.tsbuildinfo",
-    "composite": false,
-    "isolatedDeclarations": false
-  },
   "include": ["src/**/*"]
 }

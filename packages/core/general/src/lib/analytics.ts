@@ -19,10 +19,7 @@ declare global {
     gtag?: (
       command: "event" | "config" | "set",
       targetId: string,
-      config?: Record<
-        string,
-        string | number | boolean | object | null | undefined
-      >,
+      config?: Record<string, string | number | boolean | object | null | undefined>,
     ) => void;
   }
 }
@@ -37,9 +34,7 @@ declare global {
 export const googleTrackEvent = ({ name, properties }: EventProps) => {
   // Validate required parameters
   if (!name || typeof name !== "string" || name.trim().length === 0) {
-    console.warn(
-      "Analytics: Event name is required and must be a non-empty string",
-    );
+    console.warn("Analytics: Event name is required and must be a non-empty string");
     return;
   }
 

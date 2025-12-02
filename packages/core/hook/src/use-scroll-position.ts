@@ -6,8 +6,7 @@
 
 "use client";
 
-import type { RefObject } from "react";
-import { useEffect, useState } from "react";
+import { type RefObject, useEffect, useState } from "react";
 
 /**
  * Configuration options for the scroll position hook
@@ -80,9 +79,7 @@ interface UseScrollPositionProps {
  * }
  * ```
  */
-const useScrollPosition = ({
-  targetRef,
-}: UseScrollPositionProps = {}): number => {
+const useScrollPosition = ({ targetRef }: UseScrollPositionProps = {}): number => {
   /** State to track current scroll position */
   const [scrollPosition, setScrollPosition] = useState<number>(0);
 

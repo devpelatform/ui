@@ -116,8 +116,9 @@ export const useMenu = (pathname: string): UseMenuReturn => {
   const isActive = (path: string | undefined): boolean => {
     if (path && path === "/") {
       return path === pathname;
+    } else {
+      return !!path && pathname.startsWith(path);
     }
-    return !!path && pathname.startsWith(path);
   };
 
   /**
@@ -128,13 +129,10 @@ export const useMenu = (pathname: string): UseMenuReturn => {
    * @returns True if any child or nested child is active
    */
   const hasActiveChild = (children: MenuItem[] | undefined): boolean => {
-    if (!(children && Array.isArray(children))) {
-      return false;
-    }
+    if (!children || !Array.isArray(children)) return false;
     return children.some(
       (child: MenuItem) =>
-        (child.path && isActive(child.path)) ||
-        (child.children && hasActiveChild(child.children)),
+        (child.path && isActive(child.path)) || (child.children && hasActiveChild(child.children)),
     );
   };
 
@@ -188,10 +186,7 @@ export const useMenu = (pathname: string): UseMenuReturn => {
    * @returns Array of menu items representing the breadcrumb trail
    */
   const getBreadcrumb = (items: MenuConfig): MenuItem[] => {
-    const findBreadcrumb = (
-      nodes: MenuItem[],
-      breadcrumb: MenuItem[] = [],
-    ): MenuItem[] => {
+    const findBreadcrumb = (nodes: MenuItem[], breadcrumb: MenuItem[] = []): MenuItem[] => {
       for (const item of nodes) {
         const currentBreadcrumb = [...breadcrumb, item];
 
@@ -202,10 +197,7 @@ export const useMenu = (pathname: string): UseMenuReturn => {
 
         // If item has children, recurse and check them
         if (item.children && item.children.length > 0) {
-          const childBreadcrumb = findBreadcrumb(
-            item.children,
-            currentBreadcrumb,
-          );
+          const childBreadcrumb = findBreadcrumb(item.children, currentBreadcrumb);
           if (childBreadcrumb.length > currentBreadcrumb.length) {
             return childBreadcrumb; // Return the deeper breadcrumb if found
           }
@@ -233,9 +225,7 @@ export const useMenu = (pathname: string): UseMenuReturn => {
         if (
           (item.path &&
             (item.path === pathname ||
-              (item.path !== "/" &&
-                item.path !== "" &&
-                pathname.startsWith(item.path)))) ||
+              (item.path !== "/" && item.path !== "" && pathname.startsWith(item.path)))) ||
           (item.children && hasActiveChildAtLevel(item.children))
         ) {
           return true;
@@ -247,21 +237,14 @@ export const useMenu = (pathname: string): UseMenuReturn => {
     const findChildren = (
       items: MenuConfig,
       targetLevel: number,
-      currentLevel = 0,
+      currentLevel: number = 0,
     ): MenuConfig | null => {
       for (const item of items) {
         if (item.children) {
-          if (
-            targetLevel === currentLevel &&
-            hasActiveChildAtLevel(item.children)
-          ) {
+          if (targetLevel === currentLevel && hasActiveChildAtLevel(item.children)) {
             return item.children;
           }
-          const children = findChildren(
-            item.children,
-            targetLevel,
-            currentLevel + 1,
-          );
+          const children = findChildren(item.children, targetLevel, currentLevel + 1);
           if (children) {
             return children;
           }
@@ -269,9 +252,7 @@ export const useMenu = (pathname: string): UseMenuReturn => {
           targetLevel === currentLevel &&
           item.path &&
           (item.path === pathname ||
-            (item.path !== "/" &&
-              item.path !== "" &&
-              pathname.startsWith(item.path)))
+            (item.path !== "/" && item.path !== "" && pathname.startsWith(item.path)))
         ) {
           return items;
         }

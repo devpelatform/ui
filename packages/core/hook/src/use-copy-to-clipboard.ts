@@ -44,10 +44,7 @@ interface UseCopyToClipboardOptions {
  * );
  * ```
  */
-export function useCopyToClipboard({
-  timeout = 2000,
-  onCopy,
-}: UseCopyToClipboardOptions = {}) {
+export function useCopyToClipboard({ timeout = 2000, onCopy }: UseCopyToClipboardOptions = {}) {
   /** State to track whether text was recently copied */
   const [copied, setCopied] = React.useState(false);
 
