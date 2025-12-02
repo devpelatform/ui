@@ -1,0 +1,53 @@
+{
+  "name": "root",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "clean": "turbo run clean",
+    "clean:all": "turbo run clean:all && rm -rf .husky .turbo bun.lock node_modules",
+    "prepare": "husky",
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "start": "turbo run start",
+    "lint": "biome check && turbo run lint",
+    "lint:fix": "biome check --write --unsafe && turbo run lint -- --fix",
+    "format": "biome format --write",
+    "format:check": "biome check --write",
+    "types:check": "turbo run types:check",
+    "version": "changeset version && bun update",
+    "release": "bash ./scripts/publish.sh"
+  },
+  "keywords": [],
+  "author": "Lukman Aviccena <lukman@pelatform.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@biomejs/biome": "^2.3.8",
+    "@changesets/changelog-github": "^0.5.2",
+    "@changesets/cli": "^2.29.8",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@pelatform/biome-config": "^0.1.1",
+    "@types/bun": "^1.3.3",
+    "@types/node": "^24.10.1",
+    "commitlint-plugin-function-rules": "^4.1.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "prettier": "^3.7.3",
+    "rimraf": "^6.1.2",
+    "turbo": "2.6.1",
+    "typescript": "^5.9.3"
+  },
+  "workspaces": [
+    "packages/**",
+    "apps/**"
+  ],
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,cjs,mjs,cts,mts}": "biome check --write --no-errors-on-unmatched",
+    "*.{md,yml,yaml}": "prettier --write",
+    "*.{json,jsonc,html}": "biome format --write --no-errors-on-unmatched"
+  },
+  "engines": {
+    "node": ">=22",
+    "bun": ">=1.0.0"
+  },
+  "packageManager": "bun@1.3.3"
+}

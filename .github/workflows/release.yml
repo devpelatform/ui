@@ -1,0 +1,74 @@
+name: Release
+
+on:
+  push:
+    paths:
+      - ".changeset/**"
+      - "packages/**"
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Git User
+        run: |
+          git config --global user.email "lukmanaviccena@gmail.com"
+          git config --global user.name "Lukman Aviccena"
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Setup Bun cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.bun/install/cache
+          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-bun-
+
+      - name: Setup npmrc
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > .npmrc
+
+      - name: Install Dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Build
+        id: build
+        continue-on-error: false
+        run: bun run build
+
+      - name: Lint
+        id: lint
+        continue-on-error: false
+        run: bun run lint:fix && bun run lint
+
+      - name: Create Release Pull Request or Publish to npm
+        if: steps.build.outcome == 'success' && steps.lint.outcome == 'success'
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          version: bun run version
+          title: "ci(changesets): :package: version packages"
+          commit: "ci(changesets): version packages"
+          publish: bun run release
+          setupGitUser: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_OPTIONS: --max-old-space-size=4096
