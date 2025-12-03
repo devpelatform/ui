@@ -1,6 +1,6 @@
 # pelatform-ui
 
-A Modern and Minimal React UI Library built with TailwindCSS. The main package that provides access to all Pelatform UI components, hooks, and utilities through a unified interface.
+A Modern and Minimal React UI Library built with TailwindCSS. The main package that provides access to all Pelatform UI components, hooks, and utilities through a unified interface. This package includes all the components, hooks, and utilities from the other Pelatform UI packages.
 
 ## Installation
 

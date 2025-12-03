@@ -1,18 +1,20 @@
-# Contributing to Bun Package Template
+# Contributing to Pelatform UI
 
-Thank you for your interest in contributing! This template aims to provide a clean, production-ready Bun monorepo setup for building and publishing TypeScript/Node packages.
+Thank you for your interest in contributing to Pelatform UI! We appreciate your time and effort in helping us build a comprehensive React UI library for TypeScript.
 
 ## Code of Conduct
 
-This project and everyone participating in it is governed by our [Code of Conduct](./CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to the maintainers via email (replace with your contact email).
+This project and everyone participating in it is governed by our [Code of Conduct](./CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to pelatformdev@gmail.com.
 
 ## Why Contribute?
 
-This template is community-driven. Your contributions help:
+Pelatform UI is a community-driven project aiming to provide a comprehensive, accessible, and well-documented UI library for the TypeScript ecosystem. Your contributions help:
 
-- Improve developer experience and documentation
-- Fix issues and enhance reliability
-- Extend tooling and workflow capabilities
+- Build better components for developers worldwide
+- Improve accessibility and user experience
+- Expand the library's capabilities
+- Fix bugs and improve performance
+- Enhance documentation for better developer experience
 
 ## Getting Started
 
@@ -27,8 +29,8 @@ This template is community-driven. Your contributions help:
 1. Fork the repository on GitHub
 2. Clone your fork locally:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
-   cd YOUR_REPOSITORY
+   git clone https://github.com/devpelatform/ui.git
+   cd ui
    ```
 3. Install dependencies:
    ```bash
@@ -44,35 +46,32 @@ This template is community-driven. Your contributions help:
 ### Running the Project
 
 ```bash
-# Run all workspaces in development mode
-bun run dev
+# Run all packages in development mode
+bun dev
 
-# Build all workspaces
-bun run build
+# Build all packages
+bun build
 
-# Type-check all workspaces
-bun run types:check
+# Type-check all packages
+bun types:check
 
-# Lint (check)
+# Lint and format code
 bun run lint
-
-# Lint (auto-fix)
-bun run lint:fix
-
-# Format code
 bun run format
 ```
 
 ### Working on a Specific Package
 
 ```bash
-# Navigate to a package directory
-cd packages/your-package
+# Navigate to the package directory
+cd packages/core/general  # or packages/core/hook
+cd packages/components/animation  # or aria, base, default
+cd packages/main  # aggregate entry package
 
-# Run package-specific commands (if defined in that package)
-bun run dev            # Development with watch mode
-bun run build          # Build the package
-bun run types:check    # Type-check the package
+# Run package-specific commands
+bun dev            # Development with watch mode
+bun build          # Build the package
+bun types:check    # Type-check the package
 ```
 
 ## Code Style
@@ -88,19 +87,17 @@ This project uses [Biome](https://biomejs.dev/) for linting and formatting to en
 - **Trailing Commas**: All
 - **Arrow Parentheses**: Always
 
-### Lint dan Format
+### Format and Lint
 
 Before committing, always run:
 
 ```bash
-# Lint (check)
+# Lint and format
 bun run lint
-
-# Lint (auto-fix)
-bun run lint:fix
-
-# Format only
 bun run format
+
+# Fix lint issues
+bun run lint:fix
 ```
 
 ## Making Changes
@@ -109,34 +106,32 @@ bun run format
 
 Use descriptive branch names:
 
-- `feature/add-new-capability` - For new features
-- `fix/build-script-bug` - For bug fixes
+- `feature/add-new-animation-component` - For new features
+- `fix/hook-hydration-bug` - For bug fixes
 - `docs/update-readme` - For documentation
-- `refactor/simplify-structure` - For refactoring
+- `refactor/simplify-components` - For refactoring
 
 ### Commit Messages
 
 Follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 ```
-feat(template): add package scaffolding script
-fix(ci): correct bun run command in workflow
-docs(readme): clarify release process
-refactor(workspace): simplify outputs in turbo.json
-test(package): add basic type check script
+feat(animation): add new text reveal component
+fix(hook): resolve hydration mismatch in useMounted
+docs(general): update utility function documentation
+refactor(base): simplify button component variants
+test(default): add unit tests for data grid filtering
 ```
 
 **Format**: `type(scope): description`
 
 **Types**:
 
-- `feat` or `feature`: New feature
+- `feat`: New feature
 - `fix`: Bug fix
 - `docs`: Documentation changes
 - `refactor`: Code refactoring
 - `test`: Adding or updating tests
-- `build`: Build system changes
-- `ci`: CI configuration changes
 - `chore`: Maintenance tasks
 
 ### Writing Code
@@ -152,17 +147,14 @@ test(package): add basic type check script
 **All changes must pass the following checks** before submitting:
 
 ```bash
-# Type-check all workspaces
-bun run types:check
+# Type-check all packages
+bun types:check
 
 # Build to ensure no build errors
-bun run build
+bun build
 
-# Lint (check)
-bun run lint
-
-# Format code
-bun run format
+# Lint and format
+bun lint:format
 ```
 
 Make sure:
@@ -206,9 +198,9 @@ Make sure:
 ### Pull Request Checklist
 
 - [ ] Code follows the project's style guidelines
-- [ ] All checks pass (`bun run types:check`)
-- [ ] Build succeeds (`bun run build`)
-- [ ] Code is properly formatted (`bun run lint:format`)
+- [ ] All tests pass (`bun types:check`)
+- [ ] Build succeeds (`bun build`)
+- [ ] Code is properly formatted (`bun lint:format`)
 - [ ] Commit messages follow conventional commits
 - [ ] Documentation is updated (if needed)
 - [ ] No breaking changes (or clearly documented if necessary)
@@ -220,8 +212,8 @@ Make sure:
 1. Create a new directory in `packages/`
 2. Copy the structure from an existing package
 3. Update `package.json` with appropriate metadata
-4. (Optional) Create `tsup.config.ts` for build configuration
-5. Ensure the package is included in the workspace
+4. Create `tsup.config.ts` for build configuration
+5. Add the package to the workspace
 
 ### Package Structure
 
@@ -243,31 +235,31 @@ This project uses [Changesets](https://github.com/changesets/changesets) for ver
 
 1. **Create a changeset**:
 
-   ```bash
-   npx changeset
-   ```
+```bash
+npx changeset
+```
 
-   Follow the prompts to describe your changes.
+Follow the prompts to describe your changes.
 
 2. **Version packages**:
 
-   ```bash
-   bun run version
-   ```
+```bash
+bun run version
+```
 
-   This updates package versions and changelogs.
+This updates package versions and changelogs.
 
 3. **Publish to npm**:
 
-   ```bash
-   bun run release
-   ```
+```bash
+bun run release
+```
 
-   This builds and publishes all changed packages.
+This builds and publishes all changed packages.
 
 ## Security
 
-If you discover a security vulnerability, please report it privately as described in [SECURITY.md](./SECURITY.md). Replace the contact email with your own when using this template.
+If you discover a security vulnerability within Pelatform UI, please send an email to pelatformdev@gmail.com. All security vulnerabilities will be promptly addressed.
 
 **Do not report security issues through public GitHub issues.**
 
@@ -276,9 +268,10 @@ If you discover a security vulnerability, please report it privately as describe
 If you have questions or need help:
 
 - Check the [documentation](./README.md) and package READMEs
-- Open an issue in your repository
-- Start a discussion in your repository
+- Search [existing issues](https://github.com/devpelatform/ui/issues) and [discussions](https://github.com/devpelatform/ui/discussions)
+- Open a new [discussion](https://github.com/devpelatform/ui/discussions) for questions
+- Open an [issue](https://github.com/devpelatform/ui/issues) for bug reports
 
 ## License
 
-By contributing to this template, you agree that your contributions will be licensed under the MIT License.
+By contributing to Pelatform UI, you agree that your contributions will be licensed under the MIT License.
