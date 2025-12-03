@@ -23,7 +23,7 @@
     },
     "packages/components/animation": {
       "name": "@pelatform/ui.animation",
-      "version": "0.0.1",
+      "version": "0.1.0",
       "devDependencies": {
         "@pelatform/tsconfig": "^0.1.1",
         "@pelatform/ui.general": "workspace:*",
@@ -43,7 +43,7 @@
     },
     "packages/components/aria": {
       "name": "@pelatform/ui.aria",
-      "version": "0.0.1",
+      "version": "0.1.0",
       "dependencies": {
         "react-aria-components": "^1.13.0",
       },
@@ -62,7 +62,7 @@
     },
     "packages/components/base": {
       "name": "@pelatform/ui.base",
-      "version": "0.0.1",
+      "version": "0.1.0",
       "dependencies": {
         "@base-ui-components/react": "1.0.0-beta.7",
         "@tanstack/react-form": "^1.27.0",
@@ -87,7 +87,7 @@
     },
     "packages/components/default": {
       "name": "@pelatform/ui.default",
-      "version": "0.0.1",
+      "version": "0.1.0",
       "dependencies": {
         "@dnd-kit/core": "^6.3.1",
         "@dnd-kit/modifiers": "^9.0.0",
