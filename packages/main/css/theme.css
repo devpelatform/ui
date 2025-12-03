@@ -1,0 +1,243 @@
+@import "tw-animate-css";
+
+@import "@pelatform/ui.animation/css";
+@import "@pelatform/ui.aria/css";
+@import "@pelatform/ui.base/css";
+@import "@pelatform/ui.default/css";
+
+@import "./components/apexcharts.css";
+@import "./components/book.css";
+@import "./components/image-input.css";
+@import "./components/leaflet.css";
+@import "./components/patterns.css";
+@import "./components/rating.css";
+@import "./components/scrollable.css";
+@import "./components/theme-transition.css";
+@import "./components/extra.css";
+
+@source "../src/.";
+@source "../dist/.";
+
+@custom-variant dark (&:is(.dark *));
+
+/** Colors **/
+:root {
+  /** Base Colors **/
+  --background: var(--color-white);
+  --foreground: var(--color-zinc-950);
+
+  --card: var(--color-white);
+  --card-foreground: var(--color-zinc-950);
+
+  --popover: var(--color-white);
+  --popover-foreground: var(--color-zinc-950);
+
+  --primary: var(--color-blue-500);
+  --primary-foreground: var(--color-white);
+
+  --secondary: var(--color-zinc-100);
+  --secondary-foreground: var(--color-zinc-900);
+
+  --muted: var(--color-zinc-100);
+  --muted-foreground: var(--color-zinc-500);
+
+  --accent: var(--color-zinc-100);
+  --accent-foreground: var(--color-zinc-900);
+
+  --destructive: var(--color-red-600);
+  --destructive-foreground: var(--color-white);
+
+  --chart-1: var(--color-blue-500);
+  --chart-2: var(--color-green-500);
+  --chart-3: var(--color-yellow-500);
+  --chart-4: var(--color-red-500);
+  --chart-5: var(--color-purple-500);
+
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+
+  /** Base Styles **/
+  --border: oklch(94% 0.004 286.32); /* between zinc-100 and zinc-200 */
+  --input: var(--color-zinc-200);
+  --ring: var(--color-zinc-400);
+  --radius: 0.5rem;
+
+  /** Dashboard **/
+  --sidebar-width: 280px;
+  --header-height: 60px;
+
+  /** Grid color **/
+  --grid-base-color: rgba(66, 71, 112, 0.09);
+  --grid-dots-color: rgba(66, 71, 112, 0.09);
+}
+
+.dark {
+  /** Base Colors **/
+  --background: var(--color-zinc-950);
+  --foreground: var(--color-zinc-50);
+
+  --card: var(--color-zinc-950);
+  --card-foreground: var(--color-zinc-50);
+
+  --popover: var(--color-zinc-950);
+  --popover-foreground: var(--color-zinc-50);
+
+  --primary: var(--color-blue-600);
+  --primary-foreground: var(--color-white);
+
+  --secondary: var(--color-zinc-800);
+  --secondary-foreground: var(--color-zinc-50);
+
+  --muted: var(--color-zinc-900);
+  --muted-foreground: var(--color-zinc-500);
+
+  --accent: var(--color-zinc-900);
+  --accent-foreground: var(--color-zinc-50);
+
+  --destructive: var(--color-red-600);
+  --destructive-foreground: var(--color-white);
+
+  --chart-1: var(--color-blue-500);
+  --chart-2: var(--color-green-500);
+  --chart-3: var(--color-yellow-500);
+  --chart-4: var(--color-red-500);
+  --chart-5: var(--color-purple-500);
+
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+
+  /** Base Styles **/
+  --border: var(--color-zinc-800);
+  --input: var(--color-zinc-800);
+  --ring: var(--color-zinc-600);
+
+  /** Grid color **/
+  --grid-base-color: rgba(255, 255, 255, 0.09);
+  --grid-dots-color: rgba(255, 255, 255, 0.09);
+}
+
+/** Theme Setup **/
+@theme inline {
+  /** Base Colors **/
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+
+  /** Base Styles **/
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
+    }
+  }
+
+  @keyframes move {
+    to {
+      transform: translateX(0);
+    }
+  }
+}
+
+/** Custom Scrollbar **/
+@layer base {
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--input);
+    border-radius: 5px;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--input) transparent;
+  }
+
+  ::selection {
+    color: var(--primary-foreground);
+    background: var(--primary);
+  }
+
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}

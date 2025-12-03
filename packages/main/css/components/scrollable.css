@@ -1,0 +1,118 @@
+@layer components {
+  /* Base scrollable styles */
+  .pf-scrollable,
+  .pf-scrollable-y,
+  .pf-scrollable-x,
+  .pf-scrollable-hover,
+  .pf-scrollable-y-hover,
+  .pf-scrollable-x-hover,
+  .pf-scrollable-auto,
+  .pf-scrollable-y-auto,
+  .pf-scrollable-x-auto {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    position: relative;
+
+    &::-webkit-scrollbar {
+      width: 0.35rem;
+      height: 0.35rem;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border-radius: 1.25rem;
+    }
+
+    &::-webkit-scrollbar-corner {
+      background-color: transparent;
+    }
+  }
+
+  /* Overflow styles for scrollable variants */
+  .pf-scrollable,
+  .pf-scrollable-hover {
+    overflow: scroll;
+  }
+
+  .pf-scrollable-y,
+  .pf-scrollable-y-hover {
+    overflow-y: scroll;
+  }
+
+  .pf-scrollable-x,
+  .pf-scrollable-x-hover {
+    overflow-x: scroll;
+  }
+
+  .pf-scrollable-auto {
+    overflow: auto;
+  }
+
+  .pf-scrollable-y-auto {
+    overflow-y: auto;
+  }
+
+  .pf-scrollable-x-auto {
+    overflow-x: auto;
+  }
+
+  /* Scrollbar visibility and color */
+  .pf-scrollable,
+  .pf-scrollable-y,
+  .pf-scrollable-x,
+  .pf-scrollable-auto,
+  .pf-scrollable-y-auto,
+  .pf-scrollable-x-auto,
+  .pf-scrollable-hover:hover,
+  .pf-scrollable-y-hover:hover,
+  .pf-scrollable-x-hover:hover {
+    scrollbar-color: var(--scrollbar-thumb-color, var(--color-input)) transparent;
+
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--scrollbar-thumb-color, var(--color-input));
+    }
+
+    &::-webkit-scrollbar-corner {
+      background-color: transparent;
+    }
+  }
+
+  /* Target safari browser only */
+  @supports (-webkit-hyphens: none) {
+    .pf-scrollable,
+    .pf-scrollable-hover {
+      overflow: auto;
+    }
+
+    .pf-scrollable-y,
+    .pf-scrollable-y-hover {
+      overflow-y: auto;
+    }
+
+    .pf-scrollable-x,
+    .pf-scrollable-x-hover {
+      overflow-x: auto;
+    }
+  }
+
+  /* Responsive adjustments for smaller screens (lg) */
+  @media (max-width: 64rem) {
+    .pf-scrollable,
+    .pf-scrollable-hover {
+      overflow: auto;
+    }
+
+    .pf-scrollable-y,
+    .pf-scrollable-y-hover {
+      overflow-y: auto;
+    }
+
+    .pf-scrollable-x,
+    .pf-scrollable-x-hover {
+      overflow-x: auto;
+    }
+  }
+}

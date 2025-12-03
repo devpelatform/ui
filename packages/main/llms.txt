@@ -1,0 +1,192 @@
+# Pelatform UI - AI Assistant Guide
+
+This file provides guidance for AI assistants (LLMs) when helping developers use pelatform-ui.
+
+## Package Overview
+
+pelatform-ui is the main entry point for the Pelatform UI library. It aggregates all sub-packages into a unified interface with organized import paths.
+
+## Import Patterns
+
+### Core Utilities
+```typescript
+// Utilities and types from @pelatformui/general
+import { cn, cva, googleTrackEvent, getAssetsUrl } from 'pelatform-ui'
+```
+
+### Hooks
+```typescript
+// All 15 hooks from @pelatformui/hook
+import { useHydrated, useMobile, useMediaQuery, useAnalytics } from 'pelatform-ui/hooks'
+```
+
+### Animation Components
+```typescript
+// 14 animation components
+import { ShimmeringText, CountingNumber, TextReveal, Marquee } from 'pelatform-ui/animation'
+```
+
+### ARIA Components
+```typescript
+// Accessible components
+import { DateField, TimeField, ShowMore } from 'pelatform-ui/aria'
+```
+
+### Base Components
+```typescript
+// 40+ headless components
+import { Button, Input, Select, Dialog } from 'pelatform-ui/base'
+```
+
+### Default Components
+```typescript
+// 71 styled components
+import { Card, DataGrid, Kanban, Calendar, Stepper } from 'pelatform-ui/default'
+```
+
+### Custom Components
+```typescript
+// Ready-to-use components for layouts, navigation, etc.
+import { SiteHeader, SiteFooter, CommandMenu, ThemeProvider } from 'pelatform-ui/components'
+```
+
+### Styles
+```typescript
+// Import all styles
+import 'pelatform-ui/css'
+```
+
+## Component Categories
+
+### Layout Components
+Auth, Blank, Body, ComingSoon, Error, Grid, Section, SiteHeader, SiteFooter, Wrapper
+
+### Navigation
+BackLink, CommandMenu, MainNav, MobileNav
+
+### Feedback
+Alert, AlertToast, AlertNotification, AlertComingsoon, Dialog, ScreenLoader
+
+### Forms (from base/default)
+Input, Textarea, Select, Checkbox, RadioGroup, Switch, Slider, InputOTP
+
+### Data Display (from base/default)
+Card, Badge, Avatar, Table, DataGrid, Calendar, Rating, Progress, Skeleton
+
+### Advanced Features (from default)
+DataGrid (with sorting, filtering, pagination), Kanban, Stepper, Tree, Carousel
+
+## Common Usage Patterns
+
+### SSR-Safe Component
+```typescript
+import { useHydrated } from 'pelatform-ui/hooks'
+
+function ClientComponent() {
+  const hydrated = useHydrated()
+  if (!hydrated) return null
+  return <div>Client-only content</div>
+}
+```
+
+### Theme Setup
+```typescript
+import { ThemeProvider } from 'pelatform-ui/components'
+import 'pelatform-ui/css'
+
+function App({ children }) {
+  return (
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      {children}
+    </ThemeProvider>
+  )
+}
+```
+
+### Form with Validation
+```typescript
+import { Form, FormField, Input, Button } from 'pelatform-ui/default'
+import { useForm } from 'react-hook-form'
+
+function MyForm() {
+  const form = useForm()
+  return (
+    <Form {...form}>
+      <FormField name="email" render={({ field }) => (
+        <Input {...field} placeholder="Email" />
+      )} />
+      <Button type="submit">Submit</Button>
+    </Form>
+  )
+}
+```
+
+### Data Table
+```typescript
+import { DataGrid } from 'pelatform-ui/default'
+
+function UsersTable() {
+  return (
+    <DataGrid
+      columns={columns}
+      data={data}
+      searchable
+      pagination
+      sorting
+    />
+  )
+}
+```
+
+## Key Features
+
+- **100+ Components**: Complete UI component library
+- **15 Hooks**: Common React patterns
+- **TypeScript**: Full type safety
+- **Accessibility**: WCAG 2.1 compliant
+- **Dark Mode**: Built-in theme support
+- **SSR-Safe**: Next.js compatible
+- **Tree-Shakeable**: Import only what you need
+
+## Best Practices
+
+1. Always import styles: `import 'pelatform-ui/css'`
+2. Use `useHydrated()` for client-only components in SSR
+3. Wrap app with `ThemeProvider` for theme support
+4. Use organized imports based on component source
+5. Prefer `default` components for styled UI, `base` for headless
+6. Use `animation` components for text effects and transitions
+7. Use `hooks` for common React patterns
+
+## Common Mistakes to Avoid
+
+1. Forgetting to import CSS
+2. Not using `useHydrated()` for client-only features
+3. Missing `ThemeProvider` for theme-dependent components
+4. Importing from wrong path (check component source)
+5. Not installing peer dependencies
+
+## TypeScript Types
+
+All components export comprehensive TypeScript types. Import types alongside components:
+
+```typescript
+import { Button, type ButtonProps } from 'pelatform-ui/default'
+import { useFileUpload, type FileUploadOptions } from 'pelatform-ui/hooks'
+```
+
+## Dependencies
+
+Peer dependencies that must be installed:
+- react (>=18.0.0)
+- react-dom (>=18.0.0)
+- @tanstack/react-query (>=5.90.0)
+- lucide-react (>=0.55.0)
+- motion (>=12.2.0)
+- next-themes (>=0.4.0)
+- sonner (>=2.0.0)
+
+## Version
+
+Current version: 1.0.0
+Last updated: 2025-12-03
