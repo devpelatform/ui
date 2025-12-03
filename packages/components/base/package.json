@@ -1,0 +1,72 @@
+{
+  "name": "@pelatform/ui.base",
+  "version": "0.0.1",
+  "description": "Base components of the Pelatform UI Library.",
+  "author": "Pelatform",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    "./css": "./dist/style.css",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "clean:all": "rimraf .turbo dist node_modules",
+    "dev": "tsup --watch",
+    "build": "tsup && cp src/style.css dist/style.css",
+    "types:check": "tsc --noEmit"
+  },
+  "repository": "github:devpelatform/ui",
+  "homepage": "https://github.com/devpelatform/ui",
+  "bugs": {
+    "url": "https://github.com/devpelatform/ui/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "pelatform",
+    "ui",
+    "react",
+    "nextjs",
+    "vite",
+    "components",
+    "base ui"
+  ],
+  "dependencies": {
+    "@base-ui-components/react": "1.0.0-beta.7",
+    "@tanstack/react-form": "^1.27.0",
+    "react-phone-number-input": "^3.4.14"
+  },
+  "devDependencies": {
+    "@pelatform/ui.general": "workspace:*",
+    "@pelatform/tsconfig": "^0.1.1",
+    "@types/react": "^19.2.7",
+    "lucide-react": "^0.555.0",
+    "react": "^19.2.0",
+    "react-hook-form": "^7.67.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "@pelatform/ui.general": ">=0.1.0",
+    "lucide-react": ">=0.5.0",
+    "react": ">=18.0.0 || >=19.0.0-rc.0",
+    "react-hook-form": ">=7.5.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,cjs,mjs,cts,mts}": "biome check --write --no-errors-on-unmatched",
+    "*.{md,yml,yaml}": "prettier --write",
+    "*.{json,jsonc,html}": "biome format --write --no-errors-on-unmatched"
+  }
+}
