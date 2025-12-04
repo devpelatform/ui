@@ -1,5 +1,14 @@
 # pelatform-ui
 
+## 1.1.3
+
+### Patch Changes
+
+- [`48cdbae`](https://github.com/devpelatform/ui/commit/48cdbaeec09874f8c5563e6f02f9931b808529bb) Thanks [@lukmanaviccena](https://github.com/lukmanaviccena)! -
+
+- Updated dependencies [[`48cdbae`](https://github.com/devpelatform/ui/commit/48cdbaeec09874f8c5563e6f02f9931b808529bb)]:
+  - @pelatform/ui.base@0.1.3
+
 ## 1.1.2
 
 ### Patch Changes
