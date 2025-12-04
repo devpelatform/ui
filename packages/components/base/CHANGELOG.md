@@ -1,5 +1,11 @@
 # @pelatform/ui.base
 
+## 0.1.3
+
+### Patch Changes
+
+- [`48cdbae`](https://github.com/devpelatform/ui/commit/48cdbaeec09874f8c5563e6f02f9931b808529bb) Thanks [@lukmanaviccena](https://github.com/lukmanaviccena)! - Update @base-ui-components/react to latest version
+
 ## 0.1.2
 
 ### Patch Changes
