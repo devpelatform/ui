@@ -1,5 +1,13 @@
 # @pelatform/ui.general
 
+## 0.1.2
+
+### Patch Changes
+
+- [`94b5b73`](https://github.com/devpelatform/ui/commit/94b5b73b319b09a3b7b7b3f8076a60cb93f9d5bf) Thanks [@lukmanaviccena](https://github.com/lukmanaviccena)! - Updated dependencies
+
+- [`94b5b73`](https://github.com/devpelatform/ui/commit/94b5b73b319b09a3b7b7b3f8076a60cb93f9d5bf) Thanks [@lukmanaviccena](https://github.com/lukmanaviccena)! - Add image processing utilities for resize, crop and encoding
+
 ## 0.1.1
 
 ### Patch Changes
