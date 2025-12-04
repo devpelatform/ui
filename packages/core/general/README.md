@@ -102,6 +102,27 @@ const className = cn(
 );
 ```
 
+#### Image Processing
+
+Resize, crop, and encode images using browser APIs.
+
+```typescript
+import {
+  resizeAndCropImage,
+  loadImage,
+  fileToBase64,
+} from "@pelatform/ui.general";
+
+// Resize to centered square 256x256 and export as WebP
+const processed = await resizeAndCropImage(file, "avatar", 256, "webp");
+
+// Load File as HTMLImageElement
+const img = await loadImage(file);
+
+// Convert File to Base64 data URL
+const base64 = await fileToBase64(file);
+```
+
 ### Components
 
 #### Icons
@@ -187,6 +208,9 @@ const buttonVariants = cva("button-base", {
 - **`parse(request)`** - Parse Next.js request object
 - **`normalizePath(input)`** - Normalize URL pathname
 - **`cn(...inputs)`** - Merge Tailwind CSS class names
+- **`resizeAndCropImage(file, name, size, extension)`** - Center-crop and resize to square
+- **`loadImage(file)`** - Load a File into HTMLImageElement
+- **`fileToBase64(file)`** - Convert File to Base64 data URL
 
 ### Constants
 

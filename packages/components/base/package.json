@@ -46,11 +46,11 @@
   },
   "devDependencies": {
     "@pelatform/ui.general": "workspace:*",
-    "@pelatform/tsconfig": "^0.1.1",
+    "@pelatform/tsconfig": "^0.1.2",
     "@types/react": "^19.2.7",
     "lucide-react": "^0.555.0",
-    "react": "^19.2.0",
-    "react-hook-form": "^7.67.0",
+    "react": "^19.2.1",
+    "react-hook-form": "^7.68.0",
     "tsup": "^8.5.1",
     "typescript": "^5.9.3"
   },

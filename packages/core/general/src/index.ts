@@ -16,6 +16,7 @@ export * from "./components/icons";
 export * from "./lib/analytics";
 export * from "./lib/assets";
 export * from "./lib/colors";
+export * from "./lib/images";
 export * from "./lib/ip";
 export * from "./lib/parse";
 export * from "./lib/utils";
