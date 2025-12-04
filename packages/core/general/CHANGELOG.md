@@ -1,5 +1,11 @@
 # @pelatform/ui.general
 
+## 0.1.3
+
+### Patch Changes
+
+- [`34f1765`](https://github.com/devpelatform/ui/commit/34f1765f13cecde865b88c706e8cf6213d7d2ef7) Thanks [@lukmanaviccena](https://github.com/lukmanaviccena)! - add email utilities and constants modules
+
 ## 0.1.2
 
 ### Patch Changes
