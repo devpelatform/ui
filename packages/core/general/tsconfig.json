@@ -1,4 +1,7 @@
 {
   "extends": "@pelatform/tsconfig/tsconfig.react.json",
+  "compilerOptions": {
+    "types": ["bun"]
+  },
   "include": ["src/**/*"]
 }

@@ -123,6 +123,52 @@ const img = await loadImage(file);
 const base64 = await fileToBase64(file);
 ```
 
+#### Email Utilities
+
+Validate, normalize, and analyze email addresses.
+
+```typescript
+import {
+  validateEmail,
+  normalizeEmail,
+  isDisposableEmail,
+  isBusinessEmail,
+  getEmailDomain,
+} from "@pelatform/ui.general";
+
+// Validate and enforce business email
+const result = validateEmail("john@company.com", { requireBusiness: true });
+if (!result.isValid) throw new Error(result.error || "Invalid email");
+
+// Normalize user input
+const normalized = normalizeEmail(" User.Name+tag@gmail.com ");
+
+// Checks
+const isDisposable = isDisposableEmail("temp@10minutemail.com");
+const isBusiness = isBusinessEmail("jane@enterprise.org");
+const domain = getEmailDomain("user@example.com");
+```
+
+#### Application Constants
+
+Environment flags and shared query param keys.
+
+```typescript
+import {
+  isDevelopment,
+  isStaging,
+  isProduction,
+  REDIRECT_QUERY_PARAM,
+} from "@pelatform/ui.general";
+
+if (isProduction) {
+  // Enable production optimizations
+}
+
+// Use consistent redirect query name
+const loginUrl = `/login?${REDIRECT_QUERY_PARAM}=/dashboard`;
+```
+
 ### Components
 
 #### Icons
@@ -211,12 +257,19 @@ const buttonVariants = cva("button-base", {
 - **`resizeAndCropImage(file, name, size, extension)`** - Center-crop and resize to square
 - **`loadImage(file)`** - Load a File into HTMLImageElement
 - **`fileToBase64(file)`** - Convert File to Base64 data URL
+- **`validateEmail(email, options)`** - Validate email with domain checks
+- **`normalizeEmail(email)`** - Normalize common email formats
+- **`isDisposableEmail(email)`** - Check disposable email domains
+- **`isBusinessEmail(email)`** - Detect business vs free email
+- **`getEmailDomain(email)`** - Extract domain part from email
 
 ### Constants
 
 - **`THEME_MODES`** - Available theme modes (light, dark, system)
 - **`META_THEME_COLORS`** - Theme color mapping
 - **`DEFAULT_THEME_MODE`** - Default theme mode ('system')
+- **`isDevelopment` | `isStaging` | `isProduction`** - Environment flags
+- **`REDIRECT_QUERY_PARAM`** - Shared redirect query param name
 
 ### Types
 
