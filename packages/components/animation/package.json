@@ -41,7 +41,7 @@
   ],
   "devDependencies": {
     "@pelatform/ui.general": "workspace:*",
-    "@pelatform/tsconfig": "^0.1.2",
+    "@pelatform/tsconfig": "^0.1.3",
     "@types/react": "^19.2.7",
     "lucide-react": "^0.555.0",
     "motion": "^12.23.25",
