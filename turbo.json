@@ -27,7 +27,7 @@
       "persistent": true
     },
     "types:check": {
-      "dependsOn": [],
+      "dependsOn": ["^build"],
       "outputs": []
     }
   }
