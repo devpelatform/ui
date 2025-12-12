@@ -1,5 +1,11 @@
 # @pelatform/ui.general
 
+## 0.1.4
+
+### Patch Changes
+
+- [`36b8bdb`](https://github.com/devpelatform/ui/commit/36b8bdbc1d061d60b018ae54d18578a503491de4) Thanks [@lukmanaviccena](https://github.com/lukmanaviccena)! - Migrate libraries to external package and update dependencies
+
 ## 0.1.3
 
 ### Patch Changes
