@@ -13,6 +13,7 @@ export default defineConfig(() => {
       "./src/default.ts",
       "./src/hooks.ts",
       "./src/components.ts",
+      "./src/server.ts",
     ],
     format: "esm",
     target: "ES2022",

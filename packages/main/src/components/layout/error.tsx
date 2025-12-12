@@ -10,7 +10,7 @@
 import type { ReactNode } from "react";
 
 import { Badge } from "@pelatform/ui.default";
-import { cn, getAssetsUrl } from "@pelatform/ui.general";
+import { assetsUrl, cn } from "@pelatform/ui.general";
 
 /**
  * Props interface for the `ErrorComponents` component
@@ -58,12 +58,12 @@ export function ErrorComponents({
       <div className={cn("flex h-[95%] grow flex-col items-center justify-center", className)}>
         <div className="mb-10">
           <img
-            src={getAssetsUrl("media/illustrations/19.svg")}
+            src={assetsUrl("media/illustrations/19.svg")}
             className="max-h-40 dark:hidden"
             alt="illustrations"
           />
           <img
-            src={getAssetsUrl("media/illustrations/19-dark.svg")}
+            src={assetsUrl("media/illustrations/19-dark.svg")}
             className="hidden max-h-40 dark:block"
             alt="illustrations"
           />
@@ -85,12 +85,12 @@ export function ErrorComponents({
       <div className={cn("flex h-[95%] grow flex-col items-center justify-center", className)}>
         <div className="mb-10">
           <img
-            src={getAssetsUrl("media/illustrations/20.svg")}
+            src={assetsUrl("media/illustrations/20.svg")}
             className="max-h-40 dark:hidden"
             alt="illustrations"
           />
           <img
-            src={getAssetsUrl("media/illustrations/20-dark.svg")}
+            src={assetsUrl("media/illustrations/20-dark.svg")}
             className="hidden max-h-40 dark:block"
             alt="illustrations"
           />
@@ -113,12 +113,12 @@ export function ErrorComponents({
     <div className={cn("flex h-[95%] grow flex-col items-center justify-center", className)}>
       <div className="mb-10">
         <img
-          src={getAssetsUrl("media/illustrations/29.svg")}
+          src={assetsUrl("media/illustrations/29.svg")}
           className="max-h-40 dark:hidden"
           alt="illustrations"
         />
         <img
-          src={getAssetsUrl("media/illustrations/29-dark.svg")}
+          src={assetsUrl("media/illustrations/29-dark.svg")}
           className="hidden max-h-40 dark:block"
           alt="illustrations"
         />

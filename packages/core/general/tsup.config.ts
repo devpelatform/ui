@@ -5,7 +5,7 @@ export default defineConfig(() => {
     clean: true,
     dts: true,
     external: ["react"],
-    entry: ["./src/index.ts"],
+    entry: ["./src/index.ts", "./src/server.ts"],
     format: "esm",
     target: "ES2022",
   };

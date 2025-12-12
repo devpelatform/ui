@@ -3,7 +3,9 @@
 [![Version](https://img.shields.io/npm/v/@pelatform/ui.general.svg)](https://www.npmjs.com/package/@pelatform/ui.general)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Core utilities and type definitions for the Pelatform UI Library. This package provides essential utilities for analytics, asset management, theme configuration, networking, URL parsing, and CSS class management, along with TypeScript type definitions for common component patterns.
+Core utilities and type definitions for the Pelatform UI Library.
+This package now focuses on lightweight re-exports of shared utilities and server helpers,
+plus a small set of core types and components used across the UI library.
 
 ## Installation
 
@@ -17,7 +19,33 @@ npm install @pelatform/ui.general
 
 ## Features
 
-### Utilities
+### Utilities (Re-exports)
+
+This package re-exports utilities from `@pelatform/utils` so you can consume them via a single UI entry-point.
+Common helpers include class name merging, asset URL builders, and more.
+
+```typescript
+import { cn, assetsUrl } from "@pelatform/ui.general";
+import { someHelper } from "@pelatform/ui.general";
+```
+
+- `cn(...inputs)` — Tailwind-safe class merger
+- `assetsUrl(path)` — Build CDN URLs for Pelatform assets
+- All other shared helpers are also available via this package through re-export from `@pelatform/utils`.
+
+### Server Utilities
+
+Server-side helpers are available through a dedicated subpath export:
+
+```typescript
+import {} from /* server utilities */ "@pelatform/ui.general/server";
+// Or when using the aggregator package:
+// import { /* server utilities */ } from "pelatform-ui/server";
+```
+
+The server subpath is bundled and typed, and mirrors the helpers available from `@pelatform/utils/server`.
+
+### Legacy Utilities (removed)
 
 #### Analytics
 
@@ -239,6 +267,40 @@ const buttonVariants = cva("button-base", {
 });
 ```
 
+## Migration Guide
+
+This package has been simplified to primarily re-export shared utilities from `@pelatform/utils`.
+Several internal modules previously under `src/lib/*` have been removed.
+
+- Replace any deep imports from `@pelatform/ui.general/src/lib/*` with top-level imports from `@pelatform/ui.general`.
+- Use `assetsUrl(...)` instead of `getAssetsUrl(...)`.
+- For server-only helpers, import from `@pelatform/ui.general/server` (or `pelatform-ui/server` if using the aggregator).
+
+Examples:
+
+```typescript
+// Before
+import { getAssetsUrl } from "@pelatform/ui.general";
+
+// After
+import { assetsUrl } from "@pelatform/ui.general";
+```
+
+```typescript
+// Before (deep lib import)
+import { someLibHelper } from "@pelatform/ui.general/src/lib/utils";
+
+// After (top-level re-export)
+import { someLibHelper } from "@pelatform/ui.general";
+```
+
+```typescript
+// Server helpers
+import { serverHelper } from "@pelatform/ui.general/server";
+// Or
+import { serverHelper } from "pelatform-ui/server";
+```
+
 ## API Reference
 
 ### Components
@@ -247,21 +309,13 @@ const buttonVariants = cva("button-base", {
 
 ### Utilities
 
-- **`googleTrackEvent(params)`** - Track events in Google Analytics
-- **`getAssetsUrl(path)`** - Build CDN URL for assets
-- **`getFlagUrl(flag)`** - Build CDN URL for country flags
-- **`getIPAddress()`** - Retrieve client IP address
-- **`parse(request)`** - Parse Next.js request object
-- **`normalizePath(input)`** - Normalize URL pathname
 - **`cn(...inputs)`** - Merge Tailwind CSS class names
-- **`resizeAndCropImage(file, name, size, extension)`** - Center-crop and resize to square
-- **`loadImage(file)`** - Load a File into HTMLImageElement
-- **`fileToBase64(file)`** - Convert File to Base64 data URL
-- **`validateEmail(email, options)`** - Validate email with domain checks
-- **`normalizeEmail(email)`** - Normalize common email formats
-- **`isDisposableEmail(email)`** - Check disposable email domains
-- **`isBusinessEmail(email)`** - Detect business vs free email
-- **`getEmailDomain(email)`** - Extract domain part from email
+- **`assetsUrl(path)`** — Build Pelatform CDN URLs
+- Other helpers are available through re-exports from `@pelatform/utils`.
+
+### Server
+
+- Import server-only helpers via `@pelatform/ui.general/server` (or `pelatform-ui/server`).
 
 ### Constants
 
@@ -286,9 +340,10 @@ const buttonVariants = cva("button-base", {
 
 This package uses:
 
-- `class-variance-authority` - Component variant patterns
-- `clsx` - Conditional class names
-- `tailwind-merge` - Tailwind CSS class conflict resolution
+- `@pelatform/utils` — Shared cross-project utilities
+- `class-variance-authority` — Component variant patterns
+- `clsx` — Conditional class names
+- `tailwind-merge` — Tailwind CSS class conflict resolution
 
 ## Links
 
