@@ -1,5 +1,14 @@
 # @pelatform/ui.aria
 
+## 0.1.3
+
+### Patch Changes
+
+- [`36b8bdb`](https://github.com/devpelatform/ui/commit/36b8bdbc1d061d60b018ae54d18578a503491de4) Thanks [@lukmanaviccena](https://github.com/lukmanaviccena)! -
+
+- Updated dependencies [[`36b8bdb`](https://github.com/devpelatform/ui/commit/36b8bdbc1d061d60b018ae54d18578a503491de4)]:
+  - @pelatform/ui.general@0.1.4
+
 ## 0.1.2
 
 ### Patch Changes
