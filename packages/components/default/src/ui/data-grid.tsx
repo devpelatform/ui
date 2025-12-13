@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, type ReactNode, useContext } from "react";
-import type { ColumnFiltersState, Row, RowData, SortingState, Table } from "@tanstack/react-table";
+import type { ColumnFiltersState, RowData, SortingState, Table } from "@tanstack/react-table";
 
 import { cn } from "@pelatform/utils";
 
@@ -9,8 +9,9 @@ declare module "@tanstack/react-table" {
   // biome-ignore lint/correctness/noUnusedVariables: disable
   interface ColumnMeta<TData extends RowData, TValue> {
     headerTitle?: string;
-    headerClassName?: string | ((row: Row<TData>) => string | undefined);
-    cellClassName?: string | ((row: Row<TData>) => string | undefined);
+    headerClassName?: string;
+    cellClassName?: string;
+    cellClassNameFn?: (row: TData) => string;
     skeleton?: ReactNode;
     expandedContent?: (row: TData) => ReactNode;
   }

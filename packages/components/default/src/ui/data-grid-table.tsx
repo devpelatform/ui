@@ -345,6 +345,7 @@ function DataGridTableBodyRowCell<TData>({
         props.tableLayout?.cellBorder && "border-e",
         props.tableLayout?.columnsResizable && column.getCanResize() && "truncate",
         cell.column.columnDef.meta?.cellClassName,
+        cell.column.columnDef.meta?.cellClassNameFn?.(row.original),
         props.tableLayout?.columnsPinnable &&
           column.getCanPin() &&
           'data-pinned:bg-background/90 data-pinned:backdrop-blur-xs" [&[data-pinned=left][data-last-col=left]]:border-e! [&[data-pinned=right][data-last-col=right]]:border-s! [&[data-pinned][data-last-col]]:border-border',
