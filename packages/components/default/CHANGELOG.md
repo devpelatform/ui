@@ -1,5 +1,11 @@
 # @pelatform/ui.default
 
+## 0.1.5
+
+### Patch Changes
+
+- [`fe98c8f`](https://github.com/devpelatform/ui/commit/fe98c8fb6c10ecf9e17e776827e49661eaf43212) Thanks [@lukmanaviccena](https://github.com/lukmanaviccena)! - Add cellClassNameFn to ColumnMeta interface to allow dynamic class names based on row data.
+
 ## 0.1.4
 
 ### Patch Changes
