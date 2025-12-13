@@ -1,5 +1,14 @@
 # @pelatform/ui.aria
 
+## 0.1.4
+
+### Patch Changes
+
+- [`d1793e9`](https://github.com/devpelatform/ui/commit/d1793e9dedefe343eb2fe71fffe7f85fc03f2581) Thanks [@lukmanaviccena](https://github.com/lukmanaviccena)! - Migrate cn imports from ui.general to utils package
+
+- Updated dependencies [[`d1793e9`](https://github.com/devpelatform/ui/commit/d1793e9dedefe343eb2fe71fffe7f85fc03f2581)]:
+  - @pelatform/ui.general@0.1.5
+
 ## 0.1.3
 
 ### Patch Changes
