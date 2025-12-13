@@ -24,7 +24,7 @@ import {
 import { CSS } from "@dnd-kit/utilities";
 import { Slot } from "@radix-ui/react-slot";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 const SortableItemContext = React.createContext<{
   listeners: DraggableSyntheticListeners | undefined;

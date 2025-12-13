@@ -3,7 +3,8 @@
 import type * as React from "react";
 import { Toggle as TogglePrimitive } from "radix-ui";
 
-import { cn, cva, type VariantProps } from "@pelatform/ui.general";
+import { cva, type VariantProps } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 const toggleVariants = cva(
   "cursor-pointer inline-flex items-center justify-center rounded-md shrink-0 font-medium ring-offset-background transition-colors hover:bg-muted hover:text-muted-foreground focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-accent data-[state=on]:text-accent-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0",

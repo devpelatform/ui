@@ -4,7 +4,7 @@ import * as React from "react";
 import * as BasePhoneInput from "react-phone-number-input";
 import flags from "react-phone-number-input/flags";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 import { Button } from "./button";
 import {
   Combobox,

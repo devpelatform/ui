@@ -3,7 +3,8 @@
 import * as React from "react";
 import { Switch as SwitchPrimitive } from "radix-ui";
 
-import { cn, cva, type VariantProps } from "@pelatform/ui.general";
+import { cva, type VariantProps } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 // Define a context for `permanent` state
 const SwitchContext = React.createContext<{ permanent: boolean }>({

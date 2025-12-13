@@ -4,7 +4,8 @@ import * as React from "react";
 import { mergeProps } from "@base-ui-components/react/merge-props";
 import { useRender } from "@base-ui-components/react/use-render";
 
-import { cn, cva, type VariantProps } from "@pelatform/ui.general";
+import { cva, type VariantProps } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 export interface BadgeProps
   extends useRender.ComponentProps<"span">,

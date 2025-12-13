@@ -10,7 +10,7 @@
 import type { ReactNode } from "react";
 
 import { Badge } from "@pelatform/ui.default";
-import { assetsUrl, cn } from "@pelatform/ui.general";
+import { assetsUrl, cn } from "@pelatform/utils";
 
 /**
  * Props interface for the `ErrorComponents` component

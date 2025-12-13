@@ -16,7 +16,7 @@ import {
   useTransform,
 } from "motion/react";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 /**
  * Props interface for MovingLabel component

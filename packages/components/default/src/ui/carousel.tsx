@@ -4,7 +4,7 @@ import * as React from "react";
 import useEmblaCarousel, { type UseEmblaCarouselType } from "embla-carousel-react";
 import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 import { Button } from "./button";
 
 type CarouselApi = UseEmblaCarouselType[1];

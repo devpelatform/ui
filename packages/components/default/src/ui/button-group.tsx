@@ -2,7 +2,8 @@
 
 import { Slot } from "@radix-ui/react-slot";
 
-import { cn, cva, type VariantProps } from "@pelatform/ui.general";
+import { cva, type VariantProps } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 import { Separator } from "./separator";
 
 const buttonGroupVariants = cva(

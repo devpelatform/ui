@@ -3,7 +3,7 @@
 import type * as React from "react";
 import { Progress as ProgressPrimitive } from "radix-ui";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 function Progress({
   className,

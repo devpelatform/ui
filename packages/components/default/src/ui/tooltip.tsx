@@ -3,7 +3,7 @@
 import type * as React from "react";
 import { Tooltip as TooltipPrimitive } from "radix-ui";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 function TooltipProvider({
   delayDuration = 0,

@@ -10,7 +10,7 @@ import type { HTMLAttributes } from "react";
 
 import { Badge, type badgeVariants } from "@pelatform/ui.default";
 import type { VariantProps } from "@pelatform/ui.general";
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 /**
  * Props interface for the Announcement component

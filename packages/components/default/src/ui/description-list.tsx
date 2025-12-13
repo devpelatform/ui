@@ -1,6 +1,6 @@
 "use client";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 const DescriptionList = ({ className, ref, ...props }: React.ComponentProps<"dl">) => {
   return (

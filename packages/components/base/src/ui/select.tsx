@@ -5,7 +5,8 @@ import { isValidElement, type ReactNode } from "react";
 import { Select as SelectPrimitive } from "@base-ui-components/react/select";
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon, XIcon } from "lucide-react";
 
-import { cn, cva, type VariantProps } from "@pelatform/ui.general";
+import { cva, type VariantProps } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 // Create a Context for `indicatorPosition` and `indicator` control
 const SelectContext = React.createContext<{

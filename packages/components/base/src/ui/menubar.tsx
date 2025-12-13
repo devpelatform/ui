@@ -5,7 +5,7 @@ import { Menu as MenuPrimitive } from "@base-ui-components/react/menu";
 import { Menubar as MenubarPrimitive } from "@base-ui-components/react/menubar";
 import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 function Menubar({ className, ...props }: React.ComponentProps<typeof MenubarPrimitive>) {
   return (

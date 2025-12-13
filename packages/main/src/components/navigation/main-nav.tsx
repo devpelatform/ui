@@ -17,7 +17,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@pelatform/ui.default";
-import { cn, googleTrackEvent } from "@pelatform/ui.general";
+import { cn, googleTrackEvent } from "@pelatform/utils";
 import { DefaultLink, type SharedLink } from "../utils/shared";
 
 /**

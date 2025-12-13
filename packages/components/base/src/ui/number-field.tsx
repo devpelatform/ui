@@ -4,7 +4,8 @@ import * as React from "react";
 import { NumberField as NumberFieldPrimitive } from "@base-ui-components/react/number-field";
 import { MinusIcon, MoveHorizontalIcon, PlusIcon } from "lucide-react";
 
-import { cn, cva, type VariantProps } from "@pelatform/ui.general";
+import { cva, type VariantProps } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 type NumberFieldContextType = {
   id: string;

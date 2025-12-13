@@ -3,7 +3,7 @@
 import type * as React from "react";
 import { Separator as SeparatorPrimitive } from "@base-ui-components/react/separator";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 function Separator({
   className,

@@ -3,7 +3,7 @@
 import type * as React from "react";
 import { Popover as PopoverPrimitive } from "@base-ui-components/react/popover";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 function Popover({ ...props }: React.ComponentProps<typeof PopoverPrimitive.Root>) {
   return <PopoverPrimitive.Root data-slot="popover" {...props} />;

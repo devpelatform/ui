@@ -3,7 +3,7 @@
 import type * as React from "react";
 import { PreviewCard as BasePreviewCard } from "@base-ui-components/react";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 function PreviewCard({ ...props }: React.ComponentProps<typeof BasePreviewCard.Root>) {
   return <BasePreviewCard.Trigger delay={0} closeDelay={0} data-slot="preview-card" {...props} />;

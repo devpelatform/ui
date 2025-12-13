@@ -10,7 +10,7 @@ import type * as React from "react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 
 import { TooltipProvider } from "@pelatform/ui.default";
-import { DEFAULT_THEME_MODE, THEME_MODES } from "@pelatform/ui.general";
+import { DEFAULT_THEME_MODE, THEME_MODES } from "@pelatform/utils";
 
 /**
  * Props interface for ThemeProvider component

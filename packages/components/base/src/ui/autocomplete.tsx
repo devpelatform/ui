@@ -4,7 +4,8 @@ import type * as React from "react";
 import { Autocomplete as AutocompletePrimitive } from "@base-ui-components/react/autocomplete";
 import { XIcon } from "lucide-react";
 
-import { cn, cva, type VariantProps } from "@pelatform/ui.general";
+import { cva, type VariantProps } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 // Define input size variants (without file: part)
 const inputVariants = cva(

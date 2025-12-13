@@ -7,7 +7,7 @@
 "use client";
 
 import type { BaseComponentProps } from "@pelatform/ui.general";
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 function useMode(slug: string): string | undefined {
   return Array.isArray(slug) && slug.length > 0 ? slug[0] : undefined;

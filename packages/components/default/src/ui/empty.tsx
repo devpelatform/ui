@@ -1,6 +1,7 @@
 "use client";
 
-import { cn, cva, type VariantProps } from "@pelatform/ui.general";
+import { cva, type VariantProps } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 function Empty({ className, ...props }: React.ComponentProps<"div">) {
   return (

@@ -5,7 +5,7 @@ import { Toggle as TogglePrimitive } from "@base-ui-components/react/toggle";
 import { ToggleGroup as ToggleGroupPrimitive } from "@base-ui-components/react/toggle-group";
 
 import type { VariantProps } from "@pelatform/ui.general";
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 import { toggleVariants } from "./toggle";
 
 const ToggleGroupContext = React.createContext<VariantProps<typeof toggleVariants>>({

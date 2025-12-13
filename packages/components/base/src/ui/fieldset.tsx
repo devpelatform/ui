@@ -2,7 +2,7 @@
 
 import { Fieldset as BaseFieldset } from "@base-ui-components/react/fieldset";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 function Fieldset({ className, ...props }: React.ComponentProps<typeof BaseFieldset.Root>) {
   return (

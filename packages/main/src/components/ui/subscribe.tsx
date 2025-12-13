@@ -11,7 +11,7 @@ import { CircleAlertIcon, CircleCheckIcon } from "lucide-react";
 import { toast } from "sonner";
 
 import { Alert, AlertIcon, AlertTitle, Button, Input } from "@pelatform/ui.default";
-import { googleTrackEvent } from "@pelatform/ui.general";
+import { googleTrackEvent } from "@pelatform/utils";
 import { RecaptchaPopover } from "../utils/recaptcha-popover";
 
 /**

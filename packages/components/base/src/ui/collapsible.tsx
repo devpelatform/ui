@@ -3,7 +3,7 @@
 import type React from "react";
 import { Collapsible as BaseCollapsible } from "@base-ui-components/react/collapsible";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 function Collapsible({ ...props }: React.ComponentProps<typeof BaseCollapsible.Root>) {
   return <BaseCollapsible.Root data-slot="collapsible" {...props} />;

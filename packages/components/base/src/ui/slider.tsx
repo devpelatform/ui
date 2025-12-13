@@ -3,7 +3,7 @@
 import * as React from "react";
 import { Slider as SliderPrimitive } from "@base-ui-components/react/slider";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./tooltip";
 
 type SliderRootProps = React.ComponentProps<typeof SliderPrimitive.Root>;

@@ -3,7 +3,7 @@
 import type * as React from "react";
 import { MoreHorizontalIcon } from "lucide-react";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 const Pagination = ({ className, ...props }: React.ComponentProps<"nav">) => (
   <nav

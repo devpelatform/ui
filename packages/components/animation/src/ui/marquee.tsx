@@ -2,7 +2,7 @@
 
 import React, { type ComponentPropsWithoutRef, useRef } from "react";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 interface MarqueeProps extends ComponentPropsWithoutRef<"div"> {
   /**

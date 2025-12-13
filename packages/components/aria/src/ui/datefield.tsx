@@ -14,8 +14,8 @@ import {
   type TimeValue as TimeValueRa,
 } from "react-aria-components";
 
-import type { VariantProps } from "@pelatform/ui.general";
-import { cn, cva } from "@pelatform/ui.general";
+import { cva, type VariantProps } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 const inputVariants = cva(
   `

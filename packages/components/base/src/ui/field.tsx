@@ -2,7 +2,7 @@
 
 import { Field as BaseField } from "@base-ui-components/react/field";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 function Field({ className, ...props }: React.ComponentProps<typeof BaseField.Root>) {
   return (

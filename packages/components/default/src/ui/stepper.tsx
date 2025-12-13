@@ -3,7 +3,7 @@
 import * as React from "react";
 import { createContext, useContext } from "react";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 // Types
 type StepperOrientation = "horizontal" | "vertical";

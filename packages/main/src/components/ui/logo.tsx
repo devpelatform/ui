@@ -4,7 +4,7 @@
  * Supports theming through currentColor and customizable sizing
  */
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 /**
  * Logo Component

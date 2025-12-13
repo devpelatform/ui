@@ -17,7 +17,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@pelatform/ui.default";
-import { cn, THEME_MODES, type ThemeMode } from "@pelatform/ui.general";
+import { cn, THEME_MODES, type ThemeMode } from "@pelatform/utils";
 
 /**
  * Props interface for the ModeSwitcher component

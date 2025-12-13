@@ -12,7 +12,7 @@ import {
   useFormContext,
 } from "react-hook-form";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 import { Label } from "./label";
 
 const Form = FormProvider;

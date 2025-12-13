@@ -3,7 +3,8 @@
 import type * as React from "react";
 import { Input as BaseInput } from "@base-ui-components/react/input";
 
-import { cn, cva, type VariantProps } from "@pelatform/ui.general";
+import { cva, type VariantProps } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 // Define input size variants
 const inputVariants = cva(

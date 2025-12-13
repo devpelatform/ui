@@ -5,7 +5,7 @@ import { mergeProps } from "@base-ui-components/react/merge-props";
 import { useRender } from "@base-ui-components/react/use-render";
 import { ChevronRightIcon, MoreHorizontalIcon } from "lucide-react";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 export interface BreadcrumbLinkProps extends useRender.ComponentProps<"a"> {
   asChild?: boolean;

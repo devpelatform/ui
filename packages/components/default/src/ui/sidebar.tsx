@@ -4,8 +4,9 @@ import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { PanelLeftIcon } from "lucide-react";
 
-import { cn, cva, type VariantProps } from "@pelatform/ui.general";
+import { cva, type VariantProps } from "@pelatform/ui.general";
 import { useIsMobile } from "@pelatform/ui.hook";
+import { cn } from "@pelatform/utils";
 import { Button } from "./button";
 import { Input } from "./input";
 import { Separator } from "./separator";

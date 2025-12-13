@@ -3,7 +3,8 @@
 import type * as React from "react";
 import { Label as LabelPrimitive } from "radix-ui";
 
-import { cn, cva, type VariantProps } from "@pelatform/ui.general";
+import { cva, type VariantProps } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 const labelVariants = cva(
   "text-sm leading-none text-foreground peer-disabled:cursor-not-allowed peer-disabled:opacity-50",

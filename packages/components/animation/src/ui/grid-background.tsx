@@ -3,7 +3,7 @@
 import * as React from "react";
 import { type HTMLMotionProps, motion } from "motion/react";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 type GridSize =
   | "4:4"

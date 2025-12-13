@@ -9,7 +9,7 @@
 import type { ComponentProps } from "react";
 
 import type { LinkComponent } from "@pelatform/ui.general";
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 import { DefaultLink, type SharedLink } from "../utils/shared";
 
 /**

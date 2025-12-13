@@ -12,10 +12,6 @@
     ".": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
-    },
-    "./server": {
-      "types": "./dist/server.d.ts",
-      "default": "./dist/server.js"
     }
   },
   "scripts": {
@@ -42,10 +38,7 @@
     "components"
   ],
   "dependencies": {
-    "@pelatform/utils": "^1.0.5",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "tailwind-merge": "^3.4.0"
+    "class-variance-authority": "^0.7.1"
   },
   "devDependencies": {
     "@pelatform/tsconfig": "^0.1.3",

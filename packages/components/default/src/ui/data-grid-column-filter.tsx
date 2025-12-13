@@ -4,7 +4,7 @@ import type * as React from "react";
 import type { Column } from "@tanstack/react-table";
 import { CheckIcon, CirclePlusIcon } from "lucide-react";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 import { Badge } from "./badge";
 import { Button } from "./button";
 import {

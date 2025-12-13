@@ -4,7 +4,7 @@ import type * as React from "react";
 import { Dialog as SheetPrimitive } from "@base-ui-components/react/dialog";
 import { XIcon } from "lucide-react";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 import { buttonVariants } from "./button";
 
 function Sheet({ ...props }: React.ComponentProps<typeof SheetPrimitive.Root>) {

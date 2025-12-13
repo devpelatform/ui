@@ -3,7 +3,7 @@
 import * as React from "react";
 import { type ElementType, type ReactNode, useEffect, useRef } from "react";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 export interface VideoTextProps {
   /**

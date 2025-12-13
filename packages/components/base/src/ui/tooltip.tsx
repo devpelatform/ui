@@ -3,7 +3,8 @@
 import type * as React from "react";
 import { Tooltip as TooltipPrimitive } from "@base-ui-components/react/tooltip";
 
-import { cn, cva, type VariantProps } from "@pelatform/ui.general";
+import { cva, type VariantProps } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 function TooltipProvider({
   delay = 0,

@@ -4,7 +4,7 @@ import type * as React from "react";
 import { AlertDialog as AlertDialogPrimitive } from "@base-ui-components/react/alert-dialog";
 import { XIcon } from "lucide-react";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 import { buttonVariants } from "./button";
 
 // Base UI Alert Dialog Root

@@ -4,7 +4,8 @@ import * as React from "react";
 import { ChevronDownIcon, PlusIcon } from "lucide-react";
 import { Accordion as AccordionPrimitive } from "radix-ui";
 
-import { cn, cva, type VariantProps } from "@pelatform/ui.general";
+import { cva, type VariantProps } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 // Variants
 const accordionRootVariants = cva("", {

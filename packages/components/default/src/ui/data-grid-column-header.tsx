@@ -15,7 +15,7 @@ import {
   Settings2Icon,
 } from "lucide-react";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 import { Button } from "./button";
 import { useDataGrid } from "./data-grid";
 import {

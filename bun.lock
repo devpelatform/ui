@@ -27,6 +27,7 @@
       "devDependencies": {
         "@pelatform/tsconfig": "^0.1.3",
         "@pelatform/ui.general": "workspace:*",
+        "@pelatform/utils": "^1.0.6",
         "@types/react": "^19.2.7",
         "lucide-react": "^0.561.0",
         "motion": "^12.23.26",
@@ -36,6 +37,7 @@
       },
       "peerDependencies": {
         "@pelatform/ui.general": ">=0.1.0",
+        "@pelatform/utils": ">=1.0.6",
         "lucide-react": ">=0.5.0",
         "motion": ">=12.0.0",
         "react": ">=18.0.0 || >=19.0.0-rc.0",
@@ -50,6 +52,7 @@
       "devDependencies": {
         "@pelatform/tsconfig": "^0.1.3",
         "@pelatform/ui.general": "workspace:*",
+        "@pelatform/utils": "^1.0.6",
         "@types/react": "^19.2.7",
         "react": "^19.2.3",
         "tsup": "^8.5.1",
@@ -57,6 +60,7 @@
       },
       "peerDependencies": {
         "@pelatform/ui.general": ">=0.1.0",
+        "@pelatform/utils": ">=1.0.6",
         "react": ">=18.0.0 || >=19.0.0-rc.0",
       },
     },
@@ -71,6 +75,7 @@
       "devDependencies": {
         "@pelatform/tsconfig": "^0.1.3",
         "@pelatform/ui.general": "workspace:*",
+        "@pelatform/utils": "^1.0.6",
         "@types/react": "^19.2.7",
         "lucide-react": "^0.561.0",
         "react": "^19.2.3",
@@ -80,6 +85,7 @@
       },
       "peerDependencies": {
         "@pelatform/ui.general": ">=0.1.0",
+        "@pelatform/utils": ">=1.0.6",
         "lucide-react": ">=0.5.0",
         "react": ">=18.0.0 || >=19.0.0-rc.0",
         "react-hook-form": ">=7.5.0",
@@ -107,6 +113,7 @@
         "@pelatform/tsconfig": "^0.1.3",
         "@pelatform/ui.general": "workspace:*",
         "@pelatform/ui.hook": "workspace:*",
+        "@pelatform/utils": "^1.0.6",
         "@radix-ui/react-dialog": "^1.1.15",
         "@types/react": "^19.2.7",
         "lucide-react": "^0.561.0",
@@ -121,6 +128,7 @@
       "peerDependencies": {
         "@pelatform/ui.general": ">=0.1.0",
         "@pelatform/ui.hook": ">=0.1.0",
+        "@pelatform/utils": ">=1.0.6",
         "@radix-ui/react-dialog": ">=1.1.0",
         "lucide-react": ">=0.5.0",
         "next-themes": ">=0.4.6",
@@ -134,10 +142,7 @@
       "name": "@pelatform/ui.general",
       "version": "0.1.4",
       "dependencies": {
-        "@pelatform/utils": "^1.0.5",
         "class-variance-authority": "^0.7.1",
-        "clsx": "^2.1.1",
-        "tailwind-merge": "^3.4.0",
       },
       "devDependencies": {
         "@pelatform/tsconfig": "^0.1.3",
@@ -175,6 +180,7 @@
         "@pelatform/ui.default": "workspace:*",
         "@pelatform/ui.general": "workspace:*",
         "@pelatform/ui.hook": "workspace:*",
+        "@pelatform/utils": ">=1.0.6",
         "@radix-ui/react-dialog": "^1.1.15",
         "radix-ui": "^1.4.3",
         "tw-animate-css": "^1.4.0",
@@ -420,7 +426,7 @@
 
     "@pelatform/ui.hook": ["@pelatform/ui.hook@workspace:packages/core/hook"],
 
-    "@pelatform/utils": ["@pelatform/utils@1.0.5", "", { "dependencies": { "@paralleldrive/cuid2": "^3.1.0", "@sindresorhus/slugify": "^3.0.0", "bcryptjs": "^3.0.3", "chrono-node": "2.9.0", "clsx": "^2.1.1", "consola": "^3.4.2", "jsonwebtoken": "^9.0.3", "ms": "^2.1.3", "nanoid": "^5.1.6", "tailwind-merge": "^3.4.0" } }, "sha512-uEvTle2rs+x2XJ+coDO0pzhPix8j4eus9YrdQqlIZBI43tTHCCOlJV0lRm4QQANa64QW3Y9T01z6VnPelIPTAA=="],
+    "@pelatform/utils": ["@pelatform/utils@1.0.6", "", { "dependencies": { "@paralleldrive/cuid2": "^3.1.0", "@sindresorhus/slugify": "^3.0.0", "bcryptjs": "^3.0.3", "chrono-node": "2.9.0", "clsx": "^2.1.1", "consola": "^3.4.2", "jsonwebtoken": "^9.0.3", "ms": "^2.1.3", "nanoid": "^5.1.6", "tailwind-merge": "^3.4.0" } }, "sha512-x1E01Jn6YxB8VSRMcxhVEjXrtLOYOY5ISXg4NPzqZG/mdnwq2qQYnt8DE8LV82Pr+nKiVe84+fYEP7xo7tD2EA=="],
 
     "@radix-ui/number": ["@radix-ui/number@1.1.1", "", {}, "sha512-MkKCwxlXTgz6CFoJx3pCwn07GKp36+aZyu/u2Ln2VrA5DcdyCZkASEDBTd8x5whTQQL5CiYf4prXKLcgQdv29g=="],
 

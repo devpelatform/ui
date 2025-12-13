@@ -7,7 +7,7 @@ import type { ItemInstance } from "@headless-tree/core";
 import { ChevronDownIcon, SquareMinusIcon, SquarePlusIcon } from "lucide-react";
 import { Slot as SlotPrimitive } from "radix-ui";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 type ToggleIconType = "chevron" | "plus-minus";
 

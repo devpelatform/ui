@@ -2,7 +2,7 @@
 
 import { Loader2Icon, LoaderIcon } from "lucide-react";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 function Spinner({ className, ...props }: React.ComponentProps<"svg">) {
   return (

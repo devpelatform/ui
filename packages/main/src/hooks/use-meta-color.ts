@@ -9,7 +9,7 @@
 import * as React from "react";
 import { useTheme } from "next-themes";
 
-import { META_THEME_COLORS, THEME_MODES } from "@pelatform/ui.general";
+import { META_THEME_COLORS, THEME_MODES } from "@pelatform/utils";
 
 /**
  * Hook for managing HTML meta theme-color tag based on current theme

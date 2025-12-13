@@ -3,7 +3,7 @@
 import type * as React from "react";
 import { Toolbar as BaseToolbar } from "@base-ui-components/react/toolbar";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 import { type ButtonProps, buttonVariants } from "./button";
 
 function Toolbar({ className, ...props }: React.ComponentProps<typeof BaseToolbar.Root>) {

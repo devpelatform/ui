@@ -10,7 +10,8 @@ import {
   XIcon,
 } from "lucide-react";
 
-import { cn, cva } from "@pelatform/ui.general";
+import { cva } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 import { toastManager, useToast } from "../hooks/use-toast";
 
 export type ToastType = "default" | "loading" | "success" | "error" | "info" | "warning";

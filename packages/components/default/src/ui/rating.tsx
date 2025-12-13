@@ -3,7 +3,8 @@
 import * as React from "react";
 import { StarIcon } from "lucide-react";
 
-import { cn, cva, type VariantProps } from "@pelatform/ui.general";
+import { cva, type VariantProps } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 const ratingVariants = cva("flex items-center", {
   variants: {

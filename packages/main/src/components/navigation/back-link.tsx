@@ -10,7 +10,7 @@ import { ChevronLeftIcon } from "lucide-react";
 
 import { Button } from "@pelatform/ui.default";
 import type { BaseComponentProps } from "@pelatform/ui.general";
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 import { DefaultLink, type SharedLink } from "../utils/shared";
 
 /**

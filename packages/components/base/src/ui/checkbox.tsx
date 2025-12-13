@@ -4,7 +4,8 @@ import type * as React from "react";
 import { Checkbox as BaseCheckbox } from "@base-ui-components/react/checkbox";
 import { CheckIcon, MinusIcon } from "lucide-react";
 
-import { cn, cva, type VariantProps } from "@pelatform/ui.general";
+import { cva, type VariantProps } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 // Define the variants for the Checkbox using cva.
 const checkboxVariants = cva(

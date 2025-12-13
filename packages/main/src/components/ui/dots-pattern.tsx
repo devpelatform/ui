@@ -8,7 +8,7 @@
 
 import { useId } from "react";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 /**
  * DotsPattern Component

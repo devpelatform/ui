@@ -4,8 +4,9 @@ import type * as React from "react";
 import { CheckIcon, CopyIcon } from "lucide-react";
 import { Slot as SlotPrimitive } from "radix-ui";
 
-import { cn, cva, type VariantProps } from "@pelatform/ui.general";
+import { cva, type VariantProps } from "@pelatform/ui.general";
 import { useCopyToClipboard } from "@pelatform/ui.hook";
+import { cn } from "@pelatform/utils";
 import { Button } from "./button";
 
 export interface CodeProps

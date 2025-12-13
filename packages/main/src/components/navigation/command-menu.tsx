@@ -22,7 +22,7 @@ import type { DialogProps } from "@radix-ui/react-dialog";
 import { SearchIcon } from "lucide-react";
 
 import { Button, CommandDialog, CommandInput, CommandList } from "@pelatform/ui.default";
-import { cn, googleTrackEvent } from "@pelatform/ui.general";
+import { cn, googleTrackEvent } from "@pelatform/utils";
 
 /**
  * Props interface for the CommandMenu component

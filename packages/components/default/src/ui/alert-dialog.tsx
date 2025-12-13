@@ -4,7 +4,7 @@ import type * as React from "react";
 import { AlertDialog as AlertDialogPrimitive } from "radix-ui";
 
 import type { VariantProps } from "@pelatform/ui.general";
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 import { buttonVariants } from "./button";
 
 function AlertDialog({ ...props }: React.ComponentProps<typeof AlertDialogPrimitive.Root>) {

@@ -4,7 +4,7 @@ import * as React from "react";
 import { ToggleGroup as ToggleGroupPrimitive } from "radix-ui";
 
 import type { VariantProps } from "@pelatform/ui.general";
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 import { toggleVariants } from "./toggle";
 
 const ToggleGroupContext = React.createContext<VariantProps<typeof toggleVariants>>({

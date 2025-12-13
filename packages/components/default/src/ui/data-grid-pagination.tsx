@@ -3,7 +3,7 @@
 import type { ReactNode } from "react";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 import { Button } from "./button";
 import { useDataGrid } from "./data-grid";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./select";

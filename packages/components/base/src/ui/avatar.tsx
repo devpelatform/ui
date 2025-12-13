@@ -3,7 +3,8 @@
 import type * as React from "react";
 import { Avatar } from "@base-ui-components/react/avatar";
 
-import { cn, cva, type VariantProps } from "@pelatform/ui.general";
+import { cva, type VariantProps } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 const avatarStatusVariants = cva(
   "flex items-center rounded-full size-2 border-2 border-background",

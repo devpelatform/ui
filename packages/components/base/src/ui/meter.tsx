@@ -3,7 +3,7 @@
 import type * as React from "react";
 import { Meter as BaseMeter } from "@base-ui-components/react/meter";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 function Meter({ className, children, ...props }: React.ComponentProps<typeof BaseMeter.Root>) {
   return (

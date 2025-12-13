@@ -3,7 +3,7 @@
 import { createContext, type ReactNode, useContext } from "react";
 import type { ColumnFiltersState, Row, RowData, SortingState, Table } from "@tanstack/react-table";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 declare module "@tanstack/react-table" {
   // biome-ignore lint/correctness/noUnusedVariables: disable

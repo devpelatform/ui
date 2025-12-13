@@ -3,7 +3,7 @@
 import type * as React from "react";
 import { Progress as BaseProgress } from "@base-ui-components/react/progress";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 function Progress({
   className,

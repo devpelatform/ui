@@ -2,7 +2,7 @@
 
 import { type HTMLMotionProps, motion, type Transition } from "motion/react";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 type GradientBackgroundProps = HTMLMotionProps<"div"> & {
   transition?: Transition;

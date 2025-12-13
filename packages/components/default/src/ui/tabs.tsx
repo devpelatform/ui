@@ -3,7 +3,8 @@
 import * as React from "react";
 import { Tabs as TabsPrimitive } from "radix-ui";
 
-import { cn, cva, type VariantProps } from "@pelatform/ui.general";
+import { cva, type VariantProps } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 // Variants for TabsList
 const tabsListVariants = cva("flex items-center shrink-0", {

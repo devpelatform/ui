@@ -4,7 +4,7 @@ import type * as React from "react";
 import { Menu as MenuPrimitive } from "@base-ui-components/react/menu";
 import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 // Root - Groups all parts of the menu
 function Menu({ ...props }: React.ComponentProps<typeof MenuPrimitive.Root>) {

@@ -10,7 +10,7 @@ import type { ReactNode } from "react";
 
 import { Card, CardContent } from "@pelatform/ui.default";
 import type { BaseComponentProps } from "@pelatform/ui.general";
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 /**
  * LayoutAuth Component

@@ -3,7 +3,8 @@
 import type * as React from "react";
 import { XIcon } from "lucide-react";
 
-import { cn, cva, type VariantProps } from "@pelatform/ui.general";
+import { cva, type VariantProps } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 const alertVariants = cva("flex items-stretch w-full gap-2 group-[.toaster]:w-(--width)", {
   variants: {

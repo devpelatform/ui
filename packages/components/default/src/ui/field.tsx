@@ -2,7 +2,8 @@
 
 import { useMemo } from "react";
 
-import { cn, cva, type VariantProps } from "@pelatform/ui.general";
+import { cva, type VariantProps } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 import { Label } from "./label";
 import { Separator } from "./separator";
 

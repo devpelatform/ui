@@ -1,2 +1,2 @@
-export type * from "@pelatform/ui.general/server";
-export * from "@pelatform/ui.general/server";
+export type * from "@pelatform/utils";
+export * from "@pelatform/utils";

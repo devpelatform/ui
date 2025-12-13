@@ -11,7 +11,8 @@ import {
   type Row,
 } from "@tanstack/react-table";
 
-import { cn, cva } from "@pelatform/ui.general";
+import { cva } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 import { Checkbox } from "./checkbox";
 import { useDataGrid } from "./data-grid";
 

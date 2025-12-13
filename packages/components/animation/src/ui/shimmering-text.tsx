@@ -4,7 +4,7 @@ import type React from "react";
 import { useMemo, useRef } from "react";
 import { motion, type UseInViewOptions, useInView } from "motion/react";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 interface ShimmeringTextProps {
   /** Text to display with shimmer effect */

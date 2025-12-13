@@ -2,7 +2,7 @@
 
 import type * as React from "react";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 function Skeleton({ className, ...props }: React.ComponentProps<"div">) {
   return (

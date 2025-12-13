@@ -4,7 +4,8 @@ import type React from "react";
 import { createContext, useCallback, useContext, useMemo, useState } from "react";
 import { AlertCircleIcon, CheckIcon, PlusIcon, XIcon } from "lucide-react";
 
-import { cn, cva, type VariantProps } from "@pelatform/ui.general";
+import { cva, type VariantProps } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 import {
   Command,
   CommandEmpty,

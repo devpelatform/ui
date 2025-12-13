@@ -7,7 +7,7 @@
 "use client";
 
 import type { BaseComponentProps } from "@pelatform/ui.general";
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 /**
  * SiteFooter Component

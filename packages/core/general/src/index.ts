@@ -4,8 +4,6 @@
  **** REEXPORT
  *************************************/
 export { cva, type VariantProps } from "class-variance-authority";
-export type * from "@pelatform/utils";
-export * from "@pelatform/utils";
 
 /************************************
  **** COMPONENTS

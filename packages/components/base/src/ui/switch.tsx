@@ -3,7 +3,8 @@
 import * as React from "react";
 import { Switch as SwitchPrimitive } from "@base-ui-components/react/switch";
 
-import { cn, cva, type VariantProps } from "@pelatform/ui.general";
+import { cva, type VariantProps } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 // Define a context for `size` state
 const SwitchContext = React.createContext<{ size: "sm" | "md" | "lg" }>({

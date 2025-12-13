@@ -22,7 +22,7 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from "@pelatform/ui.default";
-import { cn, getFlagUrl } from "@pelatform/ui.general";
+import { cn, getFlagUrl } from "@pelatform/utils";
 import { DefaultImage, type SharedImage } from "../utils/shared";
 
 /**

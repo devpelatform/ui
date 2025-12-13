@@ -3,7 +3,7 @@
 import type * as React from "react";
 import { ScrollArea as ScrollAreaPrimitive } from "@base-ui-components/react/scroll-area";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 function ScrollArea({
   className,

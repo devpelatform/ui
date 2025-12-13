@@ -9,7 +9,7 @@
 import type { HTMLAttributes } from "react";
 import { PlusIcon } from "lucide-react";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 import { GridBackground } from "../ui/grid-background";
 
 /**

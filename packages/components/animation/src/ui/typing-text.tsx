@@ -9,7 +9,7 @@ import {
   type Variants,
 } from "motion/react";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 type AnimationVariant =
   | "fadeIn"

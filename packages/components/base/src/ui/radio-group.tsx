@@ -5,7 +5,8 @@ import { Radio as RadioPrimitive } from "@base-ui-components/react/radio";
 import { RadioGroup as RadioGroupPrimitive } from "@base-ui-components/react/radio-group";
 import { CircleIcon } from "lucide-react";
 
-import { cn, cva, type VariantProps } from "@pelatform/ui.general";
+import { cva, type VariantProps } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 type RadioSize = "sm" | "md" | "lg";
 

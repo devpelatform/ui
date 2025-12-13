@@ -4,7 +4,7 @@ import type * as React from "react";
 import { ChevronRightIcon, MoreHorizontalIcon } from "lucide-react";
 import { Slot as SlotPrimitive } from "radix-ui";
 
-import { cn } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 function Breadcrumb({
   ...props

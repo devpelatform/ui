@@ -4,7 +4,8 @@ import type * as React from "react";
 import { ChevronDownIcon } from "lucide-react";
 import { NavigationMenu as NavigationMenuPrimitive } from "radix-ui";
 
-import { cn, cva } from "@pelatform/ui.general";
+import { cva } from "@pelatform/ui.general";
+import { cn } from "@pelatform/utils";
 
 function NavigationMenu({
   className,
