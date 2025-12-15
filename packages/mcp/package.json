@@ -1,0 +1,29 @@
+{
+  "name": "@pelatform/mcp.ui",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MCP server for Pelatform UI documentation and code assistance",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "bin": {
+    "pelatform-mcp-ui": "dist/index.js"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "clean:all": "rimraf .turbo dist node_modules",
+    "build": "tsc",
+    "dev": "bun src/index.ts",
+    "start": "node dist/index.js",
+    "types:check": "tsc --noEmit",
+    "test": "node dist/index.js --test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.24.3",
+    "glob": "^13.0.0",
+    "zod": "^4.2.0"
+  },
+  "devDependencies": {
+    "@pelatform/tsconfig": "^0.1.3"
+  }
+}
