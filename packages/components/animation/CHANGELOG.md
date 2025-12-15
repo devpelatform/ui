@@ -1,5 +1,11 @@
 # @pelatform/ui.animation
 
+## 0.1.5
+
+### Patch Changes
+
+- [`a3935e8`](https://github.com/devpelatform/ui/commit/a3935e8c2696a5948de867db215a80f379d4d4cf) Thanks [@lukmanaviccena](https://github.com/lukmanaviccena)! - Reorder tailwind classes for consistent styling
+
 ## 0.1.4
 
 ### Patch Changes
