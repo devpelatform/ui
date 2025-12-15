@@ -1,5 +1,17 @@
 # pelatform-ui
 
+## 1.1.7
+
+### Patch Changes
+
+- [`a3935e8`](https://github.com/devpelatform/ui/commit/a3935e8c2696a5948de867db215a80f379d4d4cf) Thanks [@lukmanaviccena](https://github.com/lukmanaviccena)! - Reorder tailwind classes for consistent styling
+
+- Updated dependencies [[`a3935e8`](https://github.com/devpelatform/ui/commit/a3935e8c2696a5948de867db215a80f379d4d4cf), [`3b6a5ee`](https://github.com/devpelatform/ui/commit/3b6a5eea4184851005381d63bc84bef1f4971dd9)]:
+  - @pelatform/ui.animation@0.1.5
+  - @pelatform/ui.default@0.1.6
+  - @pelatform/ui.aria@0.1.5
+  - @pelatform/ui.base@0.1.6
+
 ## 1.1.6
 
 ### Patch Changes
