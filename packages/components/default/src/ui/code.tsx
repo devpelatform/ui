@@ -17,7 +17,7 @@ export interface CodeProps
   copyText?: string;
 }
 
-const codeVariants = cva("relative rounded-md bg-muted font-mono text-sm font-medium", {
+const codeVariants = cva("relative rounded-md bg-muted font-medium font-mono text-sm", {
   variants: {
     variant: {
       default: "bg-muted text-muted-foreground",
@@ -25,9 +25,9 @@ const codeVariants = cva("relative rounded-md bg-muted font-mono text-sm font-me
       outline: "border border-border bg-background text-foreground",
     },
     size: {
-      default: "text-sm px-2.5 py-1.5",
-      sm: "text-xs px-2 py-1.5",
-      lg: "text-base px-3 py-1.5",
+      default: "px-2.5 py-1.5 text-sm",
+      sm: "px-2 py-1.5 text-xs",
+      lg: "px-3 py-1.5 text-base",
     },
   },
   defaultVariants: {

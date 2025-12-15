@@ -26,7 +26,7 @@ function PreviewCardPopup({
     <BasePreviewCard.Popup
       data-slot="preview-card-popup"
       className={cn(
-        "-outline-offset-1 z-50 w-64 origin-(--transform-origin) rounded-md bg-popover p-4 text-popover-foreground shadow-md outline outline-border transition-[transform,scale,opacity] data-ending-style:scale-95 data-starting-style:scale-95 data-ending-style:opacity-0 data-starting-style:opacity-0",
+        "z-50 w-64 origin-(--transform-origin) rounded-md bg-popover p-4 text-popover-foreground shadow-md outline outline-border -outline-offset-1 transition-[transform,scale,opacity] data-ending-style:scale-95 data-starting-style:scale-95 data-ending-style:opacity-0 data-starting-style:opacity-0",
         className,
       )}
       {...props}
@@ -49,7 +49,7 @@ function PreviewCardArrow({
   return (
     <BasePreviewCard.Arrow
       className={cn(
-        "data-[side=right]:-rotate-90 data-[side=bottom]:-top-2 data-[side=top]:-bottom-2 data-[side=left]:right-[-13px] data-[side=right]:left-[-13px] data-[side=left]:rotate-90 data-[side=top]:rotate-180",
+        "data-[side=bottom]:-top-2 data-[side=left]:right-[-13px] data-[side=top]:-bottom-2 data-[side=right]:left-[-13px] data-[side=left]:rotate-90 data-[side=right]:-rotate-90 data-[side=top]:rotate-180",
         className,
       )}
       {...props}

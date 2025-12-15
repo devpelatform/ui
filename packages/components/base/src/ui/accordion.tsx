@@ -24,8 +24,8 @@ const accordionRootVariants = cva("", {
 const accordionItemVariants = cva("", {
   variants: {
     variant: {
-      default: "border-b border-border",
-      outline: "border border-border rounded-lg px-4",
+      default: "border-border border-b",
+      outline: "rounded-lg border border-border px-4",
       solid: "rounded-lg bg-accent/70 px-4",
     },
   },
@@ -48,7 +48,7 @@ const accordionHeaderVariants = cva("flex", {
 });
 
 const accordionTriggerVariants = cva(
-  "flex flex-1 items-center justify-between py-4 gap-2.5 text-foreground font-medium transition-all [&[data-panel-open]>svg]:rotate-180 cursor-pointer",
+  "flex flex-1 cursor-pointer items-center justify-between gap-2.5 py-4 font-medium text-foreground transition-all [&[data-panel-open]>svg]:rotate-180",
   {
     variants: {
       variant: {
@@ -70,7 +70,7 @@ const accordionTriggerVariants = cva(
 );
 
 const accordionPanelVariants = cva(
-  "h-[var(--accordion-panel-height)] overflow-hidden text-sm text-accent-foreground transition-[height] ease-out data-[ending-style]:h-0 data-[starting-style]:h-0",
+  "h-[var(--accordion-panel-height)] overflow-hidden text-accent-foreground text-sm transition-[height] ease-out data-[ending-style]:h-0 data-[starting-style]:h-0",
   {
     variants: {
       variant: {

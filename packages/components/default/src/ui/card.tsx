@@ -24,11 +24,11 @@ const useCardContext = () => {
 };
 
 // Variants
-const cardVariants = cva("flex flex-col items-stretch text-card-foreground rounded-xl", {
+const cardVariants = cva("flex flex-col items-stretch rounded-xl text-card-foreground", {
   variants: {
     variant: {
-      default: "bg-card border border-border shadow-xs black/5",
-      accent: "bg-muted shadow-xs p-1",
+      default: "black/5 border border-border bg-card shadow-xs",
+      accent: "bg-muted p-1 shadow-xs",
     },
   },
   defaultVariants: {
@@ -37,11 +37,11 @@ const cardVariants = cva("flex flex-col items-stretch text-card-foreground round
 });
 
 const cardHeaderVariants = cva(
-  "flex items-center justify-between flex-wrap px-5 min-h-14 gap-2.5",
+  "flex min-h-14 flex-wrap items-center justify-between gap-2.5 px-5",
   {
     variants: {
       variant: {
-        default: "border-b border-border",
+        default: "border-border border-b",
         accent: "",
       },
     },
@@ -55,7 +55,7 @@ const cardContentVariants = cva("grow p-5", {
   variants: {
     variant: {
       default: "",
-      accent: "bg-card rounded-t-xl last:rounded-b-xl",
+      accent: "rounded-t-xl bg-card last:rounded-b-xl",
     },
   },
   defaultVariants: {
@@ -67,7 +67,7 @@ const cardTableVariants = cva("grid grow", {
   variants: {
     variant: {
       default: "",
-      accent: "bg-card rounded-xl",
+      accent: "rounded-xl bg-card",
     },
   },
   defaultVariants: {
@@ -75,11 +75,11 @@ const cardTableVariants = cva("grid grow", {
   },
 });
 
-const cardFooterVariants = cva("flex items-center px-5 min-h-14", {
+const cardFooterVariants = cva("flex min-h-14 items-center px-5", {
   variants: {
     variant: {
-      default: "border-t border-border",
-      accent: "bg-card rounded-b-xl mt-0.5",
+      default: "border-border border-t",
+      accent: "mt-0.5 rounded-b-xl bg-card",
     },
   },
   defaultVariants: {

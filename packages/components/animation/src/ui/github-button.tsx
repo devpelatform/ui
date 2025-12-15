@@ -8,18 +8,18 @@ import { cva, type VariantProps } from "@pelatform/ui.general";
 import { cn } from "@pelatform/utils";
 
 const githubButtonVariants = cva(
-  "cursor-pointer relative overflow-hidden will-change-transform backface-visibility-hidden transform-gpu transition-transform duration-200 ease-out hover:scale-105 group focus-visible:outline-hidden inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background disabled:pointer-events-none disabled:opacity-60 [&_svg]:shrink-0",
+  "backface-visibility-hidden group relative inline-flex transform-gpu cursor-pointer items-center justify-center overflow-hidden whitespace-nowrap font-medium ring-offset-background transition-transform duration-200 ease-out will-change-transform hover:scale-105 focus-visible:outline-hidden disabled:pointer-events-none disabled:opacity-60 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         default:
-          "bg-zinc-950 hover:bg-zinc-900 text-white border-gray-700 dark:bg-zinc-50 dark:border-gray-300 dark:text-zinc-950 dark:hover:bg-zinc-50",
-        outline: "bg-background text-accent-foreground border border-input hover:bg-accent",
+          "border-gray-700 bg-zinc-950 text-white hover:bg-zinc-900 dark:border-gray-300 dark:bg-zinc-50 dark:text-zinc-950 dark:hover:bg-zinc-50",
+        outline: "border border-input bg-background text-accent-foreground hover:bg-accent",
       },
       size: {
-        default: "h-8.5 rounded-md px-3 text-[0.8125rem] leading-none [&_svg]:size-4 gap-2",
-        sm: "h-7 rounded-md px-2.5 text-xs leading-none [&_svg]:size-3.5 gap-1.5",
-        lg: "h-10 rounded-md px-4 text-sm leading-none [&_svg]:size-5 gap-2.5",
+        default: "h-8.5 gap-2 rounded-md px-3 text-[0.8125rem] leading-none [&_svg]:size-4",
+        sm: "h-7 gap-1.5 rounded-md px-2.5 text-xs leading-none [&_svg]:size-3.5",
+        lg: "h-10 gap-2.5 rounded-md px-4 text-sm leading-none [&_svg]:size-5",
       },
     },
     defaultVariants: {

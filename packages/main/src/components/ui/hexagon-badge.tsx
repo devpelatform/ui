@@ -108,7 +108,7 @@ export const HexagonBadge = ({ children, classNames }: HexagonBadgeProps) => {
       </svg>
       <div
         className={cn(
-          "-translate-y-2/4 -translate-x-2/4 absolute start-2/4 top-2/4 leading-none rtl:translate-x-2/4",
+          "absolute start-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 leading-none rtl:translate-x-2/4",
           classNames?.wraper,
         )}
       >

@@ -53,10 +53,10 @@ const selectTriggerVariants = cva(
   {
     variants: {
       size: {
-        xs: "h-7 px-2 text-xs gap-1 rounded-md",
-        sm: "h-8 px-2.5 text-xs gap-1 rounded-md",
-        md: "h-9 px-3 text-sm gap-1 rounded-md",
-        lg: "h-10 px-4 text-sm gap-1.5 rounded-md",
+        xs: "h-7 gap-1 rounded-md px-2 text-xs",
+        sm: "h-8 gap-1 rounded-md px-2.5 text-xs",
+        md: "h-9 gap-1 rounded-md px-3 text-sm",
+        lg: "h-10 gap-1.5 rounded-md px-4 text-sm",
       },
     },
     defaultVariants: {
@@ -127,7 +127,7 @@ function SelectContent({
         className={cn(
           "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 relative z-50 max-h-96 min-w-32 overflow-hidden rounded-md border border-border bg-popover text-secondary-foreground shadow-black/5 shadow-md data-[state=closed]:animate-out data-[state=open]:animate-in",
           position === "popper" &&
-            "data-[side=left]:-translate-x-1.5 data-[side=top]:-translate-y-1.5 data-[side=right]:translate-x-1.5 data-[side=bottom]:translate-y-1.5",
+            "data-[side=left]:-translate-x-1.5 data-[side=right]:translate-x-1.5 data-[side=bottom]:translate-y-1.5 data-[side=top]:-translate-y-1.5",
           className,
         )}
         position={position}
@@ -207,7 +207,7 @@ function SelectIndicator({
     <span
       data-slot="select-indicator"
       className={cn(
-        "-translate-y-1/2 absolute top-1/2 flex items-center justify-center",
+        "absolute top-1/2 flex -translate-y-1/2 items-center justify-center",
         indicatorPosition === "left" ? "start-2" : "end-2",
         className,
       )}

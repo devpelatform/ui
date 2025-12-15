@@ -22,13 +22,13 @@ function TooltipTrigger({ ...props }: React.ComponentProps<typeof TooltipPrimiti
 }
 
 const tooltipVariants = cva(
-  "z-55 animate-in fade-in-0 zoom-in-95 data-[closed]:animate-out data-[closed]:fade-out-0 data-[closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 w-fit origin-(--radix-tooltip-content-transform-origin) rounded-md px-3 py-1.5 text-xs text-balance",
+  "fade-in-0 zoom-in-95 data-[closed]:fade-out-0 data-[closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2 z-55 w-fit origin-(--radix-tooltip-content-transform-origin) animate-in text-balance rounded-md px-3 py-1.5 text-xs data-[closed]:animate-out",
   {
     variants: {
       variant: {
         default:
-          "dark:border dark:border-border bg-zinc-950 text-white dark:bg-zinc-300 dark:text-black shadow-md shadow-black/5",
-        light: "border border-border bg-background text-foreground shadow-md shadow-black/5",
+          "bg-zinc-950 text-white shadow-black/5 shadow-md dark:border dark:border-border dark:bg-zinc-300 dark:text-black",
+        light: "border border-border bg-background text-foreground shadow-black/5 shadow-md",
       },
     },
     defaultVariants: {
@@ -114,7 +114,7 @@ function TooltipArrow({ className, variant, ...props }: TooltipArrowProps) {
     <TooltipPrimitive.Arrow
       data-slot="tooltip-arrow"
       className={cn(
-        "data-[side=right]:-rotate-90 data-[side=bottom]:-top-2 data-[side=top]:-bottom-2 z-50 data-[side=left]:right-[-13px] data-[side=right]:left-[-13px] data-[side=left]:rotate-90 data-[side=top]:rotate-180",
+        "z-50 data-[side=bottom]:-top-2 data-[side=left]:right-[-13px] data-[side=top]:-bottom-2 data-[side=right]:left-[-13px] data-[side=left]:rotate-90 data-[side=right]:-rotate-90 data-[side=top]:rotate-180",
         className,
       )}
       {...props}

@@ -7,12 +7,12 @@ import { cva, type VariantProps } from "@pelatform/ui.general";
 import { cn } from "@pelatform/utils";
 
 // Variants for TabsList
-const tabsListVariants = cva("flex items-center shrink-0", {
+const tabsListVariants = cva("flex shrink-0 items-center", {
   variants: {
     variant: {
       default: "bg-accent p-1",
       button: "",
-      line: "border-b border-border",
+      line: "border-border border-b",
     },
     shape: {
       default: "",
@@ -26,10 +26,10 @@ const tabsListVariants = cva("flex items-center shrink-0", {
     },
   },
   compoundVariants: [
-    { variant: "default", size: "lg", className: "p-1.5 gap-2.5" },
-    { variant: "default", size: "md", className: "p-1 gap-2" },
-    { variant: "default", size: "sm", className: "p-1 gap-1.5" },
-    { variant: "default", size: "xs", className: "p-1 gap-1" },
+    { variant: "default", size: "lg", className: "gap-2.5 p-1.5" },
+    { variant: "default", size: "md", className: "gap-2 p-1" },
+    { variant: "default", size: "sm", className: "gap-1.5 p-1" },
+    { variant: "default", size: "xs", className: "gap-1 p-1" },
 
     {
       variant: "default",
@@ -80,33 +80,33 @@ const tabsListVariants = cva("flex items-center shrink-0", {
 
 // Variants for TabsTrigger
 const tabsTriggerVariants = cva(
-  "shrink-0 cursor-pointer whitespace-nowrap inline-flex justify-center items-center font-medium ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-disabled:pointer-events-none data-disabled:opacity-50 [&_svg]:shrink-0 [&_svg]:text-muted-foreground [&:hover_svg]:text-primary [&[data-selected]_svg]:text-primary",
+  "inline-flex shrink-0 cursor-pointer items-center justify-center whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-disabled:pointer-events-none data-disabled:opacity-50 [&:hover_svg]:text-primary [&[data-selected]_svg]:text-primary [&_svg]:shrink-0 [&_svg]:text-muted-foreground",
   {
     variants: {
       variant: {
         default:
-          "text-muted-foreground data-selected:bg-background hover:text-foreground data-selected:text-foreground data-selected:shadow-xs data-selected:shadow-black/5",
+          "text-muted-foreground hover:text-foreground data-selected:bg-background data-selected:text-foreground data-selected:shadow-black/5 data-selected:shadow-xs",
         button:
-          "focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-lg text-accent-foreground hover:text-foreground data-selected:bg-accent data-selected:text-foreground",
-        line: "border-b-2 text-muted-foreground border-transparent data-selected:border-primary hover:text-primary data-selected:text-primary",
+          "rounded-lg text-accent-foreground hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 data-selected:bg-accent data-selected:text-foreground",
+        line: "border-transparent border-b-2 text-muted-foreground hover:text-primary data-selected:border-primary data-selected:text-primary",
       },
       size: {
-        lg: "gap-2.5 [&_svg]:size-5 text-sm",
-        md: "gap-2 [&_svg]:size-4 text-sm",
-        sm: "gap-1.5 [&_svg]:size-3.5 text-xs",
-        xs: "gap-1 [&_svg]:size-3.5 text-xs",
+        lg: "gap-2.5 text-sm [&_svg]:size-5",
+        md: "gap-2 text-sm [&_svg]:size-4",
+        sm: "gap-1.5 text-xs [&_svg]:size-3.5",
+        xs: "gap-1 text-xs [&_svg]:size-3.5",
       },
     },
     compoundVariants: [
-      { variant: "default", size: "lg", className: "py-2.5 px-4 rounded-md" },
-      { variant: "default", size: "md", className: "py-1.5 px-3 rounded-md" },
-      { variant: "default", size: "sm", className: "py-1.5 px-2.5 rounded-sm" },
-      { variant: "default", size: "xs", className: "py-1 px-2 rounded-sm" },
+      { variant: "default", size: "lg", className: "rounded-md px-4 py-2.5" },
+      { variant: "default", size: "md", className: "rounded-md px-3 py-1.5" },
+      { variant: "default", size: "sm", className: "rounded-sm px-2.5 py-1.5" },
+      { variant: "default", size: "xs", className: "rounded-sm px-2 py-1" },
 
-      { variant: "button", size: "lg", className: "py-3 px-4 rounded-lg" },
-      { variant: "button", size: "md", className: "py-2.5 px-3 rounded-lg" },
-      { variant: "button", size: "sm", className: "py-2 px-2.5 rounded-md" },
-      { variant: "button", size: "xs", className: "py-1.5 px-2 rounded-md" },
+      { variant: "button", size: "lg", className: "rounded-lg px-4 py-3" },
+      { variant: "button", size: "md", className: "rounded-lg px-3 py-2.5" },
+      { variant: "button", size: "sm", className: "rounded-md px-2.5 py-2" },
+      { variant: "button", size: "xs", className: "rounded-md px-2 py-1.5" },
 
       { variant: "line", size: "lg", className: "py-3" },
       { variant: "line", size: "md", className: "py-2.5" },

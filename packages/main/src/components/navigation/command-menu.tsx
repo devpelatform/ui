@@ -222,7 +222,7 @@ export function CommandMenu({
         <SearchIcon className="mr-2 h-4 w-4" aria-hidden="true" />
         <span className="inline-flex text-muted-foreground">{searchButtonText}</span>
         <kbd
-          className="-translate-y-1/2 pointer-events-none absolute top-1/2 right-[5px] hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-medium font-mono text-[10px] opacity-100 sm:flex"
+          className="pointer-events-none absolute top-1/2 right-[5px] hidden h-5 -translate-y-1/2 select-none items-center gap-1 rounded border bg-muted px-1.5 font-medium font-mono text-[10px] opacity-100 sm:flex"
           aria-label={`Keyboard shortcut: ${keyHint}`}
         >
           {keyHint}

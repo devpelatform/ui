@@ -24,9 +24,9 @@ const inputVariants = cva(
   {
     variants: {
       variant: {
-        lg: "py-1 min-h-10 px-4 text-sm rounded-md [&~[data-slot=combobox-icon]]:end-2.5 [&~[data-slot=combobox-clear]]:end-7",
-        md: "py-1 min-h-9 px-3 text-sm rounded-md [&~[data-slot=combobox-icon]]:end-2 [&~[data-slot=combobox-clear]]:end-6",
-        sm: "py-0.5 min-h-8 px-2.5 text-xs rounded-md [&~[data-slot=combobox-icon]]:end-1.75 [&~[data-slot=combobox-clear]]:end-5.75",
+        lg: "min-h-10 rounded-md px-4 py-1 text-sm [&~[data-slot=combobox-clear]]:end-7 [&~[data-slot=combobox-icon]]:end-2.5",
+        md: "min-h-9 rounded-md px-3 py-1 text-sm [&~[data-slot=combobox-clear]]:end-6 [&~[data-slot=combobox-icon]]:end-2",
+        sm: "min-h-8 rounded-md px-2.5 py-0.5 text-xs [&~[data-slot=combobox-clear]]:end-5.75 [&~[data-slot=combobox-icon]]:end-1.75",
       },
     },
     defaultVariants: {
@@ -37,10 +37,10 @@ const inputVariants = cva(
 
 const chipsVariants = cva(
   [
-    "flex items-center flex-wrap gap-1",
-    "**:data-[slot=combobox-input]:py-0 **:data-[slot=combobox-input]:px-1.5 has-data-[slot=combobox-chip]:**:data-[slot=combobox-input]:px-0",
+    "flex flex-wrap items-center gap-1",
+    "**:data-[slot=combobox-input]:px-1.5 **:data-[slot=combobox-input]:py-0 has-data-[slot=combobox-chip]:**:data-[slot=combobox-input]:px-0",
     "**:data-[slot=combobox-input]:min-h-0 **:data-[slot=combobox-input]:flex-1",
-    "**:data-[slot=combobox-input]:border-0 **:data-[slot=combobox-input]:shadow-none **:data-[slot=combobox-input]:rounded-none",
+    "**:data-[slot=combobox-input]:rounded-none **:data-[slot=combobox-input]:border-0 **:data-[slot=combobox-input]:shadow-none",
     "**:data-[slot=combobox-input]:outline-none **:data-[slot=combobox-input]:ring-0",
   ],
   {
@@ -241,7 +241,7 @@ function ComboboxItemIndicator({
     <ComboboxPrimitive.ItemIndicator
       data-slot="combobox-item-indicator"
       className={cn(
-        "-translate-y-1/2 absolute start-2.5 top-1/2 flex items-center justify-center",
+        "absolute start-2.5 top-1/2 flex -translate-y-1/2 items-center justify-center",
         className,
       )}
       {...props}
@@ -294,7 +294,7 @@ function ComboboxClear({
     <ComboboxPrimitive.Clear
       data-slot="combobox-clear"
       className={cn(
-        "-translate-y-1/2 absolute end-6 top-1/2 cursor-pointer rounded-sm opacity-70 ring-offset-background",
+        "absolute end-6 top-1/2 -translate-y-1/2 cursor-pointer rounded-sm opacity-70 ring-offset-background",
         "opacity-60 transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none",
         "data-disabled:pointer-events-none",
         className,
@@ -316,7 +316,7 @@ function ComboboxIcon({
     <ComboboxPrimitive.Icon
       data-slot="combobox-icon"
       className={cn(
-        "-translate-y-1/2 absolute end-2 top-1/2 cursor-pointer rounded-sm opacity-70 ring-offset-background transition-opacity",
+        "absolute end-2 top-1/2 -translate-y-1/2 cursor-pointer rounded-sm opacity-70 ring-offset-background transition-opacity",
         "opacity-60 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none",
         "data-disabled:pointer-events-none",
         className,

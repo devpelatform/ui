@@ -89,7 +89,7 @@ export function BackLink({ Link = DefaultLink, children, href, className }: Back
       <Button
         variant="secondary"
         mode="icon"
-        className="group-hover:-translate-x-0.5 size-7.5! transition-transform duration-100"
+        className="size-7.5! transition-transform duration-100 group-hover:-translate-x-0.5"
       >
         <ChevronLeftIcon />
       </Button>

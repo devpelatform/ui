@@ -75,7 +75,7 @@ function ProgressCircle({
       {...props}
     >
       <svg
-        className="-rotate-90 absolute inset-0"
+        className="absolute inset-0 -rotate-90"
         width={size}
         height={size}
         viewBox={`0 0 ${size} ${size}`}

@@ -213,7 +213,7 @@ const useFilterContext = () => useContext(FilterContext);
 // Reusable input variant component for consistent styling
 const filterInputVariants = cva(
   [
-    "transition shrink-0 outline-none text-foreground relative flex items-center",
+    "relative flex shrink-0 items-center text-foreground outline-none transition",
     "has-[[data-slot=filters-input]:focus-visible]:ring-ring/30",
     "has-[[data-slot=filters-input]:focus-visible]:border-ring",
     "has-[[data-slot=filters-input]:focus-visible]:outline-none",
@@ -230,12 +230,12 @@ const filterInputVariants = cva(
     variants: {
       variant: {
         solid: "border-0 bg-secondary",
-        outline: "bg-background border border-border",
+        outline: "border border-border bg-background",
       },
       size: {
-        lg: "h-10 text-sm px-2.5 has-data-[slot=filters-prefix]:ps-0 has-data-[slot=filters-suffix]:pe-0",
-        md: "h-9 text-sm px-2 has-data-[slot=filters-prefix]:ps-0 has-data-[slot=filters-suffix]:pe-0",
-        sm: "h-8 text-xs px-1.5 has-data-[slot=filters-prefix]:ps-0 has-data-[slot=filters-suffix]:pe-0",
+        lg: "h-10 px-2.5 text-sm has-data-[slot=filters-prefix]:ps-0 has-data-[slot=filters-suffix]:pe-0",
+        md: "h-9 px-2 text-sm has-data-[slot=filters-prefix]:ps-0 has-data-[slot=filters-suffix]:pe-0",
+        sm: "h-8 px-1.5 text-xs has-data-[slot=filters-prefix]:ps-0 has-data-[slot=filters-suffix]:pe-0",
       },
       cursorPointer: {
         true: "cursor-pointer",
@@ -253,7 +253,7 @@ const filterInputVariants = cva(
 // Reusable remove button variant component
 const filterRemoveButtonVariants = cva(
   [
-    "inline-flex items-center shrink-0 justify-center transition text-muted-foreground hover:text-foreground",
+    "inline-flex shrink-0 items-center justify-center text-muted-foreground transition hover:text-foreground",
   ],
   {
     variants: {
@@ -286,7 +286,7 @@ const filterRemoveButtonVariants = cva(
 
 const filterAddButtonVariants = cva(
   [
-    "inline-flex items-center shrink-0 justify-center transition text-foreground shadow-xs shadow-black/5",
+    "inline-flex shrink-0 items-center justify-center text-foreground shadow-black/5 shadow-xs transition",
     "[&_svg:not([role=img]):not([class*=text-]):not([class*=opacity-])]:opacity-60",
   ],
   {
@@ -296,9 +296,9 @@ const filterAddButtonVariants = cva(
         outline: "border border-border hover:bg-secondary",
       },
       size: {
-        lg: "h-10 px-4 text-sm gap-1.5 [&_svg:not([class*=size-])]:size-4",
-        md: "h-9 px-3 gap-1.5 text-sm [&_svg:not([class*=size-])]:size-4",
-        sm: "h-8 px-2.5 gap-1.25 text-xs [&_svg:not([class*=size-])]:size-3.5",
+        lg: "h-10 gap-1.5 px-4 text-sm [&_svg:not([class*=size-])]:size-4",
+        md: "h-9 gap-1.5 px-3 text-sm [&_svg:not([class*=size-])]:size-4",
+        sm: "h-8 gap-1.25 px-2.5 text-xs [&_svg:not([class*=size-])]:size-3.5",
       },
       radius: {
         md: "rounded-md",
@@ -319,19 +319,19 @@ const filterAddButtonVariants = cva(
 
 const filterOperatorVariants = cva(
   [
-    "transition text-muted-foreground hover:text-foreground data-[state=open]:text-foreground shrink-0 flex items-center relative focus-visible:z-1",
+    "relative flex shrink-0 items-center text-muted-foreground transition hover:text-foreground focus-visible:z-1 data-[state=open]:text-foreground",
   ],
   {
     variants: {
       variant: {
         solid: "bg-secondary",
         outline:
-          "bg-background border border-border border-e-0 hover:bg-secondary data-[state=open]:bg-secondary [&+[data-slot=filters-remove]]:border-s",
+          "border border-border border-e-0 bg-background hover:bg-secondary data-[state=open]:bg-secondary [&+[data-slot=filters-remove]]:border-s",
       },
       size: {
-        lg: "h-10 px-4 text-sm gap-1.5",
-        md: "h-9 px-3 text-sm gap-1.25",
-        sm: "h-8 px-2.5 text-xs gap-1",
+        lg: "h-10 gap-1.5 px-4 text-sm",
+        md: "h-9 gap-1.25 px-3 text-sm",
+        sm: "h-8 gap-1 px-2.5 text-xs",
       },
       cursorPointer: {
         true: "cursor-pointer",
@@ -348,8 +348,8 @@ const filterOperatorVariants = cva(
 
 const filterFieldLabelVariants = cva(
   [
-    "flex gap-1.5 shrink-0 px-1.5 py-1 items-center text-foreground",
-    "[&_svg:not([class*=size-])]:size-3.5 [&_svg:not([class*=opacity-])]:opacity-60",
+    "flex shrink-0 items-center gap-1.5 px-1.5 py-1 text-foreground",
+    "[&_svg:not([class*=opacity-])]:opacity-60 [&_svg:not([class*=size-])]:size-3.5",
   ],
   {
     variants: {
@@ -358,9 +358,9 @@ const filterFieldLabelVariants = cva(
         outline: "border border-border border-e-0",
       },
       size: {
-        lg: "h-10 px-4 text-sm gap-1.5 [&_svg:not([class*=size-])]:size-4",
-        md: "h-9 px-3 gap-1.5 text-sm [&_svg:not([class*=size-])]:size-4",
-        sm: "h-8 px-2.5 gap-1.25 text-xs [&_svg:not([class*=size-])]:size-3.5",
+        lg: "h-10 gap-1.5 px-4 text-sm [&_svg:not([class*=size-])]:size-4",
+        md: "h-9 gap-1.5 px-3 text-sm [&_svg:not([class*=size-])]:size-4",
+        sm: "h-8 gap-1.25 px-2.5 text-xs [&_svg:not([class*=size-])]:size-3.5",
       },
       radius: {
         md: "rounded-s-md",
@@ -375,18 +375,18 @@ const filterFieldLabelVariants = cva(
 );
 
 const filterFieldValueVariants = cva(
-  "text-foreground transition shrink-0 flex items-center gap-1 relative focus-visible:z-1",
+  "relative flex shrink-0 items-center gap-1 text-foreground transition focus-visible:z-1",
   {
     variants: {
       variant: {
         solid: "bg-secondary",
         outline:
-          "bg-background border border-border hover:bg-secondary has-data-[slot=switch]:hover:bg-transparent",
+          "border border-border bg-background hover:bg-secondary has-data-[slot=switch]:hover:bg-transparent",
       },
       size: {
-        lg: "h-10 px-4 text-sm gap-1.5 [&_svg:not([class*=size-])]:size-4",
-        md: "h-9 px-3 gap-1.5 text-sm [&_svg:not([class*=size-])]:size-4",
-        sm: "h-8 px-2.5 gap-1.25 text-xs [&_svg:not([class*=size-])]:size-3.5",
+        lg: "h-10 gap-1.5 px-4 text-sm [&_svg:not([class*=size-])]:size-4",
+        md: "h-9 gap-1.5 px-3 text-sm [&_svg:not([class*=size-])]:size-4",
+        sm: "h-8 gap-1.25 px-2.5 text-xs [&_svg:not([class*=size-])]:size-3.5",
       },
       cursorPointer: {
         true: "cursor-pointer has-[[data-slot=switch]]:cursor-default",
@@ -401,7 +401,7 @@ const filterFieldValueVariants = cva(
   },
 );
 
-const filterFieldAddonVariants = cva("text-foreground shrink-0 flex items-center justify-center", {
+const filterFieldAddonVariants = cva("flex shrink-0 items-center justify-center text-foreground", {
   variants: {
     variant: {
       solid: "",
@@ -419,11 +419,11 @@ const filterFieldAddonVariants = cva("text-foreground shrink-0 flex items-center
   },
 });
 
-const filterFieldBetweenVariants = cva("text-muted-foreground shrink-0 flex items-center", {
+const filterFieldBetweenVariants = cva("flex shrink-0 items-center text-muted-foreground", {
   variants: {
     variant: {
       solid: "bg-secondary",
-      outline: "bg-background border border-border border-x-0",
+      outline: "border border-border border-x-0 bg-background",
     },
     size: {
       lg: "h-10 px-4 text-sm",
@@ -455,7 +455,7 @@ const filtersContainerVariants = cva("flex flex-wrap items-center", {
   },
 });
 
-const filterItemVariants = cva("flex items-center shadow-xs shadow-black/5", {
+const filterItemVariants = cva("flex items-center shadow-black/5 shadow-xs", {
   variants: {
     variant: {
       solid: "gap-px",
@@ -611,7 +611,7 @@ function FilterInput<T = unknown>({
         {!isValid && validationMessage && (
           <Tooltip>
             <TooltipTrigger asChild>
-              <div className="-translate-y-1/2 absolute top-1/2 right-2 flex items-center">
+              <div className="absolute top-1/2 right-2 flex -translate-y-1/2 items-center">
                 <AlertCircleIcon className="size-3.5 text-destructive" />
               </div>
             </TooltipTrigger>
@@ -1139,7 +1139,7 @@ function SelectOptionsPopover<T = unknown>({
             <>
               {selectedOptions.length > 0 && (
                 <div
-                  className={cn("-space-x-1.5 flex items-center", field.selectedOptionsClassName)}
+                  className={cn("flex items-center -space-x-1.5", field.selectedOptionsClassName)}
                 >
                   {selectedOptions.slice(0, 3).map((option) => (
                     <div key={String(option.value)}>{option.icon}</div>
@@ -1572,7 +1572,7 @@ function FilterValueSelector<T = unknown>({
           ) : (
             <>
               {selectedOptions.length > 0 && (
-                <div className="-space-x-1.5 flex items-center">
+                <div className="flex items-center -space-x-1.5">
                   {selectedOptions.slice(0, 3).map((option) => (
                     <div key={String(option.value)}>{option.icon}</div>
                   ))}

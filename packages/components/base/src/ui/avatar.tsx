@@ -7,7 +7,7 @@ import { cva, type VariantProps } from "@pelatform/ui.general";
 import { cn } from "@pelatform/utils";
 
 const avatarStatusVariants = cva(
-  "flex items-center rounded-full size-2 border-2 border-background",
+  "flex size-2 items-center rounded-full border-2 border-background",
   {
     variants: {
       variant: {

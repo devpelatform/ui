@@ -31,7 +31,7 @@ export type ToastSwipeDirection = "up" | "down" | "left" | "right";
 const toastVariants = cva(
   [
     "absolute z-[calc(1000-var(--toast-index))] m-0 w-[calc(100%_-_2rem)] sm:w-sm",
-    "bg-clip-padding transition-all [transition-property:opacity,transform] duration-200 ease-out select-none",
+    "select-none bg-clip-padding transition-all duration-200 ease-out [transition-property:opacity,transform]",
     'after:absolute after:start-0 after:h-[calc(var(--gap)+1px)] after:w-full after:content-[""]',
     "[transform:translateX(var(--toast-swipe-movement-x))_translateY(calc(var(--toast-swipe-movement-y)+calc(min(var(--toast-index),10)*-1*var(--gap))))_scale(calc(max(0,1-(var(--toast-index)*0.1))))]",
 
@@ -57,10 +57,10 @@ const toastVariants = cva(
   {
     variants: {
       position: {
-        "top-center": "start-1/2 -translate-x-1/2 top-0 after:top-full",
+        "top-center": "start-1/2 top-0 -translate-x-1/2 after:top-full",
         "top-right": "end-0 top-0 after:top-full",
         "top-left": "start-0 top-0 after:top-full",
-        "bottom-center": "start-1/2 -translate-x-1/2 bottom-0 after:bottom-full",
+        "bottom-center": "start-1/2 bottom-0 -translate-x-1/2 after:bottom-full",
         "bottom-right": "end-0 bottom-0 after:bottom-full",
         "bottom-left": "start-0 bottom-0 after:bottom-full",
       },
@@ -74,8 +74,8 @@ const toastVariants = cva(
 const toastTypeVariants = cva("rounded-lg", {
   variants: {
     type: {
-      loading: "bg-popover text-popover-foreground border border-border shadow-lg",
-      default: "bg-popover text-popover-foreground border border-border shadow-lg",
+      loading: "border border-border bg-popover text-popover-foreground shadow-lg",
+      default: "border border-border bg-popover text-popover-foreground shadow-lg",
       error: "bg-destructive text-destructive-foreground",
       success:
         "bg-[var(--color-success,var(--color-green-500))] text-[var(--color-success-foreground,var(--color-white))]",
@@ -89,13 +89,13 @@ const toastTypeVariants = cva("rounded-lg", {
   },
 });
 
-const toastContainerVariants = cva(["fixed flex flex-col gap-2 z-50"], {
+const toastContainerVariants = cva(["fixed z-50 flex flex-col gap-2"], {
   variants: {
     position: {
-      "top-center": "end-1/2 -translate-x-1/2 top-3",
+      "top-center": "end-1/2 top-3 -translate-x-1/2",
       "top-right": "end-3 top-3",
       "top-left": "start-3 top-3",
-      "bottom-center": "end-1/2 -translate-x-1/2 bottom-3",
+      "bottom-center": "end-1/2 bottom-3 -translate-x-1/2",
       "bottom-right": "end-3 bottom-3",
       "bottom-left": "start-3 bottom-3",
     },

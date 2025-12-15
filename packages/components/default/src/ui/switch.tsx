@@ -54,7 +54,7 @@ const switchVariants = cva(
 );
 
 const switchThumbVariants = cva(
-  "pointer-events-none block bg-white w-1/2 h-[calc(100%-4px)] shadow-lg ring-0 transition-transform start-0 data-[state=unchecked]:translate-x-[2px] data-[state=checked]:translate-x-[calc(100%-2px)] rtl:data-[state=unchecked]:-translate-x-[2px] rtl:data-[state=checked]:-translate-x-[calc(100%-2px)]",
+  "pointer-events-none start-0 block h-[calc(100%-4px)] w-1/2 bg-white shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-[calc(100%-2px)] data-[state=unchecked]:translate-x-[2px] rtl:data-[state=checked]:-translate-x-[calc(100%-2px)] rtl:data-[state=unchecked]:-translate-x-[2px]",
   {
     variants: {
       shape: {
@@ -84,7 +84,7 @@ const switchThumbVariants = cva(
 );
 
 const switchIndicatorVariants = cva(
-  "text-sm font-medium absolute mx-[2px] top-1/2 w-1/2 -translate-y-1/2 flex pointer-events-none items-center justify-center text-center transition-transform duration-300 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)]",
+  "pointer-events-none absolute top-1/2 mx-[2px] flex w-1/2 -translate-y-1/2 items-center justify-center text-center font-medium text-sm transition-transform duration-300 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)]",
   {
     variants: {
       state: {
@@ -107,7 +107,7 @@ const switchIndicatorVariants = cva(
         state: "off",
         permanent: false,
         className:
-          "peer-data-[state=checked]:invisible -translate-x-full rtl:translate-x-full peer-data-[state=unchecked]:translate-x-0",
+          "-translate-x-full peer-data-[state=checked]:invisible peer-data-[state=unchecked]:translate-x-0 rtl:translate-x-full",
       },
       {
         state: "on",

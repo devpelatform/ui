@@ -90,7 +90,7 @@ function SelectClear({ className, children, onClick, ...props }: React.Component
     <button
       data-slot="select-clear"
       className={cn(
-        `-translate-y-1/2 absolute end-2 top-1/2 cursor-pointer rounded-sm opacity-60 transition-opacity hover:opacity-100 focus:outline-none focus:ring-0 focus:ring-offset-0 disabled:pointer-events-none data-disabled:pointer-events-none`,
+        `absolute end-2 top-1/2 -translate-y-1/2 cursor-pointer rounded-sm opacity-60 transition-opacity hover:opacity-100 focus:outline-none focus:ring-0 focus:ring-offset-0 disabled:pointer-events-none data-disabled:pointer-events-none`,
         className,
       )}
       onClick={handleClick}
@@ -281,7 +281,7 @@ function SelectIndicator({
     <span
       data-slot="select-indicator"
       className={cn(
-        "-translate-y-1/2 absolute top-1/2 flex items-center justify-center",
+        "absolute top-1/2 flex -translate-y-1/2 items-center justify-center",
         indicatorPosition === "left" ? "start-2" : "end-2",
         className,
       )}
@@ -299,7 +299,7 @@ function SelectSeparator({
   return (
     <SelectPrimitive.Separator
       data-slot="select-separator"
-      className={cn("-mx-1 pointer-events-none my-1 h-px bg-border", className)}
+      className={cn("pointer-events-none -mx-1 my-1 h-px bg-border", className)}
       {...props}
     />
   );

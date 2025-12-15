@@ -15,8 +15,8 @@ const NumberFieldContext = React.createContext<NumberFieldContextType | null>(nu
 
 const inputVariants = cva(
   [
-    "border border-input flex items-center justify-center transition-colors select-none disabled:opacity-50 disabled:pointer-events-none w-20 text-center",
-    "focus-visible:ring-ring/30  focus-visible:border-ring focus-visible:outline-none focus-visible:ring-[3px]",
+    "flex w-20 select-none items-center justify-center border border-input text-center transition-colors disabled:pointer-events-none disabled:opacity-50",
+    "focus-visible:border-ring focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/30",
     "aria-invalid:border-destructive/60 aria-invalid:ring-destructive/10 dark:aria-invalid:border-destructive dark:aria-invalid:ring-destructive/20",
   ],
   {
@@ -35,10 +35,10 @@ const inputVariants = cva(
 
 const buttonVariants = cva(
   [
-    "cursor-pointer focus-visible:outline-hidden inline-flex items-center justify-center text-foreground border border-input",
-    "focus-visible:ring-ring/30  focus-visible:border-ring focus-visible:outline-none focus-visible:ring-[3px]",
+    "inline-flex cursor-pointer items-center justify-center border border-input text-foreground focus-visible:outline-hidden",
+    "focus-visible:border-ring focus-visible:outline-none focus-visible:ring-[3px] focus-visible:ring-ring/30",
     "hover:bg-muted",
-    "whitespace-nowrap text-sm font-medium ring-offset-background transition-[color,box-shadow] disabled:pointer-events-none disabled:opacity-60 [&_svg]:shrink-0",
+    "whitespace-nowrap font-medium text-sm ring-offset-background transition-[color,box-shadow] disabled:pointer-events-none disabled:opacity-60 [&_svg]:shrink-0",
   ],
   {
     variants: {

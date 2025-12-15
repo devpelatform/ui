@@ -19,9 +19,9 @@ const inputVariants = cva(
   {
     variants: {
       variant: {
-        lg: "h-10 px-4 text-sm rounded-md [&~[data-slot=autocomplete-clear]]:end-2.5",
-        md: "h-9 px-3 text-sm rounded-md [&~[data-slot=autocomplete-clear]]:end-2",
-        sm: "h-8 px-2.5 text-xs rounded-md [&~[data-slot=autocomplete-clear]]:end-1.75",
+        lg: "h-10 rounded-md px-4 text-sm [&~[data-slot=autocomplete-clear]]:end-2.5",
+        md: "h-9 rounded-md px-3 text-sm [&~[data-slot=autocomplete-clear]]:end-2",
+        sm: "h-8 rounded-md px-2.5 text-xs [&~[data-slot=autocomplete-clear]]:end-1.75",
       },
     },
     defaultVariants: {
@@ -280,7 +280,7 @@ function AutocompleteClear({
     <AutocompletePrimitive.Clear
       data-slot="autocomplete-clear"
       className={cn(
-        "-translate-y-1/2 absolute top-1/2 cursor-pointer rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100",
+        "absolute top-1/2 -translate-y-1/2 cursor-pointer rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100",
         "focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none",
         "data-disabled:pointer-events-none",
         className,

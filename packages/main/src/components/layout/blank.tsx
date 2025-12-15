@@ -21,8 +21,6 @@ export interface LayoutBlankProps extends BaseComponentProps {
   footer?: ReactNode;
   /** Optional logo element displayed at the top */
   logo?: ReactNode;
-  /** Destination URL for the logo link */
-  logoHref?: string;
 }
 
 /**
@@ -41,14 +39,14 @@ export interface LayoutBlankProps extends BaseComponentProps {
  * </LayoutBlank>
  * ```
  */
-export function LayoutBlank({ children, footer, className, logo, logoHref }: LayoutBlankProps) {
+export function LayoutBlank({ children, footer, className, logo }: LayoutBlankProps) {
   return (
     <>
       <div className="absolute inset-0 isolate overflow-hidden bg-background">
         {/* Grid */}
         <div
           className={cn(
-            "-translate-x-1/2 absolute inset-y-0 start-1/2 w-[1200px]",
+            "absolute inset-y-0 start-1/2 w-[1200px] -translate-x-1/2",
             "mask-intersect mask-[linear-gradient(black,transparent_320px),linear-gradient(90deg,transparent,black_5%,black_95%,transparent)]",
           )}
         >
@@ -62,15 +60,7 @@ export function LayoutBlank({ children, footer, className, logo, logoHref }: Lay
           className,
         )}
       >
-        <div className="grow basis-0">
-          {logo && (
-            <div className="pt-4">
-              <a href={logoHref ?? "#"} target="_blank" className="block">
-                {logo}
-              </a>
-            </div>
-          )}
-        </div>
+        <div className="grow basis-0">{logo && <div className="pt-4">{logo}</div>}</div>
 
         <div className="w-full max-w-4xl px-4 py-16">{children}</div>
 

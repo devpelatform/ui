@@ -169,7 +169,7 @@ export function LanguageSwitcher({
         <span className="relative flex grow items-center justify-between gap-2">
           {label}
           {currentLanguage && (
-            <Badge appearance="outline" className="-translate-y-1/2 absolute end-0 top-1/2">
+            <Badge appearance="outline" className="absolute end-0 top-1/2 -translate-y-1/2">
               {currentLanguage.name}
               {showFlags && currentLanguage.flag && (
                 <Image

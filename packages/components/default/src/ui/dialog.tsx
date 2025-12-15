@@ -8,11 +8,11 @@ import { cva, type VariantProps } from "@pelatform/ui.general";
 import { cn } from "@pelatform/utils";
 
 const dialogContentVariants = cva(
-  "flex flex-col fixed outline-0 z-50 border border-border bg-background p-6 shadow-lg shadow-black/5 duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 sm:rounded-lg",
+  "data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 fixed z-50 flex flex-col border border-border bg-background p-6 shadow-black/5 shadow-lg outline-0 duration-200 data-[state=closed]:animate-out data-[state=open]:animate-in sm:rounded-lg",
   {
     variants: {
       variant: {
-        default: "left-[50%] top-[50%] max-w-lg translate-x-[-50%] translate-y-[-50%] w-full",
+        default: "top-[50%] left-[50%] w-full max-w-lg translate-x-[-50%] translate-y-[-50%]",
         fullscreen: "inset-5",
       },
     },

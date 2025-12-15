@@ -70,7 +70,7 @@ export function FloatingPaths({
   }));
 
   return (
-    <div className="-z-50 pointer-events-none absolute inset-0">
+    <div className="pointer-events-none absolute inset-0 -z-50">
       <svg className={cn("h-full w-full", color)} viewBox="0 0 696 316" fill="none">
         {paths.map((path) => (
           <motion.path

@@ -6,7 +6,7 @@ import { cva, type VariantProps } from "@pelatform/ui.general";
 import { cn } from "@pelatform/utils";
 
 const labelVariants = cva(
-  "text-sm leading-none text-foreground peer-disabled:cursor-not-allowed peer-disabled:opacity-50",
+  "text-foreground text-sm leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-50",
   {
     variants: {
       variant: {

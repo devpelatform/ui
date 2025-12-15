@@ -22,9 +22,9 @@ const ratingVariants = cva("flex items-center", {
 const starVariants = cva("", {
   variants: {
     size: {
-      sm: "w-4 h-4",
-      md: "w-5 h-5",
-      lg: "w-6 h-6",
+      sm: "h-4 w-4",
+      md: "h-5 w-5",
+      lg: "h-6 w-6",
     },
   },
   defaultVariants: {
@@ -32,7 +32,7 @@ const starVariants = cva("", {
   },
 });
 
-const valueVariants = cva("text-muted-foreground w-5", {
+const valueVariants = cva("w-5 text-muted-foreground", {
   variants: {
     size: {
       sm: "text-xs",
