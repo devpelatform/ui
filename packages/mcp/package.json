@@ -19,9 +19,9 @@
     "test": "node dist/index.js --test"
   },
   "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.25.0",
+    "@modelcontextprotocol/sdk": "^1.25.1",
     "glob": "^13.0.0",
-    "zod": "^4.2.0"
+    "zod": "^4.2.1"
   },
   "devDependencies": {
     "@pelatform/tsconfig": "^0.1.3"
