@@ -1,5 +1,11 @@
 # @pelatform/ui.default
 
+## 0.1.7
+
+### Patch Changes
+
+- [`6087bba`](https://github.com/devpelatform/ui/commit/6087bba105fa00ef9a653df39ee94e8c4957ad67) Thanks [@lukmanaviccena](https://github.com/lukmanaviccena)! - Update @headless-tree/core to ^1.6.1 and react-resizable-panels to ^4.0.5
+
 ## 0.1.6
 
 ### Patch Changes

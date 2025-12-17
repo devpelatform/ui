@@ -45,7 +45,7 @@
     },
     "packages/components/aria": {
       "name": "@pelatform/ui.aria",
-      "version": "0.1.5",
+      "version": "0.1.6",
       "dependencies": {
         "react-aria-components": "^1.14.0",
       },
@@ -93,7 +93,7 @@
     },
     "packages/components/default": {
       "name": "@pelatform/ui.default",
-      "version": "0.1.6",
+      "version": "0.1.7",
       "dependencies": {
         "@dnd-kit/core": "^6.3.1",
         "@dnd-kit/modifiers": "^9.0.0",
@@ -172,7 +172,7 @@
     },
     "packages/main": {
       "name": "pelatform-ui",
-      "version": "1.1.7",
+      "version": "1.1.8",
       "dependencies": {
         "@pelatform/ui.animation": "workspace:*",
         "@pelatform/ui.aria": "workspace:*",

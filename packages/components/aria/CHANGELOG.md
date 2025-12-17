@@ -1,5 +1,11 @@
 # @pelatform/ui.aria
 
+## 0.1.6
+
+### Patch Changes
+
+- [`6087bba`](https://github.com/devpelatform/ui/commit/6087bba105fa00ef9a653df39ee94e8c4957ad67) Thanks [@lukmanaviccena](https://github.com/lukmanaviccena)! - Update react-aria-components to ^1.14.0
+
 ## 0.1.5
 
 ### Patch Changes
