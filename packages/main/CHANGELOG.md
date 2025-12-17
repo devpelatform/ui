@@ -1,5 +1,13 @@
 # pelatform-ui
 
+## 1.1.8
+
+### Patch Changes
+
+- Updated dependencies [[`6087bba`](https://github.com/devpelatform/ui/commit/6087bba105fa00ef9a653df39ee94e8c4957ad67), [`6087bba`](https://github.com/devpelatform/ui/commit/6087bba105fa00ef9a653df39ee94e8c4957ad67)]:
+  - @pelatform/ui.aria@0.1.6
+  - @pelatform/ui.default@0.1.7
+
 ## 1.1.7
 
 ### Patch Changes
