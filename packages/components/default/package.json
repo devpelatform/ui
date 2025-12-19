@@ -51,7 +51,7 @@
     "embla-carousel-react": "^8.6.0",
     "input-otp": "^1.4.2",
     "react-day-picker": "^9.13.0",
-    "react-resizable-panels": "^4.0.8",
+    "react-resizable-panels": "^4.0.9",
     "vaul": "^1.1.2"
   },
   "devDependencies": {

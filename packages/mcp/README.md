@@ -64,9 +64,9 @@ Add the MCP server to your MCP client configuration:
     "Pelatform UI": {
       "command": "node",
       "args": [
-        "D:\\PROJECTS\\PELATFORM FOUNDATIONS\\ui\\packages\\mcp\\dist\\index.js"
+        "D:\\PROJECTS\\PELATFORM\\FOUNDATIONS\\LABS\\ui\\packages\\mcp\\dist\\index.js"
       ],
-      "cwd": "D:\\PROJECTS\\PELATFORM FOUNDATIONS\\ui"
+      "cwd": "D:\\PROJECTS\\PELATFORM\\FOUNDATIONS\\LABS\\ui"
     }
   }
 }
@@ -76,7 +76,7 @@ Add the MCP server to your MCP client configuration:
 
 - **command**: `"node"` - Runtime to execute the server
 - **args**: Array containing the path to the built server file
-- **cwd**: Working directory (project root)
+- **cwd**: Current working directory for the server process (default: `process.cwd()`)
 
 ### Path Guidelines
 
