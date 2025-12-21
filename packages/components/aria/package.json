@@ -22,10 +22,10 @@
     "build": "tsup && cp src/style.css dist/style.css",
     "types:check": "tsc --noEmit"
   },
-  "repository": "github:devpelatform/ui",
-  "homepage": "https://github.com/devpelatform/ui",
+  "repository": "github:pelatformlabs/ui",
+  "homepage": "https://github.com/pelatformlabs/ui",
   "bugs": {
-    "url": "https://github.com/devpelatform/ui/issues"
+    "url": "https://github.com/pelatformlabs/ui/issues"
   },
   "files": [
     "dist"
@@ -43,9 +43,9 @@
     "react-aria-components": "^1.14.0"
   },
   "devDependencies": {
-    "@pelatform/tsconfig": "^0.1.3",
+    "@pelatform/tsconfig": "^0.1.4",
     "@pelatform/ui.general": "workspace:*",
-    "@pelatform/utils": "^1.0.6",
+    "@pelatform/utils": "^1.0.7",
     "@types/react": "^19.2.7",
     "react": "^19.2.3",
     "tsup": "^8.5.1",

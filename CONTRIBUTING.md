@@ -29,7 +29,7 @@ Pelatform UI is a community-driven project aiming to provide a comprehensive, ac
 1. Fork the repository on GitHub
 2. Clone your fork locally:
    ```bash
-   git clone https://github.com/devpelatform/ui.git
+   git clone https://github.com/pelatformlabs/ui.git
    cd ui
    ```
 3. Install dependencies:
@@ -268,9 +268,9 @@ If you discover a security vulnerability within Pelatform UI, please send an ema
 If you have questions or need help:
 
 - Check the [documentation](./README.md) and package READMEs
-- Search [existing issues](https://github.com/devpelatform/ui/issues) and [discussions](https://github.com/devpelatform/ui/discussions)
-- Open a new [discussion](https://github.com/devpelatform/ui/discussions) for questions
-- Open an [issue](https://github.com/devpelatform/ui/issues) for bug reports
+- Search [existing issues](https://github.com/pelatformlabs/ui/issues) and [discussions](https://github.com/pelatformlabs/ui/discussions)
+- Open a new [discussion](https://github.com/pelatformlabs/ui/discussions) for questions
+- Open an [issue](https://github.com/pelatformlabs/ui/issues) for bug reports
 
 ## License
 

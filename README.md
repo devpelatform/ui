@@ -95,7 +95,7 @@ We welcome contributions! This project is community-driven and your help makes i
 
 - Read the [Contributing Guide](./CONTRIBUTING.md) for development setup and guidelines
 - Check the [Code of Conduct](./CODE_OF_CONDUCT.md)
-- Browse [open issues](https://github.com/devpelatform/ui/issues) or start a [discussion](https://github.com/devpelatform/ui/discussions)
+- Browse [open issues](https://github.com/pelatformlabs/ui/issues) or start a [discussion](https://github.com/pelatformlabs/ui/discussions)
 
 **Development:**
 
@@ -117,10 +117,10 @@ Do not report security issues through public GitHub issues.
 
 ## Links
 
-- [GitHub Repository](https://github.com/devpelatform/ui)
+- [GitHub Repository](https://github.com/pelatformlabs/ui)
 - [NPM Organization](https://www.npmjs.com/org/pelatformui)
-- [Issues](https://github.com/devpelatform/ui/issues)
-- [Discussions](https://github.com/devpelatform/ui/discussions)
+- [Issues](https://github.com/pelatformlabs/ui/issues)
+- [Discussions](https://github.com/pelatformlabs/ui/discussions)
 
 ## License
 
