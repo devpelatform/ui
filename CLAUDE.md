@@ -55,7 +55,8 @@ ui/
 │   │   ├── aria/          # @pelatform/ui.aria - Accessible ARIA components
 │   │   ├── base/          # @pelatform/ui.base - Headless base components
 │   │   └── default/       # @pelatform/ui.default - Styled default components
-│   └── main/              # pelatform-ui - Main entry point package
+│   ├── main/              # pelatform-ui - Main entry point package
+│   └── mcp/               # @pelatform/mcp.ui - MCP server (private)
 ├── apps/                  # Reserved for example applications
 ```
 
@@ -76,6 +77,12 @@ ui/
   - Mobile detection, mounted state, mutation observer
   - reCAPTCHA v2, scroll position, slider input
   - Viewport tracking, GA params removal
+
+**@pelatform/mcp.ui** (`packages/mcp/`)
+
+- Model Context Protocol (MCP) server for Pelatform UI documentation and code assistance
+- Private package, not published to npm
+- Binary: `pelatform-mcp-ui`
 
 Shared TypeScript configurations provided via external `@pelatform/tsconfig`.
 
@@ -131,17 +138,21 @@ Shared TypeScript configurations provided via external `@pelatform/tsconfig`.
   - `pelatform-ui/base` - Headless components
   - `pelatform-ui/default` - Styled components
   - `pelatform-ui/components` - Custom components (layouts, navigation, etc.)
+  - `pelatform-ui/server` - Server-side utilities
   - `pelatform-ui/css` - Complete stylesheet
 - Includes `llms.txt` for AI assistant integration
+- Multi-entry tsup build produces separate dist files for each export path
 
 ### Build System
 
 - **Bundler**: tsup (ESM only, targets ES2022)
-- **TypeScript**: Module resolution is "bundler", strict mode enabled
+- **TypeScript**: Module resolution is "bundler", strict mode enabled; extends external `@pelatform/tsconfig`
 - **Format**: All packages export ESM format with TypeScript declarations
 - **External Dependencies**: React is externalized in builds
 - **CSS Handling**: Component packages with CSS use build scripts that copy `src/style.css` to `dist/style.css` after tsup build
 - **Peer Dependencies**: Component packages use peerDependencies to avoid bundling shared libraries (React, Radix UI, motion, etc.)
+- **"use client" Banner**: Component packages add `"use client";` via tsup banner for Next.js compatibility
+- **Multi-Entry Builds**: Main package uses multiple tsup entry points to produce separate exports (animation, aria, base, default, hooks, components, server)
 
 ### Code Style (Biome)
 
@@ -243,10 +254,11 @@ Configuration: `.changeset/config.json` - Uses main branch, public access, patch
 
 ## Important Notes
 
-- **Package Manager**: Must use Bun 1.3.3+ (defined in packageManager field)
+- **Package Manager**: Must use Bun 1.3.5+ (defined in packageManager field as `bun@1.3.5`)
 - **Node Version**: Requires Node.js 22+
-- **Biome**: Used exclusively for linting and formatting (no ESLint/Prettier)
+- **Biome**: Used exclusively for linting and formatting (no ESLint/Prettier); extends `@pelatform/biome-config/base`
 - **Turbo**: Caches builds, runs tasks in dependency order
-- **React Version**: Uses React 19.2.0
+- **React Version**: Uses React 19.2.0; peer dependencies support React >=18.0.0 || >=19.0.0-rc.0
 - **TypeScript**: Version 5.9.3, strict mode enforced
 - **Git Hooks**: Husky is configured (`bun prepare` installs hooks automatically)
+- **Lint-Staged**: Configured at both root and package level for pre-commit checks
