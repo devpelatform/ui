@@ -110,7 +110,7 @@ Shared TypeScript configurations provided via external `@pelatform/tsconfig`.
   - Layout: Accordion, Tabs, Dialog, Popover, Tooltip
   - Data: Table, Pagination, Avatar, Badge
   - Buttons, Toasts, and more
-- Radix UI foundation with custom styling hooks
+- Built on Base UI components with React Hook Form integration
 - Exports CSS via `./css` entry point
 
 **@pelatform/ui.default** (`packages/components/default/`)
@@ -124,7 +124,7 @@ Shared TypeScript configurations provided via external `@pelatform/tsconfig`.
   - Dialogs (7): Dialog, Sheet, Drawer, AlertDialog, etc.
   - Advanced (8): Carousel, Kanban, Stepper, Tree, etc.
   - Utilities (7): Button, ButtonGroup, Sonner toasts, etc.
-- Full Radix UI + TanStack integration
+- Full Radix UI + TanStack + motion integration
 - Exports CSS via `./css` entry point
 
 **pelatform-ui** (`packages/main/`)
@@ -151,10 +151,12 @@ Shared TypeScript configurations provided via external `@pelatform/tsconfig`.
 - **External Dependencies**: React is externalized in builds
 - **CSS Handling**: Component packages with CSS use build scripts that copy `src/style.css` to `dist/style.css` after tsup build
 - **Peer Dependencies**: Component packages use peerDependencies to avoid bundling shared libraries (React, Radix UI, motion, etc.)
-- **"use client" Banner**: Component packages add `"use client";` via tsup banner for Next.js compatibility
+- **"use client" Banner**: Component packages (animation, aria, base, default) add `"use client";` via tsup banner for Next.js compatibility
 - **Multi-Entry Builds**: Main package uses multiple tsup entry points to produce separate exports (animation, aria, base, default, hooks, components, server)
 
 ### Code Style (Biome)
+
+Configuration: `biome.jsonc` - Extends `@pelatform/biome-config/base`
 
 - **Indentation**: 2 spaces
 - **Line Width**: 100 characters
@@ -166,17 +168,17 @@ Shared TypeScript configurations provided via external `@pelatform/tsconfig`.
   1. Node/Bun/URL imports
   2. React and Next.js
   3. External packages
-  4. @pelatform/**, @pelatformui/**, @repo/\*\* packages
+  4. @pelatform/**, @pelatformutils/** packages
   5. Aliases and relative paths
 
 ### Conventional Commits
 
-Follow the conventional commit format:
+Follow the conventional commit format (enforced via commitlint):
 
 ```
 type(scope): description
 
-Types: feat, fix, docs, refactor, test, chore
+Types: feat, fix, docs, refactor, test, chore, build, ci
 Scopes: Package names (ui.general, ui.hook, ui.animation, ui.aria, ui.base, ui.default, main)
 ```
 
@@ -189,6 +191,8 @@ Examples:
 - `refactor(react): simplify import paths`
 - `chore(general): update dependencies`
 
+Configuration: `.commitlintrc.cjs` - Extends `@commitlint/config-conventional` with custom types
+
 ## Package Development
 
 ### Adding a New Package
@@ -197,16 +201,19 @@ Examples:
 2. Set up with standard structure:
    - `src/index.ts` - Main exports
    - `package.json` - Package metadata with workspace references
-   - `tsconfig.json` - Extends `@repo/tsconfig/react-library.json`
+   - `tsconfig.json` - Extends `@pelatform/tsconfig/tsconfig.react.json`
    - `tsup.config.ts` - Build configuration (see existing packages for standard config)
    - `README.md` - Package documentation
    - `CHANGELOG.md` - Version history
-3. Package naming: Use `@pelatformui/*` for public packages, `@repo/*` for internal
+3. Package naming: Use `@pelatform/*` for public packages (e.g., @pelatform/ui.general)
 4. For component packages with CSS:
    - Add `src/style.css` file
    - Configure `./css` export in package.json exports field
    - Update build script to copy CSS: `"build": "tsup && cp src/style.css dist/style.css"`
-5. Configure peer dependencies for shared libraries to avoid bundling duplication
+5. For component packages that need Next.js client directive:
+   - Add `banner: { js: '"use client";' }` to tsup.config.ts
+   - This is required for animation, aria, base, and default component packages
+6. Configure peer dependencies for shared libraries to avoid bundling duplication
 
 ### Working on Individual Packages
 
@@ -221,16 +228,27 @@ bun types:check      # Type-check only
 
 Each package's `src/index.ts` should clearly organize exports:
 
+**Core packages (general, hook, components):**
+
 ```typescript
-// Re-exports from dependencies (if any)
-export { ... } from '...'
+// Type exports first (for tree-shaking)
+export type * from "./types/...";
 
-// Library exports
-export * from './lib/...'
-
-// Type exports
-export * from './types/...'
+// Value exports
+export * from "./lib/...";
 ```
+
+**Main package re-exports:**
+
+```typescript
+// Re-export types first (preserves type-only exports)
+export type * from "@pelatform/ui.general";
+export * from "@pelatform/ui.general";
+```
+
+**Entry point files (animation.ts, hooks.ts, etc.):**
+
+These simply re-export from their respective workspace packages for the multi-entry build.
 
 ## Workspace Protocol
 
@@ -255,10 +273,11 @@ Configuration: `.changeset/config.json` - Uses main branch, public access, patch
 ## Important Notes
 
 - **Package Manager**: Must use Bun 1.3.5+ (defined in packageManager field as `bun@1.3.5`)
-- **Node Version**: Requires Node.js 22+
+- **Node Version**: Requires Node.js 22+ (defined in engines.field)
 - **Biome**: Used exclusively for linting and formatting (no ESLint/Prettier); extends `@pelatform/biome-config/base`
 - **Turbo**: Caches builds, runs tasks in dependency order
 - **React Version**: Uses React 19.2.0; peer dependencies support React >=18.0.0 || >=19.0.0-rc.0
-- **TypeScript**: Version 5.9.3, strict mode enforced
+- **TypeScript**: Version 5.9.3, strict mode enforced; extends external `@pelatform/tsconfig`
 - **Git Hooks**: Husky is configured (`bun prepare` installs hooks automatically)
 - **Lint-Staged**: Configured at both root and package level for pre-commit checks
+- **Commitlint**: Enforces conventional commit format via `.commitlintrc.cjs`
